@@ -21,5 +21,9 @@ export class LoginComponent {
     this.authService.login(this.loginForm.value.username!, this.loginForm.value.password!);
   }
 
+  checkToken() {
+    this.authService.checkToken();
+  }
+
 
 }
