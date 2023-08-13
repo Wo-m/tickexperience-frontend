@@ -7,12 +7,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './features/log-in/login.component';
 import { LandingComponent } from './features/landing/landing.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CalendarComponent } from './features/calendar/calendar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     LandingComponent,
+    CalendarComponent,
   ],
   imports: [
     BrowserModule,

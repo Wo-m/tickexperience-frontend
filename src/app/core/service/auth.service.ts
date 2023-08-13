@@ -5,33 +5,38 @@ import { Login } from '../model/login.model';
 
 /**
  * Singleton Service for handling authentication
+ * should only be injected to use the non-static methods
  */
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  private token: string = "";
+  private static token: string = "";
   private base_url: string = "http://127.0.0.1:8080/api/auth/";
 
   constructor(private http: HttpClient) {
-
   }
 
   login(username: string, password: string) {
     let body = new Login(username, password);
 
     this.http.post(this.base_url + "login", body)
-      .subscribe( (data: Token) =>
-        this.token = data.token!);
+      .subscribe((data: Token) =>
+        AuthService.token = data.token!);
   }
 
-  checkToken() {
-    if (this.token.length == 0) {
-      return;
-    }
-    const params = new HttpParams().set('token', this.token);
-
-    return this.http.get(this.base_url + "check", {params: params}).subscribe();
+  // Static Methods to avoid injection
+  static logout() {
+    this.token = '';
   }
+
+  static getToken(): string {
+    return this.token;
+  }
+
+  static isAuthenticated(): boolean {
+    return this.token != "";
+  }
+
 }
