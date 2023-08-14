@@ -3,10 +3,10 @@ import { Injectable } from '@angular/core';
 import { Token } from '../model/token.model';
 import { Login } from '../model/login.model';
 import { CacheConstants } from '../constant/cache.constant';
+import { AuthUtils } from '../Utils/auth.utils';
 
 /**
  * Singleton Service for handling authentication
- * should only be injected to use the non-static methods
  */
 @Injectable({
   providedIn: 'root'
@@ -19,6 +19,11 @@ export class AuthService {
   }
 
   login(username: string, password: string) {
+    if (AuthUtils.isAuthenticated()) {
+      console.log("Login failed: User already logged in.")
+      return;
+    }
+
     let body = new Login(username, password);
 
     this.http.post(this.base_url + "login", body)
@@ -28,18 +33,16 @@ export class AuthService {
   }
 
   logout() {
-    let body = {"token": AuthService.getToken()};
+    if (!AuthUtils.isAuthenticated()) {
+      console.log("Logout failed: No User logged in.")
+      return;
+    }
 
+    const token = AuthUtils.getToken();
     sessionStorage.removeItem(CacheConstants.token);
+
+    let body = {"token": token};
     this.http.post(this.base_url + "logout", body).subscribe();
-  }
-
-  static getToken(): string {
-    return sessionStorage.getItem(CacheConstants.token)!;
-  }
-
-  static isAuthenticated(): boolean {
-    return sessionStorage.getItem(CacheConstants.token) != '';
   }
 
 }
