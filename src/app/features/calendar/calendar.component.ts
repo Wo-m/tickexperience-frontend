@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../core/service/user.service';
 import { Ticket } from '../../core/model/ticket.model';
-import { AuthService } from '../../core/service/auth.service';
+import { AuthUtils } from '../../core/Utils/auth.utils';
 
 @Component({
   selector: 'app-calendar',
@@ -16,7 +16,7 @@ export class CalendarComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    if (AuthService.isAuthenticated()) {
+    if (AuthUtils.isAuthenticated()) {
       this.loadUserTickets();
     }
   }
