@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { UserService } from '../../core/service/user.service';
 import { Ticket } from '../../core/model/ticket.model';
 import { AuthService } from '../../core/service/auth.service';
@@ -24,7 +23,7 @@ export class CalendarComponent implements OnInit{
 
   loadUserTickets() {
     this.userService.getTickets().subscribe((data: any) => {
-      this.tickets = data;
+      this.tickets = data as Ticket[];
     });
   }
 }
