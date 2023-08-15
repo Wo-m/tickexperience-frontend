@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { AuthUtils } from '../Utils/auth.utils';
 
 @Injectable({
@@ -12,7 +12,7 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   getTickets() {
-    const headers = new HttpHeaders().set('token', AuthUtils.getToken());
+    const headers = AuthUtils.getAuthedHeaders();
     return this.http.get(this.base_url + "/tickets", {headers: headers});
   }
 }

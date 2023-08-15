@@ -42,8 +42,7 @@ export class AuthService {
     const token = AuthUtils.getToken();
     sessionStorage.removeItem(CacheConstants.token);
 
-    let body = {"token": token};
-    this.http.post(this.base_url + "logout", body).subscribe();
+    this.http.post(this.base_url + `logout/${token}`, null ).subscribe();
   }
 
 }
