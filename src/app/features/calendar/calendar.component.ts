@@ -26,4 +26,6 @@ export class CalendarComponent implements OnInit{
       this.tickets = data as Ticket[];
     });
   }
+
+  protected readonly AuthUtils = AuthUtils;
 }

@@ -1,3 +1,8 @@
-<p> {{ tickets[0].id }}</p>
-<p> {{ tickets[0].venue}}</p>
-<p> {{ tickets[0].seatNumber }}</p>
+<div *ngIf="AuthUtils.isAuthenticated()">
+  <h3>Tickets:</h3>
+  <div *ngFor="let ticket of tickets">
+    <p>Id: {{ ticket.id }} </p>
+    <p>Seat: {{ ticket.seatNumber }} </p>
+    <p>Venue: {{ ticket.venue }} </p>
+  </div>
+</div>

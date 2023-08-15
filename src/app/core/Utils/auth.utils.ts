@@ -1,4 +1,3 @@
-import { Injectable } from '@angular/core';
 import { CacheConstants } from '../constant/cache.constant';
 
 /**
@@ -11,7 +10,7 @@ export class AuthUtils {
   }
 
   static isAuthenticated(): boolean {
-    return sessionStorage.getItem(CacheConstants.token) != '';
+    return sessionStorage.getItem(CacheConstants.token) != null;
   }
 
 

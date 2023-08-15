@@ -21,6 +21,7 @@ export class AuthService {
   login(username: string, password: string) {
     if (AuthUtils.isAuthenticated()) {
       console.log("Login failed: User already logged in.")
+      console.log(AuthUtils.getToken())
       return;
     }
 
