@@ -1,0 +1,27 @@
+.banner {
+  width: 100%;
+  background: rgba(0,0,0,0.78);
+  padding: 10px;
+}
+
+.root-container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  // Disables scrolling
+  overflow: hidden !important;
+}
+
+mat-drawer-container {
+  height: 100%;
+}
+
+.menu {
+  background: aquamarine; // just to show box distinctively
+  height: 100%;
+  width: 200px;
+}
+
+
+

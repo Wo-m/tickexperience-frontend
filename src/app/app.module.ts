@@ -7,7 +7,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './features/log-in/login.component';
 import { LandingComponent } from './features/landing/landing.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CalendarComponent } from './features/calendar/calendar.component';
+import { CalendarComponent } from './features/landing/calendar/calendar.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatButtonModule } from '@angular/material/button';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { CalendarComponent } from './features/calendar/calendar.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSidenavModule,
+    MatButtonModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

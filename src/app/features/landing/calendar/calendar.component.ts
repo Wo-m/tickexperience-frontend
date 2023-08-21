@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../core/service/user.service';
-import { Ticket } from '../../core/model/ticket.model';
-import { AuthUtils } from '../../core/Utils/auth.utils';
+import { UserService } from '../../../core/service/user.service';
+import { Ticket } from '../../../core/model/ticket.model';
+import { AuthUtils } from '../../../core/Utils/auth.utils';
 
 @Component({
   selector: 'app-calendar',

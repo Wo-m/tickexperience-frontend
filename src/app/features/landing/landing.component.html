@@ -1,3 +1,27 @@
-<p>Welcome to TickExperience!</p>
-<a [routerLink]="['/log-in']" class="btn btn-primary">Log in</a>
-<app-calendar></app-calendar>
+<div class="root-container">
+
+  <div class="banner">
+    <div class="right-align">
+      <button mat-button (click)="drawer.toggle()">
+        Toggle sidenav
+      </button>
+    </div>
+  </div>
+
+
+  <mat-drawer-container >
+
+    <mat-drawer #drawer mode="over" position="end">
+      <!-- Side Menu Bar   -->
+      <div class="menu">
+        <button *ngIf="isAuthenticated()" (click)="logout()">Log Out</button>
+        <button *ngIf="!isAuthenticated()" [routerLink]="'/log-in'">Log In</button>
+      </div>
+    </mat-drawer>
+
+    <!--Injected Components-->
+    <app-calendar></app-calendar>
+
+  </mat-drawer-container>
+
+</div>
