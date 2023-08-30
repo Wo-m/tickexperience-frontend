@@ -15,7 +15,7 @@
       <!-- Side Menu Bar   -->
       <div class="menu">
         <button *ngIf="isAuthenticated()" (click)="logout()">Log Out</button>
-        <button *ngIf="!isAuthenticated()" [routerLink]="'/log-in'">Log In</button>
+        <button *ngIf="!isAuthenticated()" [routerLink]="['/log-in', 'false']">Log In</button>
       </div>
     </mat-drawer>
 

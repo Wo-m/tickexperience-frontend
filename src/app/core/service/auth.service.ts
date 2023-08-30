@@ -4,6 +4,7 @@ import { Token } from '../model/token.model';
 import { Login } from '../model/login.model';
 import { CacheConstants } from '../constant/cache.constant';
 import { AuthUtils } from '../Utils/auth.utils';
+import { Router } from '@angular/router';
 
 /**
  * Singleton Service for handling authentication
@@ -19,18 +20,9 @@ export class AuthService {
   }
 
   login(username: string, password: string) {
-    if (AuthUtils.isAuthenticated()) {
-      console.log("Login failed: User already logged in.")
-      console.log(AuthUtils.getToken())
-      return;
-    }
-
     let body = new Login(username, password);
 
-    this.http.post(this.base_url + "login", body)
-      .subscribe((data: Token) =>
-        // store token in browser session storage
-        sessionStorage.setItem(CacheConstants.token, data.token!));
+    return this.http.post(this.base_url + "login", body);
   }
 
   logout() {

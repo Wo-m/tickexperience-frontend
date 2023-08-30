@@ -14,9 +14,7 @@ export class AuthUtils {
     return sessionStorage.getItem(CacheConstants.token) != null;
   }
 
-  static getAuthedHeaders(): HttpHeaders {
-    return new HttpHeaders().set('token', AuthUtils.getToken());
+  static removeToken(): void {
+    sessionStorage.removeItem(CacheConstants.token);
   }
-
-
 }

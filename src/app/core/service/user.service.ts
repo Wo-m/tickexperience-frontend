@@ -12,7 +12,6 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   getTickets() {
-    const headers = AuthUtils.getAuthedHeaders();
-    return this.http.get(this.base_url + "/tickets", {headers: headers});
+    return this.http.get(this.base_url + "/tickets");
   }
 }
