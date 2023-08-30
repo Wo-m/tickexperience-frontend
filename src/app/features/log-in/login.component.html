@@ -1,6 +1,20 @@
 
-<form [formGroup]="loginForm" (ngSubmit)="login()">
-  <input type="text" formControlName="username">
-  <input type="text" formControlName="password">
-  <button type="submit" [disabled]="!loginForm.valid">Login</button>
-</form>
+<div class="root-container image">
+    <div class="card">
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <h1>Welcome to somn</h1>
+        <div *ngIf="loggedOut" class="warning">
+          You have been logged out.
+        </div>
+        <div class="formInput">
+          <label>Username</label>
+          <input type="text" formControlName="username">
+        </div>
+        <div class="formInput">
+          <label>Password</label>
+          <input type="text" formControlName="password">
+        </div>
+        <button type="submit" [disabled]="!loginForm.valid">Login</button>
+      </form>
+  </div>
+</div>

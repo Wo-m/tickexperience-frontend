@@ -1,0 +1,80 @@
+.root-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  // Disables scrolling
+  overflow: hidden !important;
+}
+
+.card {
+  width: 350px;
+  box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
+  height: fit-content;
+  border-radius: 10px;
+  backdrop-filter: blur(14px);
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 30px;
+  text-align: center;
+  font-family: 'Poppins',sans-serif;
+  color: #000000;
+  letter-spacing: 0.5px;
+}
+
+.image {
+  background-image: url("https://stillmed.olympics.com/media/Images/OlympicOrg/IOC/The_Organisation/The-Olympic-Rings/Olympic_rings_TM_c_IOC_All_rights_reserved_1.jpg");
+  background-size: 1500px auto;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.formInput {
+  text-align: left;
+  margin-top: 40px;
+  width: 100%;
+}
+
+.warning {
+  font-size: 12px;
+  color: orange;
+  font-weight: 400;
+}
+
+form *{
+  outline: none;
+  border: none;
+}
+
+label {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+input{
+  height: 40px;
+  width: 90%;
+  padding: 0 5%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  background-color: rgba(107,107,107, 0.5);
+  border-radius: 3px;
+  color: white;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+button {
+  margin-top: 30px;
+  width: 100%;
+  background-color: #000000;
+  color: #ffffff;
+  padding: 15px 0;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
