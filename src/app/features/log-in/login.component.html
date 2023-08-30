@@ -1,5 +1,5 @@
 
-<div class="root-container image">
+<div class="root-container image" [ngClass]="{image_phone: responsive.isPhone(), image_web: !responsive.isPhone()}">
     <div class="card">
       <form [formGroup]="loginForm" (ngSubmit)="login()">
         <h1>Welcome to somn</h1>

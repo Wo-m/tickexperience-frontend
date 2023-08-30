@@ -3,4 +3,5 @@
  */
 export class CacheConstants {
   public static token: string = "token";
+  public static screen: string = "screen";
 }

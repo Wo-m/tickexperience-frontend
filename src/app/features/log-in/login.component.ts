@@ -2,9 +2,10 @@ import { Component, Input, OnInit } from '@angular/core';
 import { AuthService } from '../../core/service/auth.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { AuthUtils } from '../../core/Utils/auth.utils';
 import { Token } from '../../core/model/token.model';
 import { CacheConstants } from '../../core/constant/cache.constant';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { ResponsiveService } from '../../core/service/responsive.service';
 
 @Component({
   selector: 'app-log-in',
@@ -23,7 +24,8 @@ export class LoginComponent implements OnInit{
 
   constructor(private route: ActivatedRoute,
               private authService: AuthService,
-              private router: Router) {
+              private router: Router,
+              public responsive: ResponsiveService) {
   }
 
   ngOnInit() {

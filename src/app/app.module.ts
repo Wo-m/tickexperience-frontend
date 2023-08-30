@@ -12,6 +12,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppInterceptor } from './core/interceptor/app.interceptor';
+import {LayoutModule} from '@angular/cdk/layout';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AppInterceptor } from './core/interceptor/app.interceptor';
     ReactiveFormsModule,
     MatSidenavModule,
     MatButtonModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    LayoutModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
