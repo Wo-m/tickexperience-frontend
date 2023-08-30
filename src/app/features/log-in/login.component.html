@@ -3,8 +3,9 @@
     <div class="card">
       <form [formGroup]="loginForm" (ngSubmit)="login()">
         <h1>Welcome to somn</h1>
-        <div *ngIf="loggedOut" class="warning">
-          You have been logged out.
+        <div class="warning">
+          <p *ngIf="loggedOut">You have been logged out.</p>
+          <p *ngIf="failed">Login failed. Please try again.</p>
         </div>
         <div class="formInput">
           <label>Username</label>
