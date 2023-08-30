@@ -5,9 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './features/log-in/login.component';
-import { LandingComponent } from './features/landing/landing.component';
+import { ParentComponent } from './features/parent/parent.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CalendarComponent } from './features/landing/calendar/calendar.component';
+import { CalendarComponent } from './features/parent/calendar/calendar.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -18,7 +18,7 @@ import {LayoutModule} from '@angular/cdk/layout';
   declarations: [
     AppComponent,
     LoginComponent,
-    LandingComponent,
+    ParentComponent,
     CalendarComponent,
   ],
   imports: [

@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
 import { AuthUtils } from '../../core/Utils/auth.utils';
 import { AuthService } from '../../core/service/auth.service';
-import {SportService} from "../../core/service/sport.service";
 
 @Component({
-  selector: 'app-landing',
-  templateUrl: './landing.component.html',
-  styleUrls: ['./landing.component.scss']
+  selector: 'app-parent',
+  templateUrl: './parent.component.html',
+  styleUrls: ['./parent.component.scss']
 })
-export class LandingComponent {
+export class ParentComponent {
 
 constructor(private authService: AuthService) { }
 
