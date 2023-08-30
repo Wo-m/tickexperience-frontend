@@ -8,7 +8,6 @@ import {
 import { catchError, Observable, throwError } from 'rxjs';
 import { Router } from '@angular/router';
 import { AuthUtils } from '../Utils/auth.utils';
-import { CacheConstants } from '../constant/cache.constant';
 
 @Injectable()
 export class AppInterceptor implements HttpInterceptor {

@@ -1,10 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Token } from '../model/token.model';
 import { Login } from '../model/login.model';
 import { CacheConstants } from '../constant/cache.constant';
 import { AuthUtils } from '../Utils/auth.utils';
-import { Router } from '@angular/router';
 
 /**
  * Singleton Service for handling authentication
