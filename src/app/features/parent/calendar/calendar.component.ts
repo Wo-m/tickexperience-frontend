@@ -19,10 +19,25 @@ export class CalendarComponent implements OnInit{
   }
 
   ngOnInit(): void {
-
     if (AuthUtils.isAuthenticated()) {
       this.loadUserTickets();
     }
+  }
+
+  scrollLeft() {
+    this.scrollNav(-100)
+  }
+
+  scrollRight() {
+    this.scrollNav(100)
+  }
+
+  scrollNav(left: number) {
+    const nav = document.getElementById('nav')
+    if (nav === null) {
+      return;
+    }
+    nav.scrollBy({left: left, behavior: 'smooth'})
   }
 
   loadUserTickets() {
@@ -30,6 +45,4 @@ export class CalendarComponent implements OnInit{
       this.tickets = data as Ticket[];
     });
   }
-
-  protected readonly AuthUtils = AuthUtils;
 }

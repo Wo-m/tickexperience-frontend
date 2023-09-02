@@ -2,11 +2,25 @@
 body {
   margin: 0;
   padding: 0;
+
+  font-family: 'Poppins',sans-serif;
 }
 
 div {
   box-sizing: border-box;
 }
+
+button {
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form *{
+  outline: none;
+  border: none;
+}
+
 
 .right-align {
   width: fit-content;

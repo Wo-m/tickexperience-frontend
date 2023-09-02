@@ -18,7 +18,6 @@
   background-color: rgba(255, 255, 255, 0.5);
   padding: 30px;
   text-align: center;
-  font-family: 'Poppins',sans-serif;
   color: #000000;
   letter-spacing: 0.5px;
 }
@@ -38,8 +37,6 @@
   background-position: top;
 }
 
-
-
 .formInput {
   text-align: left;
   margin-top: 40px;
@@ -50,11 +47,6 @@
   font-size: 12px;
   color: orange;
   font-weight: 400;
-}
-
-form *{
-  outline: none;
-  border: none;
 }
 
 label {
@@ -69,8 +61,8 @@ input{
   margin-left: auto;
   margin-right: auto;
   margin-top: 5px;
-  background-color: rgba(107,107,107, 0.5);
   border-radius: 3px;
+  background-color: rgba(107,107,107, 0.5);
   color: white;
   font-size: 20px;
   font-weight: 300;
@@ -79,12 +71,10 @@ input{
 button {
   margin-top: 30px;
   width: 100%;
-  background-color: #000000;
-  color: #ffffff;
   padding: 15px 0;
   font-size: 18px;
   font-weight: 600;
-  border-radius: 5px;
-  cursor: pointer;
+  background-color: #000000;
+  color: #ffffff;
 }
 

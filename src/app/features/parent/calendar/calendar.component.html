@@ -1,7 +1,11 @@
 <div class="container">
-    <div class="scroll-menu">
-      <nav>
+  <button (click)="scrollLeft()">Left</button>
+    <div id="nav" class="scroll-menu">
         <span class="nav-item" *ngFor="let sport of sports">{{ sport }}</span>
-      </nav>
+        <span class="nav-item" *ngFor="let sport of sports">{{ sport }}</span>
+        <span class="nav-item" *ngFor="let sport of sports">{{ sport }}</span>
     </div>
+  <button (click)="scrollRight()">Right</button>
 </div>
+
+

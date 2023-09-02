@@ -1,9 +1,7 @@
 // Make element scrollable
 .scroll-menu {
   white-space: nowrap;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  -ms-overflow-style: -ms-autohiding-scrollbar;
+  overflow-x: scroll;
   border-radius: 20px;
   background: #7ec0ff;
   max-width: 80%;
@@ -17,6 +15,7 @@
 .scroll-menu::-webkit-scrollbar {
   display: none;
 }
+
 // Nav items
 .nav-item {
   padding: 12px 16px 13px;
@@ -28,17 +27,8 @@
   }
 }
 
-nav {
-}
-
 body {
-  font-family: 'Poppins',sans-serif;
   max-width: 360px;
   margin: 10vmin auto 0;
-  color: #64cce3;
   line-height: 1.5;
 }
-
-
-// remove the scroll bar
-
