@@ -7,19 +7,21 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './features/log-in/login.component';
 import { ParentComponent } from './features/parent/parent.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CalendarComponent } from './features/parent/calendar/calendar.component';
+import { LandingComponent } from './features/parent/landing/landing.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppInterceptor } from './core/interceptor/app.interceptor';
 import {LayoutModule} from '@angular/cdk/layout';
+import { MatIconModule } from '@angular/material/icon';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     ParentComponent,
-    CalendarComponent,
+    LandingComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,7 +32,9 @@ import {LayoutModule} from '@angular/cdk/layout';
     MatSidenavModule,
     MatButtonModule,
     BrowserAnimationsModule,
-    LayoutModule
+    LayoutModule,
+    MatIconModule,
+    CommonModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

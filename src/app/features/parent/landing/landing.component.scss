@@ -1,0 +1,44 @@
+// Make element scrollable
+.scroll-menu {
+  white-space: nowrap;
+  overflow-x: scroll;
+  border-radius: 20px;
+  //background: #7ec0ff;
+  max-width: 80%;
+}
+
+// Hide scroll bar for scroll-menu class
+.scroll-menu::-webkit-scrollbar {
+  display: none;
+}
+
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.nav-item {
+  padding: 12px 16px 13px;
+  font-size: 14px;
+  display: inline-block;
+  vertical-align: middle;
+  &:not(:last-child) {
+    //border-right: 1px solid rgba(#727c87, .2);
+  }
+}
+
+// style for selectable and button class
+.selectable, .nav-button {
+  cursor: pointer;
+  &:hover {
+    background: #e6f7ff;
+  }
+}
+
+.nav-button {
+  justify-content: center;
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+}

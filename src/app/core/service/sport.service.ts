@@ -13,7 +13,7 @@ export class SportService {
     return this.http.get(this.base_url + "/all")
   }
 
-  getSportAllEvents(sportId: number) {
+  getEvents(sportId: number) {
     return this.http.get(this.base_url + `/events/${sportId}`)
   }
 }

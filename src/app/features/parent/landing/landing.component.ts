@@ -3,16 +3,23 @@ import { UserService } from '../../../core/service/user.service';
 import { Ticket } from '../../../core/model/ticket.model';
 import { AuthUtils } from '../../../core/Utils/auth.utils';
 import { SportService } from '../../../core/service/sport.service';
+import {MatIconModule} from '@angular/material/icon';
 
 @Component({
-  selector: 'app-calendar',
-  templateUrl: './calendar.component.html',
-  styleUrls: ['./calendar.component.scss']
+  selector: 'app-landing',
+  templateUrl: './landing.component.html',
+  styleUrls: ['./landing.component.scss']
 })
-export class CalendarComponent implements OnInit{
+export class LandingComponent implements OnInit{
 
   tickets: Ticket[];
-  sports: string[] = ['Running', 'Swimming', 'Rugby']
+  // sports: string[] = ['Running', 'Swimming', 'Rugby']
+  sports = [
+    {name: "Running", dates: [1, 2,3, 4, 5]},
+    {name: "Swimming", dates: [1, 2,3, 4, 5]},
+    {name: "Rugby", dates: [1, 2,3, 4, 5]}
+  ]
+  selectedSport: {name: string, dates: number[]} = this.sports[0]
 
   constructor(private userService: UserService,
               private sportService: SportService) {
@@ -24,16 +31,20 @@ export class CalendarComponent implements OnInit{
     }
   }
 
-  scrollLeft() {
-    this.scrollNav(-100)
+  selectSport(sport: { name: string; dates: number[];}) {
+    this.selectedSport = sport;
   }
 
-  scrollRight() {
-    this.scrollNav(100)
+  scrollLeft(id: string) {
+    this.scrollNav(-100, id)
   }
 
-  scrollNav(left: number) {
-    const nav = document.getElementById('nav')
+  scrollRight(id: string) {
+    this.scrollNav(100, id)
+  }
+
+  scrollNav(left: number, id: string) {
+    const nav = document.getElementById(id)
     if (nav === null) {
       return;
     }

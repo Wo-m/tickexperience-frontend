@@ -1,0 +1,37 @@
+<div class="container">
+  <div (click)="scrollLeft('sport')" class="nav-button">
+    <mat-icon>keyboard_arrow_left</mat-icon>
+  </div>
+  <div id="sport" class="scroll-menu">
+      <div class="nav-item selectable" *ngFor="let sport of sports" (click)="selectSport(sport)">{{ sport.name }}</div>
+      <div class="nav-item selectable" *ngFor="let sport of sports" (click)="selectSport(sport)">{{ sport.name }}</div>
+      <div class="nav-item selectable" *ngFor="let sport of sports" (click)="selectSport(sport)">{{ sport.name }}</div>
+      <div class="nav-item selectable" *ngFor="let sport of sports" (click)="selectSport(sport)">{{ sport.name }}</div>
+      <div class="nav-item selectable" *ngFor="let sport of sports" (click)="selectSport(sport)">{{ sport.name }}</div>
+      <div class="nav-item selectable" *ngFor="let sport of sports" (click)="selectSport(sport)">{{ sport.name }}</div>
+      <div class="nav-item selectable" *ngFor="let sport of sports" (click)="selectSport(sport)">{{ sport.name }}</div>
+      <div class="nav-item selectable" *ngFor="let sport of sports" (click)="selectSport(sport)">{{ sport.name }}</div>
+      <div class="nav-item selectable" *ngFor="let sport of sports" (click)="selectSport(sport)">{{ sport.name }}</div>
+      <div class="nav-item selectable" *ngFor="let sport of sports" (click)="selectSport(sport)">{{ sport.name }}</div>
+      <div class="nav-item selectable" *ngFor="let sport of sports" (click)="selectSport(sport)">{{ sport.name }}</div>
+      <div class="nav-item selectable" *ngFor="let sport of sports" (click)="selectSport(sport)">{{ sport.name }}</div>
+  </div>
+  <div (click)="scrollRight('sport')" class="nav-button">
+    <mat-icon>keyboard_arrow_right</mat-icon>
+  </div>
+</div>
+
+
+<div class="container">
+  <div (click)="scrollLeft('dates')" class="nav-button">
+    <mat-icon>keyboard_arrow_left</mat-icon>
+  </div>
+  <div id="dates" class="scroll-menu">
+    <div class="nav-item selectable" *ngFor="let date of selectedSport.dates" >{{ date }}</div>
+  </div>
+  <div (click)="scrollRight('dates')" class="nav-button">
+    <mat-icon>keyboard_arrow_right</mat-icon>
+  </div>
+</div>
+
+
