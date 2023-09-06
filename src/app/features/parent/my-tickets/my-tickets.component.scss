@@ -1,0 +1,126 @@
+@use "../../../../assets/colours";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  height: fit-content;
+  margin-top: 35px;
+  text-align: center;
+  align-items: center;
+  background:linear-gradient(135deg, colours.$honeydew 55%, colours.$yellow 70%);
+  border-width: 2px;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: colours.$green;
+  box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
+  color: colours.$green;
+  padding: 10px;
+}
+
+.card_phone {
+  background:linear-gradient(to right, colours.$yellow 27%, colours.$honeydew 33%);
+  padding: 5px;
+  height: 30%;
+}
+
+.details {
+  width: 55%;
+  height: 100%;
+  display: flex;
+  padding-left: 5px;
+  padding-right: 5px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.details_phone {
+  width: 70%;
+  padding-left: 15px;
+}
+
+.image {
+  width: 15%;
+  aspect-ratio: 1;
+  display: flex;
+  padding-right: 5px;
+}
+
+.image_phone {
+  width: 30%;
+}
+
+.datetime {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  justify-content: center;
+  align-items: center;
+  padding-left: 5px;
+}
+
+.datetime_phone {
+  width: 100%;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding-left: 0px;
+}
+
+.day_time {
+  font-size: 28px;
+}
+
+.date {
+  font-size: 22px;
+}
+
+.venue {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  font-size: 22px;
+  padding-top: 5px;
+}
+
+.venue_phone {
+  font-size: 18px;
+}
+
+.event {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  font-size: 28px;
+  border-bottom-color: rgba(colours.$green, 0.29);
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  padding-bottom: 5px;
+}
+
+.event_phone {
+  font-size: 22px;
+}
+
+.selectable {
+  cursor: pointer;
+  &:hover {
+    background:linear-gradient(135deg, colours.$white 55%, colours.$orange 70%);
+  }
+}
+
+.selectable_phone {
+  &:hover {
+    background:linear-gradient(to right, colours.$orange 27%, colours.$white 33%);
+  }
+}

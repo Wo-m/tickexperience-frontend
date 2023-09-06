@@ -12,9 +12,11 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppInterceptor } from './core/interceptor/app.interceptor';
-import {LayoutModule} from '@angular/cdk/layout';
+import { LayoutModule } from '@angular/cdk/layout';
 import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
+import { MyTicketsComponent } from './features/parent/my-tickets/my-tickets.component';
+import { MatCardModule } from "@angular/material/card";
 
 @NgModule({
   declarations: [
@@ -22,6 +24,7 @@ import { CommonModule } from '@angular/common';
     LoginComponent,
     ParentComponent,
     LandingComponent,
+    MyTicketsComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,8 @@ import { CommonModule } from '@angular/common';
     BrowserAnimationsModule,
     LayoutModule,
     MatIconModule,
-    CommonModule
+    CommonModule,
+    MatCardModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
