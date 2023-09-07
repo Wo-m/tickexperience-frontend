@@ -17,6 +17,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
 import { MyTicketsComponent } from './features/parent/my-tickets/my-tickets.component';
 import { MatCardModule } from "@angular/material/card";
+import { RegisterComponent } from './features/log-in/register/register.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { MatCardModule } from "@angular/material/card";
     ParentComponent,
     LandingComponent,
     MyTicketsComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
