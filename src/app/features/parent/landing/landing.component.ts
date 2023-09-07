@@ -15,11 +15,24 @@ export class LandingComponent implements OnInit{
   tickets: Ticket[];
   // sports: string[] = ['Running', 'Swimming', 'Rugby']
   sports = [
-    {name: "Running", dates: [1, 2,3, 4, 5]},
-    {name: "Swimming", dates: [1, 2,3, 4, 5]},
-    {name: "Rugby", dates: [1, 2,3, 4, 5]}
+    {name: "Running",
+      icon: "athletics",
+      events: [
+          {name: "100m", gender: "male", date: new Date(2032, 6, 23), time: "12:00", venue: "Gabba", image: "https://athleticsweekly.com/wp-content/uploads/2015/03/BOLTUSAIN_Beijing08.jpg"},
+          {name: "10,000m", gender: "female", date: new Date(2032, 6, 27), time: "16:00", venue: "SCG", image: "https://www.si.com/.image/t_share/MTY4MTI1ODk2OTk3MjgzMDg5/huddle-ayana-rio-216jpg.jpg"},
+        ]
+    },
+    {name: "Swimming",
+      icon: "swimming",
+      events: [
+      ]},
+    {name: "Football",
+      icon: "football",
+      events: [
+      ]}
   ]
-  selectedSport: {name: string, dates: number[]} = this.sports[0]
+
+  selectedSport = this.sports[0]
 
   constructor(private userService: UserService,
               private sportService: SportService) {
@@ -31,7 +44,7 @@ export class LandingComponent implements OnInit{
     }
   }
 
-  selectSport(sport: { name: string; dates: number[];}) {
+  selectSport(sport: any) {
     this.selectedSport = sport;
   }
 

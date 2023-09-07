@@ -14,7 +14,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppInterceptor } from './core/interceptor/app.interceptor';
 import {LayoutModule} from '@angular/cdk/layout';
 import { MatIconModule } from '@angular/material/icon';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -23,19 +24,21 @@ import { CommonModule } from '@angular/common';
     ParentComponent,
     LandingComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatSidenavModule,
-    MatButtonModule,
-    BrowserAnimationsModule,
-    LayoutModule,
-    MatIconModule,
-    CommonModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatSidenavModule,
+        MatButtonModule,
+        BrowserAnimationsModule,
+        LayoutModule,
+        MatIconModule,
+        CommonModule,
+        MatGridListModule,
+        NgOptimizedImage
+    ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
     useClass: AppInterceptor,
