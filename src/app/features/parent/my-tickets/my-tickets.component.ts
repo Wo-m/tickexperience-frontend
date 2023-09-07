@@ -29,7 +29,7 @@ export class MyTicketsComponent implements OnInit {
 
   ngOnInit(): void {
     this.userService.getMyTickets().subscribe( (data: any) => {
-      this.tickets = data as MyTicket[];
+        this.tickets = data as MyTicket[];
     });
   }
 

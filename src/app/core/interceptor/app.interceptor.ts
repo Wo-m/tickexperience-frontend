@@ -22,6 +22,9 @@ export class AppInterceptor implements HttpInterceptor {
     }
 
     // add auth token
+    if (!AuthUtils.isAuthenticated()) {
+      this.router.navigate(['/log-in', 'true'])
+    }
 
     const authReq = request.clone({
       headers: request.headers.set('token', AuthUtils.getToken())
