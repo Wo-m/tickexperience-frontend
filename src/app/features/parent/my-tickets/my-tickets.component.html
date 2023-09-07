@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="card selectable" [ngClass]="{'selectable_phone card_phone': responsive.isPhone()}"
+       *ngFor="let ticket of tickets" (click)="openTicketDetails(ticket.id)">
+    <div class="image" [ngClass]="{image_phone: responsive.isPhone()}">
+    </div>
+    <div class="details" [ngClass]="{details_phone: responsive.isPhone()}">
+      <div class="event" [ngClass]="{event_phone: responsive.isPhone()}">
+        {{ticket.event}}
+      </div>
+      <div class="venue" [ngClass]="{venue_phone: responsive.isPhone()}">
+        {{ticket.venue}}
+      </div>
+      <div class="datetime datetime_phone" *ngIf="responsive.isPhone()">
+        {{getTicketDateTimePhone(ticket)}}
+      </div>
+    </div>
+    <div class="datetime" *ngIf="!responsive.isPhone()">
+      <div class="day_time">
+        {{getTicketDayAndTime(ticket)}}
+      </div>
+      <div class="date">
+        {{getTicketDate(ticket)}}
+      </div>
+    </div>
+  </div>
+</div>
