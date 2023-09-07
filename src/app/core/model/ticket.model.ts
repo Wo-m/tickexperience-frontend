@@ -1,7 +1,13 @@
 export class Ticket {
-  id?: number;
+  id: number;
+
+  // FIXME below shouldn't be optional
+  //  for dummy data
   seatNumber?: number;
-  venue?: string;
-  // session: Session;
-  // user: User;
+  venue: string;
+
+  // FIXME below are strings for dummy data
+  //  may have to change to proper types when linked to backend
+  event: string;
+  datetime: string;
 }

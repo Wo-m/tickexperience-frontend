@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import { ResponsiveService } from '../../../core/service/responsive.service';
 import * as moment from 'moment';
+import { Ticket } from '../../../core/model/ticket.model';
 
 @Component({
   selector: 'app-my-tickets',
@@ -10,7 +11,7 @@ import * as moment from 'moment';
 export class MyTicketsComponent implements OnInit {
 
   //TODO: delete this dummy data, set up a proper fetch, might have to alter below functions for new format
-  tickets = [
+  tickets: Ticket[] = [
     {id: 0, datetime: "2023-07-20 20:00:00.000", venue: "The Gabba", event: "Opening Ceremony"},
     {id: 0, datetime: "2023-07-27 08:00:00.000", venue: "Roma St Stadium", event: "400m Mixed Medley Finals"},
     {id: 0, datetime: "2023-08-01 18:00:00.000", venue: "The Gabba", event: "100m Sprint Finals"},
@@ -30,18 +31,15 @@ export class MyTicketsComponent implements OnInit {
     console.log("todo")
   }
 
-  getTicketDayAndTime(ticket: object) {
-    // @ts-ignore
+  getTicketDayAndTime(ticket: Ticket) {
     return moment(ticket.datetime).format("ddd h:mmA")
   }
 
-  getTicketDate(ticket: object) {
-    // @ts-ignore
+  getTicketDate(ticket: Ticket) {
     return moment(ticket.datetime).format("MMMM Do YYYY")
   }
 
-  getTicketDateTimePhone(ticket: object) {
-    // @ts-ignore
+  getTicketDateTimePhone(ticket: Ticket) {
     return moment(ticket.datetime).format("h:mmA Do MMMM YYYY")
   }
 
