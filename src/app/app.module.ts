@@ -12,8 +12,10 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppInterceptor } from './core/interceptor/app.interceptor';
-import {LayoutModule} from '@angular/cdk/layout';
+import { LayoutModule } from '@angular/cdk/layout';
 import { MatIconModule } from '@angular/material/icon';
+import { MyTicketsComponent } from './features/parent/my-tickets/my-tickets.component';
+import { MatCardModule } from "@angular/material/card";
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { MatGridListModule } from '@angular/material/grid-list';
 
@@ -23,22 +25,24 @@ import { MatGridListModule } from '@angular/material/grid-list';
     LoginComponent,
     ParentComponent,
     LandingComponent,
+    MyTicketsComponent,
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        HttpClientModule,
-        FormsModule,
-        ReactiveFormsModule,
-        MatSidenavModule,
-        MatButtonModule,
-        BrowserAnimationsModule,
-        LayoutModule,
-        MatIconModule,
-        CommonModule,
-        MatGridListModule,
-        NgOptimizedImage
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatSidenavModule,
+    MatButtonModule,
+    BrowserAnimationsModule,
+    LayoutModule,
+    MatIconModule,
+    CommonModule,
+    MatCardModule,
+    MatGridListModule,
+    NgOptimizedImage
+  ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
     useClass: AppInterceptor,
