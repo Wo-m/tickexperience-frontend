@@ -28,7 +28,7 @@ export class AppInterceptor implements HttpInterceptor {
     });
 
     // Redirect to login if 401 error
-    return next.handle(authReq  ).pipe(catchError(err => {
+    return next.handle(authReq).pipe(catchError(err => {
       if (err.status === 401) {
         AuthUtils.removeToken();
         this.router.navigate(['/log-in', 'true'])
