@@ -26,9 +26,6 @@ export class LandingComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    if (AuthUtils.isAuthenticated()) {
-      this.loadUserTickets();
-    }
   }
 
   selectSport(sport: { name: string; dates: number[];}) {
@@ -49,11 +46,5 @@ export class LandingComponent implements OnInit{
       return;
     }
     nav.scrollBy({left: left, behavior: 'smooth'})
-  }
-
-  loadUserTickets() {
-    this.userService.getTickets().subscribe((data: any) => {
-      this.tickets = data as Ticket[];
-    });
   }
 }
