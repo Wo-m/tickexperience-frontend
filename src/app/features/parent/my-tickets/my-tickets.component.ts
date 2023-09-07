@@ -9,6 +9,7 @@ import * as moment from 'moment';
 })
 export class MyTicketsComponent implements OnInit {
 
+  //TODO: delete this dummy data, set up a proper fetch, might have to alter below functions for new format
   tickets = [
     {id: 0, datetime: "2023-07-20 20:00:00.000", venue: "The Gabba", event: "Opening Ceremony"},
     {id: 0, datetime: "2023-07-27 08:00:00.000", venue: "Roma St Stadium", event: "400m Mixed Medley Finals"},
@@ -24,6 +25,7 @@ export class MyTicketsComponent implements OnInit {
 
   }
 
+  //TODO: implement functionality
   openTicketDetails(id: number) {
     console.log("todo")
   }

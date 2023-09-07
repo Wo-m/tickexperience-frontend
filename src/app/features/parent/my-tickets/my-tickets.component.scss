@@ -12,8 +12,7 @@
 .card {
   display: flex;
   flex-direction: row;
-  width: 90%;
-  height: fit-content;
+  width: 75%;
   margin-top: 35px;
   text-align: center;
   align-items: center;
@@ -30,6 +29,7 @@
 .card_phone {
   background:linear-gradient(to right, colours.$yellow 27%, colours.$honeydew 33%);
   padding: 5px;
+  width:90%;
   height: 30%;
 }
 
@@ -76,11 +76,11 @@
 }
 
 .day_time {
-  font-size: 28px;
+  font-size: 34px;
 }
 
 .date {
-  font-size: 22px;
+  font-size: 28px;
 }
 
 .venue {
@@ -88,7 +88,7 @@
   justify-content: flex-start;
   align-items: center;
   width: 100%;
-  font-size: 22px;
+  font-size: 28px;
   padding-top: 5px;
 }
 
@@ -101,7 +101,7 @@
   justify-content: flex-start;
   align-items: center;
   width: 100%;
-  font-size: 28px;
+  font-size: 34px;
   border-bottom-color: rgba(colours.$green, 0.29);
   border-bottom-style: solid;
   border-bottom-width: 2px;
