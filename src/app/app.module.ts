@@ -15,6 +15,7 @@ import { AppInterceptor } from './core/interceptor/app.interceptor';
 import {LayoutModule} from '@angular/cdk/layout';
 import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
+import { TicketDetailsComponent } from './features/parent/ticket-details/ticket-details.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { CommonModule } from '@angular/common';
     LoginComponent,
     ParentComponent,
     LandingComponent,
+    TicketDetailsComponent,
   ],
   imports: [
     BrowserModule,

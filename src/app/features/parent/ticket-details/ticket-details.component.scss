@@ -1,0 +1,28 @@
+.page-heading {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: left;
+  width: 100vw;
+  height: 70px;
+  background: yellow;
+  align-content: space-between;
+}
+
+.nav-button {
+  margin:5px;
+  padding: 10px;
+  background: white;
+}
+
+.countdown-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left:10%;
+  margin-right: 10%;
+  background: pink;
+}
+
+

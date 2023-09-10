@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <link rel="stylesheet" href="ticket-details.component.scss">
+  <title>My Tickets</title>
+</head>
+
+<header class = "page-heading">
+  <button class="nav-button">
+    <mat-icon>keyboard_arrow_left</mat-icon>
+  </button>
+  <div>
+    <h1> My Tickets </h1>
+  </div>
+</header>
+
+<body>
+  <div class = "countdown-container">
+    <div class = "countdown-container">
+      Time To Event:
+    </div>
+    <div>
+      <div>
+        weeks box {{ this.countdownTime.at(0) }}
+      </div>
+      <div>
+        days box {{ this.countdownTime.at(1) }}
+      </div>
+    </div>
+  </div>
+  <div>
+    <br> ticketId: {{ this.ticket.ticketId }}
+    <br> event: {{ this.ticket.event}}
+    <br> seatNumber: {{ this.ticket.seatNumber}}
+    <br> venue: {{ this.ticket.venue}}
+    <br> userId: {{ this.ticket.userId}}
+    <br> year: {{ this.ticket.date.getFullYear()}}
+    <br> month: {{ this.ticket.date.getMonth()}}
+    <br> day: {{ this.ticket.date.getDay()}}
+    <br> time: {{ this.ticket.date.toTimeString()}}
+  </div>
+</body>
+</html>
