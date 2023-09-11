@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Login } from '../model/login.model';
 import { CacheConstants } from '../constant/cache.constant';
 import { AuthUtils } from '../Utils/auth.utils';
+import { Token } from '../model/token.model';
 
 /**
  * Singleton Service for handling authentication
@@ -18,9 +19,12 @@ export class AuthService {
   }
 
   login(username: string, password: string) {
-    let body = new Login(username, password);
+    let body: Login = {
+      username: username,
+      password: password
+    }
 
-    return this.http.post(this.base_url + "login", body);
+    return this.http.post<Token>(this.base_url + "login", body);
   }
 
   logout() {

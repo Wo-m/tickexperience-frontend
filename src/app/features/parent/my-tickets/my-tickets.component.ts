@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import { ResponsiveService } from '../../../core/service/responsive.service';
 import * as moment from 'moment';
-import { Ticket } from '../../../core/model/ticket.model';
 import {UserService} from "../../../core/service/user.service";
 import {MyTicket} from "../../../core/model/my-ticket.model";
 
@@ -28,8 +27,8 @@ export class MyTicketsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.userService.getMyTickets().subscribe( (data: any) => {
-        this.tickets = data as MyTicket[];
+    this.userService.getMyTickets().subscribe( data => {
+        this.tickets = data;
     });
   }
 
