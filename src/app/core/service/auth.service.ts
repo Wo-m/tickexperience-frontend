@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Login } from '../model/login.model';
 import { CacheConstants } from '../constant/cache.constant';
 import { AuthUtils } from '../Utils/auth.utils';
+import { Register } from '../model/register.model';
 import { Token } from '../model/token.model';
 
 /**
@@ -39,4 +40,14 @@ export class AuthService {
     this.http.post(this.base_url + `logout/${token}`, null ).subscribe();
   }
 
+  register(username: string, name: string, password: string) {
+    let body : Register = {
+      username: username,
+      name: name,
+      password: password
+    }
+
+    return this.http.post(this.base_url + "register", body);
+
+  }
 }

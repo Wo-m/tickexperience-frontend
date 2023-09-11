@@ -1,4 +1,4 @@
-@use "../../../../assets/colours";
+@use "../../../../assets/styles/colours";
 
 .container {
   display: flex;
@@ -72,7 +72,7 @@
   width: 100%;
   flex-direction: row;
   justify-content: flex-start;
-  padding-left: 0px;
+  padding-left: 0;
 }
 
 .day_time {
