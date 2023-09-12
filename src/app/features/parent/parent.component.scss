@@ -9,19 +9,29 @@
 
 .banner {
   width: 100%;
-  background: rgba(0,0,0,0.78);
+  background: #0F2E1E;
   padding: 10px;
 }
 
 mat-drawer-container {
   height: 100%;
+  padding: 2%;
 }
 
 .menu {
-  background: aquamarine; // just to show box distinctively
+  background: #0F2E1E;
   height: 100%;
   width: 200px;
+  padding: 20%;
+  align-items: center;
+  text-size-adjust: auto;
 }
 
-
+footer {
+  text-align: center;
+  color: white;
+  width: 100%;
+  background: #0F2E1E;
+  padding: 10px;
+}
 

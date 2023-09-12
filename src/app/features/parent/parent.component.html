@@ -3,7 +3,9 @@
   <div class="banner">
     <div class="right-align">
       <button mat-button (click)="drawer.toggle()">
-        Toggle sidenav
+        -
+        -
+        -
       </button>
     </div>
   </div>
@@ -14,9 +16,9 @@
     <mat-drawer #drawer mode="over" position="end">
       <!-- Side Menu Bar   -->
       <div class="menu">
-        <button *ngIf="!isAuthenticated()" [routerLink]="['/log-in', 'false']">Log In</button>
-        <button *ngIf="!isAuthenticated()" [routerLink]="'/register'"> Register </button>
-        <button *ngIf="isAuthenticated()" (click)="logout()">Log Out</button>
+        <button *ngIf="!isAuthenticated()" [routerLink]="['/log-in', 'false']"> <h1> LOG IN </h1></button> <br>
+        <button *ngIf="!isAuthenticated()" [routerLink]="'/register'"> <h1>REGISTER</h1> </button>
+        <a> <button *ngIf="isAuthenticated()" (click)="logout()">Log Out</button> </a>
         <div *ngIf="isAuthenticated()">
           <button (click)="selectPage(PageEnum.LANDING)">Home</button>
           <button (click)="selectPage(PageEnum.MY_TICKETS)">My Tickets</button>
@@ -33,7 +35,22 @@
 
 <!--    My Account doesn't exist yet-->
 <!--    <app-my-account *ngIf="pageCheck(PageEnum.MY_ACCOUNT)"></app-my-account>-->
+    <main>
+      [content input]
+
+    </main>
 
   </mat-drawer-container>
 
+
+  <footer>
+    <p>Brisbane 2032 Olympics</p>
+    <p>
+      <button *ngIf="!isAuthenticated()" [routerLink]="['/log-in', 'false']">Log In</button>
+      <a href='/welcome-page'>Google</a>
+      <button *ngIf="!isAuthenticated()" [routerLink]="['/welcome-page']">Welcome Page</button> <br>
+      <button *ngIf="!isAuthenticated()" [routerLink]="'/my-tickets'"> My Tickets </button>
+      <button *ngIf="!isAuthenticated()" [routerLink]="'/register'"> Register </button>
+    </p>
+  </footer>
 </div>
