@@ -18,6 +18,7 @@ import { MyTicketsComponent } from './features/parent/my-tickets/my-tickets.comp
 import { MatCardModule } from "@angular/material/card";
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { RegisterComponent } from './features/log-in/register/register.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
     ParentComponent,
     LandingComponent,
     MyTicketsComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

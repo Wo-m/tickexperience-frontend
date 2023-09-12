@@ -1,3 +1,5 @@
+@use "../../../assets/styles/colours";
+
 .root-container {
   display: flex;
   flex-direction: column;
@@ -74,7 +76,11 @@ button {
   padding: 15px 0;
   font-size: 18px;
   font-weight: 600;
-  background-color: #000000;
+  background-color: colours.$green;
   color: #ffffff;
 }
 
+button:disabled {
+  background-color: #cccccc;
+  color: #666666;
+}
