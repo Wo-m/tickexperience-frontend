@@ -27,27 +27,29 @@
 <!--</div>-->
 
 
-<mat-grid-list cols="3" rowHeight="1:1">
+<mat-grid-list cols="{{ getCols() }}" rowHeight="1:1">
   <mat-grid-tile *ngFor="let event of selectedSport.events">
     <div class="card selectable">
-      <div class="image-container">
+      <div class="horizontal-align">
+        <div class="vertical-align title">
+          <div class="left">
+            {{ event.name }}
+          </div>
+          <div class="sub left">
+            {{ event.gender }}
+          </div>
+        </div>
+        <div class="title right">
+          <div class="right">
+            {{ event.date.toLocaleDateString() }}
+          </div>
+          <div class="sub right">
+            {{ event.time }} - {{ event.venue }}
+          </div>
+        </div>
+      </div>
+      <div class="image-container" [ngClass]="{'image-container_phone': responsive.isPhone()}">
         <img src="{{event.image}}">
-      </div>
-      <div class="horizontal-split">
-        <div>
-          {{ event.name }}
-        </div>
-        <div>
-          {{ event.gender }}
-        </div>
-      </div>
-      <div class="horizontal-split">
-        <div>
-          {{ event.date.toLocaleDateString() }}
-        </div>
-        <div>
-          {{ event.venue }}
-        </div>
       </div>
     </div>
   </mat-grid-tile>

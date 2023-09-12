@@ -6,7 +6,6 @@
   scrollbar-gutter: auto;
 }
 
-
 // Make element scrollable
 .scroll-menu {
   white-space: nowrap;
@@ -28,6 +27,13 @@
   padding: 12px 16px 13px;
   font-size: 14px;
   vertical-align: middle;
+
+  cursor: pointer;
+  &:hover {
+    background-color: rgba(colours.$honeydew, 0.5);
+  }
+
+  // text under icon
   span {
     margin-top: 5px;
     text-align: center;
@@ -35,9 +41,6 @@
     text-transform: uppercase;
     font-weight: bold;
   }
-  //&:not(:last-child) {
-  //  //border-right: 1px solid rgba(#727c87, .2);
-  //}
 }
 
 .nav-button {
@@ -55,31 +58,58 @@
 
 
 .card {
-  padding: 10px;
   box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
   width: 80%;
   height: 80%;
 
-  background-color: colours.$honeydew;
-
-  border-radius: 20px;
+  background:linear-gradient(135deg, colours.$honeydew 55%, colours.$yellow 70%);
+  border-width: 2px;
+  border-radius: 10px;
   border-style: solid;
   border-color: colours.$green;
-  border-width: 5px;
-}
+  color: colours.$green;
+  padding: 10px;
 
-// style for selectable and button class
-.selectable {
   cursor: pointer;
   &:hover {
-    background: colours.$white;
+    background:linear-gradient(135deg, colours.$white 55%, colours.$orange 70%);
   }
 }
 
-.horizontal-split {
+.horizontal-align {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.vertical-align {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  color: colours.$green;
+
+  // sub heading
+  .sub {
+    font-size: 14px;
+    font-weight: normal;
+    margin-top: 5px;
+  }
+
+  // text alignment
+  .left {
+    text-align: left;
+  }
+  .right {
+    text-align: right;
+  }
 }
 
 .icon {
@@ -87,13 +117,16 @@
 }
 
 .image-container {
+  border: 5px solid red;
   overflow: hidden;
   border-radius: 20px;
   height: 80%;
   img {
-    //width: 100%;
-    //min-height: 80%;
     height: 500px;
   }
+}
+
+.image-container_phone{
+  height: 70%;
 }
 

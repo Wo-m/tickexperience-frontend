@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ResponsiveService } from '../../../core/service/responsive.service';
 
 @Component({
   selector: 'app-landing',
@@ -12,8 +13,10 @@ export class LandingComponent implements OnInit{
     {name: "Running",
       icon: "athletics",
       events: [
-          {name: "100m", gender: "male", date: new Date(2032, 6, 23), time: "12:00", venue: "Gabba", image: "https://athleticsweekly.com/wp-content/uploads/2015/03/BOLTUSAIN_Beijing08.jpg"},
-          {name: "10,000m", gender: "female", date: new Date(2032, 6, 27), time: "16:00", venue: "SCG", image: "https://www.si.com/.image/t_share/MTY4MTI1ODk2OTk3MjgzMDg5/huddle-ayana-rio-216jpg.jpg"},
+          {name: "100m", gender: "male", date: new Date(2032, 6, 23), time: "12:00", venue: "Gabba",
+            image: ""},
+          {name: "10,000m", gender: "female", date: new Date(2032, 6, 27), time: "16:00", venue: "SCG",
+            image: ""}
         ]
     },
     {name: "Swimming",
@@ -28,7 +31,7 @@ export class LandingComponent implements OnInit{
 
   selectedSport = this.sports[0]
 
-  constructor() {
+  constructor(public responsive: ResponsiveService) {
   }
 
   ngOnInit(): void {
@@ -52,5 +55,12 @@ export class LandingComponent implements OnInit{
       return;
     }
     nav.scrollBy({left: left, behavior: 'smooth'})
+  }
+
+  getCols() {
+    if (this.responsive.isPhone()){
+      return "1"
+    }
+    return "3"
   }
 }
