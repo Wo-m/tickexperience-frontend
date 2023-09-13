@@ -1,1 +1,25 @@
-<p>my-account works!</p>
+<div class="my-account-container">
+  <h1 class="banner">My Account</h1>
+  <div class="account-fields">
+    <div class="field">
+      <label for="name">Name:</label>
+      <input type="text" id="name" [(ngModel)]="myAccountDetails.name" disabled>
+    </div>
+    <div class="field">
+      <label for="username">Username:</label>
+      <input type="text" id="username" [(ngModel)]="myAccountDetails.username" disabled>
+    </div>
+    <div class="field">
+      <label for="password">Password:</label>
+      <input type="password" id="password" placeholder="•••••••••" disabled>
+    </div>
+    <div class="field">
+      <label for="email">Email:</label>
+      <input type="email" id="email" [(ngModel)]="myAccountDetails.email" disabled>
+    </div>
+    <div class="field">
+      <label for="mobile">Mobile:</label>
+      <input type="tel" id="mobile" [(ngModel)]="myAccountDetails.mobile" disabled>
+    </div>
+  </div>
+</div>
