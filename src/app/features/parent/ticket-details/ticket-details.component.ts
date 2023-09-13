@@ -20,7 +20,7 @@ export class TicketDetailsComponent implements OnInit {
                                         venue: "Gabba",
                                         event: "Cricket",
                                         date: new Date("2032-05-27T11:30")}
-  countdownTime: number[] = [0,0]; //[weeks, days]
+  countdownTime: number[] = [0,0, 0]; //[months, weeks, days]
 
   constructor(private route: ActivatedRoute,
               private router: Router,
@@ -44,8 +44,9 @@ export class TicketDetailsComponent implements OnInit {
       // Time calculations for days, hours, minutes and seconds
       let days = Math.floor(distance / (1000 * 60 * 60 * 24));
       let weeks = Math.floor(distance/(1000 * 60 * 60 * 24 * 7));
+      let months = Math.floor(distance/(1000 * 60 * 60 * 24 * 7));
 
-      this.countdownTime = [weeks, days];
+      this.countdownTime = [months, weeks, days];
   }
 
 }

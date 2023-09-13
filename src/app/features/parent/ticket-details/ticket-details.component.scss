@@ -3,9 +3,9 @@
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: left;
-  width: 100vw;
   height: 70px;
   background: yellow;
+  margin: 0 10%;
   align-content: space-between;
 }
 
@@ -17,12 +17,71 @@
 
 .countdown-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
+  text-align: center;
   margin-left:10%;
   margin-right: 10%;
+  padding: 10px;
   background: pink;
+  font-size: 24px;
 }
 
+.countdown-elements {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  background: blueviolet;
+  padding: 3px;
+}
 
+.countdown-element {
+  text-align: center;
+  font-size: 24px;
+  background: green;
+  align-items: center;
+  margin: 1%;
+  padding: 10px;
+}
+
+.ticket {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: left;
+  align-items: center;
+  background: mediumpurple;
+  height: auto;
+  width: auto;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding: 30px 20px;
+}
+
+.ticket-barcode {
+  background: darkcyan;
+  height: auto;
+  width: auto;
+  padding: 10px;
+  transform: rotate(270deg);
+}
+
+.barcode_web {
+  height: auto;
+  width: 250px;
+}
+
+.barcode_phone {
+  height: auto;
+  width: 125px;
+}
+
+.ticket-contents {
+  background-color: lightpink;
+  font-size: 24px;
+  padding-left: 10px;
+}

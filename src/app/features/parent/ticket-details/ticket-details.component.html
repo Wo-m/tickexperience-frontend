@@ -16,28 +16,34 @@
 
 <body>
   <div class = "countdown-container">
-    <div class = "countdown-container">
-      Time To Event:
-    </div>
-    <div>
-      <div>
-        weeks box {{ this.countdownTime.at(0) }}
+    Time To Event:
+    <div class = "countdown-elements">
+      <div class = "countdown-element">
+        {{ this.countdownTime.at(0) }} months
       </div>
-      <div>
-        days box {{ this.countdownTime.at(1) }}
+      <div class = "countdown-element">
+        {{ this.countdownTime.at(1) }} weeks
+      </div>
+      <div class = "countdown-element">
+        {{ this.countdownTime.at(2) }} days
       </div>
     </div>
   </div>
-  <div>
-    <br> ticketId: {{ this.ticket.ticketId }}
-    <br> event: {{ this.ticket.event}}
-    <br> seatNumber: {{ this.ticket.seatNumber}}
-    <br> venue: {{ this.ticket.venue}}
-    <br> userId: {{ this.ticket.userId}}
-    <br> year: {{ this.ticket.date.getFullYear()}}
-    <br> month: {{ this.ticket.date.getMonth()}}
-    <br> day: {{ this.ticket.date.getDay()}}
-    <br> time: {{ this.ticket.date.toTimeString()}}
+  <div class = "ticket">
+    <div class = "ticket-barcode">
+      <img class="barcode" src="https://upload.wikimedia.org/wikipedia/commons/5/5d/UPC-A-036000291452.png" [ngClass]="{barcode_phone: responsive.isPhone(), barcode_web: !responsive.isPhone()}" alt="Ticket Barcode">
+    </div>
+    <div class = "ticket-contents">
+      <br> ticketId: {{ this.ticket.ticketId }}
+      <br> event: {{ this.ticket.event}}
+      <br> seatNumber: {{ this.ticket.seatNumber}}
+      <br> venue: {{ this.ticket.venue}}
+      <br> userId: {{ this.ticket.userId}}
+      <br> year: {{ this.ticket.date.getFullYear()}}
+      <br> month: {{ this.ticket.date.getMonth() + 1}}
+      <br> day: {{ this.ticket.date.getDate()}}
+      <br> time: {{ this.ticket.date.toTimeString()}}
+    </div>
   </div>
 </body>
 </html>
