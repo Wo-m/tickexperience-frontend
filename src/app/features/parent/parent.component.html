@@ -11,13 +11,13 @@
   </div>
 
 
-  <mat-drawer-container >
+  <mat-drawer-container>
 
     <mat-drawer #drawer mode="over" position="end">
       <!-- Side Menu Bar   -->
       <div class="menu">
         <button *ngIf="!isAuthenticated()" [routerLink]="['/log-in', 'false']"> <h1> LOG IN </h1></button> <br>
-        <button *ngIf="!isAuthenticated()" [routerLink]="'/register'"> <h1>REGISTER</h1> </button>
+        <h1> <button *ngIf="!isAuthenticated()" [routerLink]="'/register'"> <h1>REGISTER</h1> </button> </h1>
         <a> <button *ngIf="isAuthenticated()" (click)="logout()">Log Out</button> </a>
         <div *ngIf="isAuthenticated()">
           <button (click)="selectPage(PageEnum.LANDING)">Home</button>
@@ -46,11 +46,10 @@
   <footer>
     <p>Brisbane 2032 Olympics</p>
     <p>
-      <button *ngIf="!isAuthenticated()" [routerLink]="['/log-in', 'false']">Log In</button>
-      <a href='/welcome-page'>Google</a>
-      <button *ngIf="!isAuthenticated()" [routerLink]="['/welcome-page']">Welcome Page</button> <br>
-      <button *ngIf="!isAuthenticated()" [routerLink]="'/my-tickets'"> My Tickets </button>
-      <button *ngIf="!isAuthenticated()" [routerLink]="'/register'"> Register </button>
+      <button *ngIf="!isAuthenticated()" [routerLink]="['/log-in', 'false']">LOG IN</button>
+      <button *ngIf="!isAuthenticated()" [routerLink]="['/welcome-page']">WELCOME</button> <br>
+      <button *ngIf="!isAuthenticated()" [routerLink]="'/my-tickets'"> MY TICKETS </button>
+      <button *ngIf="!isAuthenticated()" [routerLink]="'/register'"> REGISTER </button>
     </p>
   </footer>
 </div>
