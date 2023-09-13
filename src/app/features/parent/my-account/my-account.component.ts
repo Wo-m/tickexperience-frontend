@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {UserService} from "../../../core/service/user.service";
 import {MyAccountDetails} from "../../../core/model/my-account.model";
 
@@ -7,7 +7,7 @@ import {MyAccountDetails} from "../../../core/model/my-account.model";
   templateUrl: './my-account.component.html',
   styleUrls: ['./my-account.component.scss']
 })
-export class MyAccountComponent {
+export class MyAccountComponent implements OnInit{
 
   myAccountDetails: MyAccountDetails = {
     name: 'John Doe',
