@@ -13,20 +13,6 @@
   </div>
 </div>
 
-
-<!--<div class="container">-->
-<!--  <div (click)="scrollLeft('dates')" class="nav-button">-->
-<!--    <mat-icon>keyboard_arrow_left</mat-icon>-->
-<!--  </div>-->
-<!--  <div id="dates" class="scroll-menu">-->
-<!--    <div class="nav-item selectable" *ngFor="let date of selectedSport.dates" >{{ date }}</div>-->
-<!--  </div>-->
-<!--  <div (click)="scrollRight('dates')" class="nav-button">-->
-<!--    <mat-icon>keyboard_arrow_right</mat-icon>-->
-<!--  </div>-->
-<!--</div>-->
-
-
 <mat-grid-list cols="{{ getCols() }}" rowHeight="1:1">
   <mat-grid-tile *ngFor="let event of selectedSport.events">
     <div class="card selectable">

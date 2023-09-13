@@ -8,7 +8,7 @@ import { ResponsiveService } from '../../../core/service/responsive.service';
 })
 export class LandingComponent implements OnInit{
 
-  // sports: string[] = ['Running', 'Swimming', 'Rugby']
+  // TODO: Remove this mock data
   sports = [
     {name: "Running",
       icon: "athletics",
