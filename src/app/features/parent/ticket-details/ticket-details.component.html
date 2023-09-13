@@ -8,16 +8,12 @@
 <header class = "page-heading">
   <button class="nav-button">
     <mat-icon>keyboard_arrow_left</mat-icon>
-    My Tickets
+    <h2>My Tickets</h2>
   </button>
-<!--  <div>-->
-<!--    <h1> My Tickets </h1>-->
-<!--  </div>-->
 </header>
 
 <body>
   <div class = "countdown-container">
-    Time To Event:
     <div class = "countdown-elements">
       <div class = "countdown-element">
         {{ this.countdownTime.at(0) }} years
@@ -29,17 +25,16 @@
         {{ this.countdownTime.at(2) }} days
       </div>
     </div>
+    ...until your next event!
   </div>
   <div class = "ticket">
     <div class = "ticket-barcode">
       <img class="barcode" src="https://upload.wikimedia.org/wikipedia/commons/5/5d/UPC-A-036000291452.png" [ngClass]="{barcode_phone: responsive.isPhone(), barcode_web: !responsive.isPhone()}" alt="Ticket Barcode">
     </div>
     <div class = "ticket-contents">
-      <br> ticketId: {{ this.ticket.ticketId }}
       <br> event: {{ this.ticket.event}}
       <br> seatNumber: {{ this.ticket.seatNumber}}
       <br> venue: {{ this.ticket.venue}}
-      <br> userId: {{ this.ticket.userId}}
       <br> year: {{ this.ticket.date.getFullYear()}}
       <br> month: {{ this.ticket.date.getMonth() + 1}}
       <br> day: {{ this.ticket.date.getDate()}}

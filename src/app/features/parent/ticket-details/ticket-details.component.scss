@@ -10,6 +10,8 @@
 }
 
 .nav-button {
+  display: flex;
+  flex-direction: row;
   margin:5px;
   padding: 10px;
   background: white;
@@ -84,4 +86,5 @@
   background-color: lightpink;
   font-size: 24px;
   padding-left: 10px;
+
 }
