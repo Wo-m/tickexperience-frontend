@@ -61,7 +61,7 @@
   width: 80%;
   height: 80%;
 
-  box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
+  box-shadow: 0 15px 25px rgba(129, 124, 124, 0.3);
   background:linear-gradient(135deg, colours.$honeydew 55%, colours.$yellow 70%);
   border-width: 2px;
   border-radius: 10px;
@@ -73,6 +73,9 @@
   cursor: pointer;
   &:hover {
     background:linear-gradient(135deg, colours.$white 55%, colours.$orange 70%);
+    box-shadow: 0 15px 25px rgba(129, 124, 124, 0.8);
+    width: 82%;
+    height: 82%;
   }
 }
 
