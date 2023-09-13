@@ -8,7 +8,6 @@
     </div>
   </div>
 
-
   <mat-drawer-container >
 
     <mat-drawer #drawer mode="over" position="end">
@@ -20,8 +19,7 @@
         <div *ngIf="isAuthenticated()">
           <button (click)="selectPage(PageEnum.LANDING)">Home</button>
           <button (click)="selectPage(PageEnum.MY_TICKETS)">My Tickets</button>
-<!--          My Account doesn't exist yet-->
-<!--          <button (click)="selectPage(PageEnum.MY_ACCOUNT)">My MY_ACCOUNT</button>-->
+          <button (click)="selectPage(PageEnum.MY_ACCOUNT)">My Account</button>
         </div>
       </div>
     </mat-drawer>
@@ -30,10 +28,7 @@
 
     <app-landing *ngIf="checkPage(PageEnum.LANDING)"></app-landing>
     <app-my-tickets *ngIf="checkPage(PageEnum.MY_TICKETS)"></app-my-tickets>
-
-<!--    My Account doesn't exist yet-->
-<!--    <app-my-account *ngIf="pageCheck(PageEnum.MY_ACCOUNT)"></app-my-account>-->
-
+    <app-my-account *ngIf="checkPage(PageEnum.MY_ACCOUNT)"></app-my-account>
   </mat-drawer-container>
 
 </div>

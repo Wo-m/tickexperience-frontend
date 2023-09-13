@@ -19,6 +19,7 @@ import { MatCardModule } from "@angular/material/card";
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { RegisterComponent } from './features/log-in/register/register.component';
+import { MyAccountComponent } from './features/parent/my-account/my-account.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { RegisterComponent } from './features/log-in/register/register.component
     LandingComponent,
     MyTicketsComponent,
     RegisterComponent,
+    MyAccountComponent,
   ],
   imports: [
     BrowserModule,
