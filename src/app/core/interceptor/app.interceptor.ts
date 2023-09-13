@@ -22,13 +22,16 @@ export class AppInterceptor implements HttpInterceptor {
     }
 
     // add auth token
+    if (!AuthUtils.isAuthenticated()) {
+      this.router.navigate(['/log-in', 'true'])
+    }
 
     const authReq = request.clone({
       headers: request.headers.set('token', AuthUtils.getToken())
     });
 
     // Redirect to login if 401 error
-    return next.handle(authReq  ).pipe(catchError(err => {
+    return next.handle(authReq).pipe(catchError(err => {
       if (err.status === 401) {
         AuthUtils.removeToken();
         this.router.navigate(['/log-in', 'true'])

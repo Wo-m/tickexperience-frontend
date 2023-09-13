@@ -1,10 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../core/service/auth.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { Token } from '../../core/model/token.model';
 import { CacheConstants } from '../../core/constant/cache.constant';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { ResponsiveService } from '../../core/service/responsive.service';
 
 @Component({
@@ -37,13 +35,13 @@ export class LoginComponent implements OnInit{
 
   login() {
     this.authService.login(this.loginForm.value.username!, this.loginForm.value.password!).subscribe({
-      next: (data: Token) => {
+      next: data => {
         // update the auth token
         sessionStorage.setItem(CacheConstants.token, data.token!);
         this.failed = false;
         this.router.navigate(['/'])
       },
-      error: (error) => {
+      error: () => {
         this.failed = true;
       }
     })

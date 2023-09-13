@@ -1,9 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../../core/service/user.service';
-import { Ticket } from '../../../core/model/ticket.model';
-import { AuthUtils } from '../../../core/Utils/auth.utils';
-import { SportService } from '../../../core/service/sport.service';
-import {MatIconModule} from '@angular/material/icon';
 
 @Component({
   selector: 'app-landing',
@@ -12,7 +7,6 @@ import {MatIconModule} from '@angular/material/icon';
 })
 export class LandingComponent implements OnInit{
 
-  tickets: Ticket[];
   // sports: string[] = ['Running', 'Swimming', 'Rugby']
   sports = [
     {name: "Running", dates: [1, 2,3, 4, 5]},
@@ -21,14 +15,10 @@ export class LandingComponent implements OnInit{
   ]
   selectedSport: {name: string, dates: number[]} = this.sports[0]
 
-  constructor(private userService: UserService,
-              private sportService: SportService) {
+  constructor() {
   }
 
   ngOnInit(): void {
-    if (AuthUtils.isAuthenticated()) {
-      this.loadUserTickets();
-    }
   }
 
   selectSport(sport: { name: string; dates: number[];}) {
@@ -49,11 +39,5 @@ export class LandingComponent implements OnInit{
       return;
     }
     nav.scrollBy({left: left, behavior: 'smooth'})
-  }
-
-  loadUserTickets() {
-    this.userService.getTickets().subscribe((data: any) => {
-      this.tickets = data as Ticket[];
-    });
   }
 }
