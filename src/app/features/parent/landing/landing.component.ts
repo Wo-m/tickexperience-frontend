@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ResponsiveService } from '../../../core/service/responsive.service';
 
 @Component({
   selector: 'app-landing',
@@ -7,21 +8,44 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingComponent implements OnInit{
 
-  // sports: string[] = ['Running', 'Swimming', 'Rugby']
+  // TODO: Remove this mock data
   sports = [
-    {name: "Running", dates: [1, 2,3, 4, 5]},
-    {name: "Swimming", dates: [1, 2,3, 4, 5]},
-    {name: "Rugby", dates: [1, 2,3, 4, 5]}
+    {name: "Running",
+      icon: "athletics",
+      events: [
+          {name: "100m", gender: "male", date: new Date(2032, 6, 23), time: "12:00", venue: "Gabba",
+            image: ""},
+          {name: "10,000m", gender: "female", date: new Date(2032, 6, 27), time: "16:00", venue: "SCG",
+            image: ""}
+        ]
+    },
+    {name: "Swimming",
+      icon: "swimming",
+      events: [
+        {name: "400m Freestyle", gender: "male", date: new Date(2032, 6, 23), time: "12:00", venue: "Gabba",
+          image: ""}
+      ]
+    },
+    {name: "Football",
+      icon: "football",
+      events: [
+        {name: "100m", gender: "male", date: new Date(2032, 6, 23), time: "12:00", venue: "Gabba",
+          image: ""},
+        {name: "10,000m", gender: "female", date: new Date(2032, 6, 27), time: "16:00", venue: "SCG",
+          image: ""}
+      ]
+    },
   ]
-  selectedSport: {name: string, dates: number[]} = this.sports[0]
 
-  constructor() {
+  selectedSport = this.sports[0]
+
+  constructor(public responsive: ResponsiveService) {
   }
 
   ngOnInit(): void {
   }
 
-  selectSport(sport: { name: string; dates: number[];}) {
+  selectSport(sport: any) {
     this.selectedSport = sport;
   }
 
@@ -39,5 +63,12 @@ export class LandingComponent implements OnInit{
       return;
     }
     nav.scrollBy({left: left, behavior: 'smooth'})
+  }
+
+  getCols() {
+    if (this.responsive.isPhone()){
+      return "1"
+    }
+    return "3"
   }
 }

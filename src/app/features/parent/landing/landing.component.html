@@ -3,35 +3,40 @@
     <mat-icon>keyboard_arrow_left</mat-icon>
   </div>
   <div id="sport" class="scroll-menu">
-      <div class="nav-item selectable" *ngFor="let sport of sports" (click)="selectSport(sport)">{{ sport.name }}</div>
-      <div class="nav-item selectable" *ngFor="let sport of sports" (click)="selectSport(sport)">{{ sport.name }}</div>
-      <div class="nav-item selectable" *ngFor="let sport of sports" (click)="selectSport(sport)">{{ sport.name }}</div>
-      <div class="nav-item selectable" *ngFor="let sport of sports" (click)="selectSport(sport)">{{ sport.name }}</div>
-      <div class="nav-item selectable" *ngFor="let sport of sports" (click)="selectSport(sport)">{{ sport.name }}</div>
-      <div class="nav-item selectable" *ngFor="let sport of sports" (click)="selectSport(sport)">{{ sport.name }}</div>
-      <div class="nav-item selectable" *ngFor="let sport of sports" (click)="selectSport(sport)">{{ sport.name }}</div>
-      <div class="nav-item selectable" *ngFor="let sport of sports" (click)="selectSport(sport)">{{ sport.name }}</div>
-      <div class="nav-item selectable" *ngFor="let sport of sports" (click)="selectSport(sport)">{{ sport.name }}</div>
-      <div class="nav-item selectable" *ngFor="let sport of sports" (click)="selectSport(sport)">{{ sport.name }}</div>
-      <div class="nav-item selectable" *ngFor="let sport of sports" (click)="selectSport(sport)">{{ sport.name }}</div>
-      <div class="nav-item selectable" *ngFor="let sport of sports" (click)="selectSport(sport)">{{ sport.name }}</div>
+      <div class="nav-item selectable" *ngFor="let sport of sports" (click)="selectSport(sport)">
+        <img class="icon" src="{{ 'assets/icons/' + sport.icon + '.png'}}">
+        <span>{{ sport.name }}</span>
+      </div>
   </div>
   <div (click)="scrollRight('sport')" class="nav-button">
     <mat-icon>keyboard_arrow_right</mat-icon>
   </div>
 </div>
 
-
-<div class="container">
-  <div (click)="scrollLeft('dates')" class="nav-button">
-    <mat-icon>keyboard_arrow_left</mat-icon>
-  </div>
-  <div id="dates" class="scroll-menu">
-    <div class="nav-item selectable" *ngFor="let date of selectedSport.dates" >{{ date }}</div>
-  </div>
-  <div (click)="scrollRight('dates')" class="nav-button">
-    <mat-icon>keyboard_arrow_right</mat-icon>
-  </div>
-</div>
-
-
+<mat-grid-list cols="{{ getCols() }}" rowHeight="1:1">
+  <mat-grid-tile *ngFor="let event of selectedSport.events">
+    <div class="card selectable">
+      <div class="horizontal-align">
+        <div class="vertical-align title">
+          <div class="left">
+            {{ event.name }}
+          </div>
+          <div class="sub left">
+            {{ event.gender }}
+          </div>
+        </div>
+        <div class="title right">
+          <div class="right">
+            {{ event.date.toLocaleDateString() }}
+          </div>
+          <div class="sub right">
+            {{ event.time }} - {{ event.venue }}
+          </div>
+        </div>
+      </div>
+      <div class="image-container" [ngClass]="{'image-container_phone': responsive.isPhone()}">
+        <img src="{{event.image}}">
+      </div>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>
