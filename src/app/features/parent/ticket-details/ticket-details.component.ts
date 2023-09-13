@@ -2,8 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, ParamMap, Router} from "@angular/router";
 import {AuthService} from "../../../core/service/auth.service";
 import {ResponsiveService} from "../../../core/service/responsive.service";
-import { Ticket } from '../../../core/model/ticket.model';
-
+import {MyTicket} from '../../../core/model/my-ticket.model';
 
 
 @Component({
@@ -20,7 +19,7 @@ export class TicketDetailsComponent implements OnInit {
                                         venue: "Gabba",
                                         event: "Cricket",
                                         date: new Date("2032-05-27T11:30")}
-  countdownTime: number[] = [0,0, 0]; //[months, weeks, days]
+  countdownTime: number[] = [0,0, 0]; //[years, months, days]
 
   constructor(private route: ActivatedRoute,
               private router: Router,
@@ -43,10 +42,10 @@ export class TicketDetailsComponent implements OnInit {
 
       // Time calculations for days, hours, minutes and seconds
       let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      let weeks = Math.floor(distance/(1000 * 60 * 60 * 24 * 7));
       let months = Math.floor(distance/(1000 * 60 * 60 * 24 * 7));
+      let years = Math.floor(distance/(1000 * 60 * 60 * 24 * 7));
 
-      this.countdownTime = [months, weeks, days];
+      this.countdownTime = [years, months, days];
   }
 
 }

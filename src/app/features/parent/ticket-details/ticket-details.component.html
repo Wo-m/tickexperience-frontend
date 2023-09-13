@@ -8,10 +8,11 @@
 <header class = "page-heading">
   <button class="nav-button">
     <mat-icon>keyboard_arrow_left</mat-icon>
+    My Tickets
   </button>
-  <div>
-    <h1> My Tickets </h1>
-  </div>
+<!--  <div>-->
+<!--    <h1> My Tickets </h1>-->
+<!--  </div>-->
 </header>
 
 <body>
@@ -19,10 +20,10 @@
     Time To Event:
     <div class = "countdown-elements">
       <div class = "countdown-element">
-        {{ this.countdownTime.at(0) }} months
+        {{ this.countdownTime.at(0) }} years
       </div>
       <div class = "countdown-element">
-        {{ this.countdownTime.at(1) }} weeks
+        {{ this.countdownTime.at(1) }} months
       </div>
       <div class = "countdown-element">
         {{ this.countdownTime.at(2) }} days
@@ -42,7 +43,7 @@
       <br> year: {{ this.ticket.date.getFullYear()}}
       <br> month: {{ this.ticket.date.getMonth() + 1}}
       <br> day: {{ this.ticket.date.getDate()}}
-      <br> time: {{ this.ticket.date.toTimeString()}}
+      <br> time: {{ this.ticket.date.toLocaleTimeString()}}
     </div>
   </div>
 </body>
