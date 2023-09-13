@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MyTicket } from '../model/my-ticket.model';
+import {MyAccountDetails} from "../model/my-account.model";
 
 @Injectable({
   providedIn: 'root'
@@ -12,5 +13,9 @@ export class UserService {
 
   getMyTickets() {
     return this.http.get<MyTicket[]>(this.base_url + "/my-tickets");
+  }
+
+  getMyAccountDetails() {
+    return this.http.get<MyAccountDetails>(this.base_url + "my-acc-details");
   }
 }
