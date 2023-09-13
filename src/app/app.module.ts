@@ -18,6 +18,7 @@ import { CommonModule } from '@angular/common';
 import { MyTicketsComponent } from './features/parent/my-tickets/my-tickets.component';
 import { MatCardModule } from "@angular/material/card";
 import { RegisterComponent } from './features/log-in/register/register.component';
+import { MyAccountComponent } from './features/parent/my-account/my-account.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { RegisterComponent } from './features/log-in/register/register.component
     LandingComponent,
     MyTicketsComponent,
     RegisterComponent,
+    MyAccountComponent,
   ],
   imports: [
     BrowserModule,
