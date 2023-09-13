@@ -14,9 +14,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppInterceptor } from './core/interceptor/app.interceptor';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatIconModule } from '@angular/material/icon';
-import { CommonModule } from '@angular/common';
 import { MyTicketsComponent } from './features/parent/my-tickets/my-tickets.component';
 import { MatCardModule } from "@angular/material/card";
+import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { RegisterComponent } from './features/log-in/register/register.component';
 import { MyAccountComponent } from './features/parent/my-account/my-account.component';
 import { WelcomeComponent } from './features/parent/welcome/welcome.component';
@@ -44,7 +45,9 @@ import { WelcomeComponent } from './features/parent/welcome/welcome.component';
     LayoutModule,
     MatIconModule,
     CommonModule,
-    MatCardModule
+    MatCardModule,
+    MatGridListModule,
+    NgOptimizedImage
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
