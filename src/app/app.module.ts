@@ -19,6 +19,7 @@ import { MyTicketsComponent } from './features/parent/my-tickets/my-tickets.comp
 import { MatCardModule } from "@angular/material/card";
 import { RegisterComponent } from './features/log-in/register/register.component';
 import { MyAccountComponent } from './features/parent/my-account/my-account.component';
+import { WelcomeComponent } from './features/parent/welcome/welcome.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { MyAccountComponent } from './features/parent/my-account/my-account.comp
     MyTicketsComponent,
     RegisterComponent,
     MyAccountComponent,
+    WelcomeComponent,
   ],
   imports: [
     BrowserModule,
