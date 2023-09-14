@@ -22,6 +22,7 @@ import { RegisterComponent } from './features/log-in/register/register.component
 import { MyAccountComponent } from './features/parent/my-account/my-account.component';
 import { EventDetailsComponent } from './features/parent/event-details/event-details.component';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
     declarations: [
@@ -49,7 +50,8 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
         MatCardModule,
         MatGridListModule,
         NgOptimizedImage,
-        MatDialogModule
+        MatDialogModule,
+        MatTooltipModule
     ],
     providers: [{
         provide: HTTP_INTERCEPTORS,

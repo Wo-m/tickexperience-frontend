@@ -3,6 +3,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { LandingComponent } from '../landing/landing.component';
 import { EventService } from '../../../core/service/event.service';
 import { Event } from '../../../core/model/event.model';
+import { AuthUtils } from '../../../core/Utils/auth.utils';
 
 @Component({
     selector: 'app-event-details',
@@ -15,10 +16,10 @@ export class EventDetailsComponent implements OnInit {
 
     event: Event
 
+
     constructor(public dialogRef: MatDialogRef<LandingComponent>,
                 private eventService: EventService) {
     }
-
 
     ngOnInit(): void {
         this.eventService.getEvent(this.eventId).subscribe((event: Event) => {
@@ -38,4 +39,7 @@ export class EventDetailsComponent implements OnInit {
         return new Date(event.startTime).toLocaleTimeString();
     }
 
+    isAuthenticated() {
+        return AuthUtils.isAuthenticated();
+    }
 }
