@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -23,6 +23,7 @@ import { MyAccountComponent } from './features/parent/my-account/my-account.comp
 import { EventDetailsComponent } from './features/parent/event-details/event-details.component';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { VrImageComponent } from './vr-image/vr-image.component';
 
 @NgModule({
     declarations: [
@@ -33,7 +34,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
         MyTicketsComponent,
         RegisterComponent,
         MyAccountComponent,
-        EventDetailsComponent
+        VrImageComponent,
     ],
     imports: [
         BrowserModule,
@@ -58,7 +59,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
         useClass: AppInterceptor,
         multi: true
     }],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule {
 }
