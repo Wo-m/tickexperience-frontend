@@ -3,6 +3,8 @@ import { ResponsiveService } from '../../../core/service/responsive.service';
 import { SportService } from '../../../core/service/sport.service';
 import { Sport } from '../../../core/model/sport.model';
 import { Event } from '../../../core/model/event.model';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { EventDetailsComponent } from '../event-details/event-details.component';
 
 @Component({
   selector: 'app-landing',
@@ -15,7 +17,8 @@ export class LandingComponent implements OnInit{
   events: Event[];
 
   constructor(public responsive: ResponsiveService,
-              private sportService: SportService) {
+              private sportService: SportService,
+              private dialog: MatDialog) {
   }
 
   ngOnInit(): void {
@@ -28,8 +31,19 @@ export class LandingComponent implements OnInit{
   selectSport(sport: any) {
     this.sportService.getEvents(sport.id).subscribe((data: Event[]) => {
       this.events = data;
-      console.log(this.events[0].gender)
     });
+  }
+
+  openEventDetails(event: Event) {
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.autoFocus = true;
+    dialogConfig.height = "50%";
+    dialogConfig.width = "50%";
+    dialogConfig.viewContainerRef = undefined;
+
+    let dialogRef = this.dialog.open(EventDetailsComponent, dialogConfig);
+    dialogRef.componentInstance.eventId = event.id;
   }
 
   getStartDate(event: Event) {

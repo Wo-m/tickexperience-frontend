@@ -1,0 +1,24 @@
+<div class="container" *ngIf="event">
+    <div>
+        {{event.name}}
+    </div>
+    <div>
+        {{event.gender}}
+    </div>
+    <div>
+        {{getStartDate(event)}}
+    </div>
+    <div>
+        {{getStartTime(event)}}
+    </div>
+    <div>
+        {{event.venue.name}}
+    </div>
+    <div class="selectable" matTooltip="Please login the purchase a ticket" [matTooltipDisabled]="isAuthenticated()">
+        <button [disabled]="!isAuthenticated()" (click)="buyTicket()">Buy Ticket</button>
+    </div>
+    <div class="image-container">
+        <img src="{{event.imageURL}}">
+    </div>
+</div>
+
