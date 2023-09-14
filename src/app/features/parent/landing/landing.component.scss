@@ -120,12 +120,11 @@
 }
 
 .image-container {
-  border: 5px solid red; // TODO remove this
   overflow: hidden;
   border-radius: 20px;
   height: 80%;
   img {
-    height: 500px;
+    height: 100%
   }
 }
 
