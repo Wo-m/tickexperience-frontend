@@ -11,37 +11,7 @@ import { Event } from '../../../core/model/event.model';
 })
 export class LandingComponent implements OnInit{
 
-  // TODO: Remove this mock data
-  // sports = [
-  //   {name: "Running",
-  //     icon: "athletics",
-  //     events: [
-  //         {name: "100m", gender: "male", date: new Date(2032, 6, 23), time: "12:00", venue: "Gabba",
-  //           image: ""},
-  //         {name: "10,000m", gender: "female", date: new Date(2032, 6, 27), time: "16:00", venue: "SCG",
-  //           image: ""}
-  //       ]
-  //   },
-  //   {name: "Swimming",
-  //     icon: "swimming",
-  //     events: [
-  //       {name: "400m Freestyle", gender: "male", date: new Date(2032, 6, 23), time: "12:00", venue: "Gabba",
-  //         image: ""}
-  //     ]
-  //   },
-  //   {name: "Football",
-  //     icon: "football",
-  //     events: [
-  //       {name: "100m", gender: "male", date: new Date(2032, 6, 23), time: "12:00", venue: "Gabba",
-  //         image: ""},
-  //       {name: "10,000m", gender: "female", date: new Date(2032, 6, 27), time: "16:00", venue: "SCG",
-  //         image: ""}
-  //     ]
-  //   },
-  // ]
-
   sports: Sport[];
-
   events: Event[];
 
   constructor(public responsive: ResponsiveService,
