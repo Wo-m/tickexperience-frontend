@@ -35,6 +35,7 @@ import { VrImageComponent } from './vr-image/vr-image.component';
         RegisterComponent,
         MyAccountComponent,
         VrImageComponent,
+        EventDetailsComponent
     ],
     imports: [
         BrowserModule,
