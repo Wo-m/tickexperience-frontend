@@ -15,7 +15,7 @@
 
 <mat-grid-list cols="{{ getCols() }}" rowHeight="1:1">
   <mat-grid-tile *ngFor="let event of events">
-    <div class="card selectable">
+    <div class="card selectable" (click)="openEventDetails(event)">
       <div class="horizontal-align">
         <div class="vertical-align title">
           <div class="left">
