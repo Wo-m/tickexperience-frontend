@@ -67,10 +67,9 @@ export class LandingComponent implements OnInit{
   openEventDetails(event: Event) {
     const dialogConfig = new MatDialogConfig();
 
-    dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
-    dialogConfig.height = "30%";
-    dialogConfig.width = "30%";
+    dialogConfig.height = "50%";
+    dialogConfig.width = "50%";
     dialogConfig.viewContainerRef = undefined;
 
     let dialogRef = this.dialog.open(EventDetailsComponent, dialogConfig);
