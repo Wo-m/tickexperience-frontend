@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -20,6 +20,7 @@ import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { RegisterComponent } from './features/log-in/register/register.component';
 import { MyAccountComponent } from './features/parent/my-account/my-account.component';
+import { VrImageComponent } from './vr-image/vr-image.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { MyAccountComponent } from './features/parent/my-account/my-account.comp
     MyTicketsComponent,
     RegisterComponent,
     MyAccountComponent,
+    VrImageComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,6 +54,7 @@ import { MyAccountComponent } from './features/parent/my-account/my-account.comp
     useClass: AppInterceptor,
     multi: true
   }],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

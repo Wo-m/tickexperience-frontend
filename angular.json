@@ -95,7 +95,13 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              {
+                "input": "node_modules/aframe/dist/aframe-v1.4.0.min.js",
+                "inject": true,
+                "bundleName": "aframe.min"
+              }
+            ]
           }
         }
       }
