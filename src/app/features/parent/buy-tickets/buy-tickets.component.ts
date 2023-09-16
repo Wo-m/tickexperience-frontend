@@ -28,8 +28,6 @@ export class BuyTicketsComponent implements OnInit {
   }
 
   buyTicket() {
-    console.log(this.tickets)
-    console.log(this.selectedTicketId)
     this.userService.buyTicket(this.selectedTicketId).subscribe();
   }
 }
