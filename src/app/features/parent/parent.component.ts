@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthUtils } from '../../core/Utils/auth.utils';
 import { AuthService } from '../../core/service/auth.service';
 import { PageEnum } from '../../core/constant/page.enum';
+import { MatDrawer } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-parent',
@@ -25,7 +26,8 @@ export class ParentComponent implements OnInit{
     return page === this.page;
   }
 
-  selectPage(page: PageEnum) {
+  selectPage(page: PageEnum, drawer: MatDrawer) {
+    drawer.close();
     this.page = page;
   }
 

@@ -15,7 +15,8 @@ export class BuyTicketsComponent implements OnInit {
 
   tickets: Ticket[];
 
-  selectedTicketIds: number[] = [];
+  selectedTicketId: number
+
 
   constructor(private eventService: EventService,
               private userService: UserService) { }
@@ -26,13 +27,9 @@ export class BuyTicketsComponent implements OnInit {
     });
   }
 
-  buyTicket(ticketId: number) {
-    this.userService.buyTicket(ticketId).subscribe();
-  }
-
-  buyTickets() {
-    this.selectedTicketIds.forEach(id => {
-      this.buyTicket(id);
-    });
+  buyTicket() {
+    console.log(this.tickets)
+    console.log(this.selectedTicketId)
+    this.userService.buyTicket(this.selectedTicketId).subscribe();
   }
 }

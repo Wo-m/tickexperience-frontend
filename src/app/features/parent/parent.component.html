@@ -17,9 +17,9 @@
         <button *ngIf="!isAuthenticated()" [routerLink]="'/register'"> Register </button>
         <button *ngIf="isAuthenticated()" (click)="logout()">Log Out</button>
         <div *ngIf="isAuthenticated()">
-          <button (click)="selectPage(PageEnum.LANDING)">Home</button>
-          <button (click)="selectPage(PageEnum.MY_TICKETS)">My Tickets</button>
-          <button (click)="selectPage(PageEnum.MY_ACCOUNT)">My Account</button>
+          <button (click)="selectPage(PageEnum.LANDING, drawer)">Home</button>
+          <button (click)="selectPage(PageEnum.MY_TICKETS, drawer)">My Tickets</button>
+          <button (click)="selectPage(PageEnum.MY_ACCOUNT, drawer)">My Account</button>
         </div>
       </div>
     </mat-drawer>

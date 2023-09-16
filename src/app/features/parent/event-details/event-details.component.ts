@@ -17,6 +17,8 @@ export class EventDetailsComponent implements OnInit {
     event: Event
 
 
+  buyingTickets: boolean = false;
+
     constructor(public dialogRef: MatDialogRef<LandingComponent>,
                 private eventService: EventService) {
     }
@@ -28,7 +30,7 @@ export class EventDetailsComponent implements OnInit {
     }
 
     buyTicket() {
-        console.log("TODO");
+        this.buyingTickets = true;
     }
 
     getStartDate(event: Event) {

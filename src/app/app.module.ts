@@ -25,6 +25,7 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { VrImageComponent } from './features/vr-image/vr-image.component';
 import { BuyTicketsComponent } from './features/parent/buy-tickets/buy-tickets.component';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
     declarations: [
@@ -39,24 +40,25 @@ import { BuyTicketsComponent } from './features/parent/buy-tickets/buy-tickets.c
         EventDetailsComponent,
         BuyTicketsComponent
     ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        HttpClientModule,
-        FormsModule,
-        ReactiveFormsModule,
-        MatSidenavModule,
-        MatButtonModule,
-        BrowserAnimationsModule,
-        LayoutModule,
-        MatIconModule,
-        CommonModule,
-        MatCardModule,
-        MatGridListModule,
-        NgOptimizedImage,
-        MatDialogModule,
-        MatTooltipModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatSidenavModule,
+    MatButtonModule,
+    BrowserAnimationsModule,
+    LayoutModule,
+    MatIconModule,
+    CommonModule,
+    MatCardModule,
+    MatGridListModule,
+    NgOptimizedImage,
+    MatDialogModule,
+    MatTooltipModule,
+    MatSelectModule
+  ],
     providers: [{
         provide: HTTP_INTERCEPTORS,
         useClass: AppInterceptor,
