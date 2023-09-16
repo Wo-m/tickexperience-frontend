@@ -23,7 +23,7 @@ import { MyAccountComponent } from './features/parent/my-account/my-account.comp
 import { EventDetailsComponent } from './features/parent/event-details/event-details.component';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { VrImageComponent } from './vr-image/vr-image.component';
+import { VrImageComponent } from './features/vr-image/vr-image.component';
 
 @NgModule({
     declarations: [
