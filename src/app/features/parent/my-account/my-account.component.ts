@@ -20,9 +20,10 @@ export class MyAccountComponent implements OnInit{
   constructor(private userService: UserService) {}
 
   ngOnInit() {
+    // TODO: backend setup
     // Fetch user data when the component initializes
-    this.userService.getMyAccountDetails().subscribe((userData) => {
-      this.myAccountDetails = userData;
-    });
+    // this.userService.getMyAccountDetails().subscribe((userData) => {
+    //   this.myAccountDetails = userData;
+    // });
   }
 }
