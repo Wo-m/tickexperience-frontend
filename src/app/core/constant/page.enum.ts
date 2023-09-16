@@ -1,5 +1,5 @@
 export enum PageEnum {
-  LANDING,
-  MY_TICKETS,
-  MY_ACCOUNT
+  LANDING='home',
+  MY_TICKETS='my-tickets',
+  MY_ACCOUNT='my-account'
 }

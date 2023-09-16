@@ -16,6 +16,6 @@ export class UserService {
   }
 
   getMyAccountDetails() {
-    return this.http.get<MyAccountDetails>(this.base_url + "my-acc-details");
+    return this.http.get<MyAccountDetails>(this.base_url + "/my-acc-details");
   }
 }
