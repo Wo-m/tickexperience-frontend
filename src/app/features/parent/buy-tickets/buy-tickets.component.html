@@ -1,0 +1,12 @@
+<div *ngIf="tickets" class="container">
+  <mat-form-field>
+    <mat-label>Select a Ticket</mat-label>
+    <mat-select [(value)]="selectedTicketId">
+      <mat-option>None</mat-option>
+      <mat-option *ngFor="let ticket of tickets" value="{{ ticket.id }}">
+        {{ticket.seatNumber}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+<button (click)="buyTicket()" [disabled]="!selectedTicketId"> Buy Ticket</button>
+</div>

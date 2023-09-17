@@ -18,4 +18,8 @@ export class UserService {
   getMyAccountDetails() {
     return this.http.get<MyAccountDetails>(this.base_url + "/my-acc-details");
   }
+
+  buyTicket(ticketId: number) {
+    return this.http.post(this.base_url + `/buy-ticket/${ticketId}`, null);
+  }
 }
