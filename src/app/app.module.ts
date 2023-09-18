@@ -26,6 +26,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { VrImageComponent } from './features/vr-image/vr-image.component';
 import { BuyTicketsComponent } from './features/parent/buy-tickets/buy-tickets.component';
 import { MatSelectModule } from '@angular/material/select';
+import { VenueComponent } from './features/parent/venue/venue.component';
+import { GoogleMapComponent } from './features/parent/google-map/google-map.component';
 
 @NgModule({
     declarations: [
@@ -38,7 +40,9 @@ import { MatSelectModule } from '@angular/material/select';
         MyAccountComponent,
         VrImageComponent,
         EventDetailsComponent,
-        BuyTicketsComponent
+        BuyTicketsComponent,
+        VenueComponent,
+        GoogleMapComponent
     ],
   imports: [
     BrowserModule,
