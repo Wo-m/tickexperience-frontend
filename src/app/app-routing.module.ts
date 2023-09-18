@@ -17,7 +17,7 @@ const routes: Routes = [
       { path: 'home', component: LandingComponent },
       { path: 'my-tickets', component: MyTicketsComponent },
       { path: 'my-account', component: MyAccountComponent },
-      { path: 'venue/:venue_id', component: VenueComponent},
+      { path: 'venue/:venueId', component: VenueComponent},
       { path: 'buy-ticket/:eventId', component: BuyTicketsComponent }
     ]},
   { path: '**', redirectTo: '/home', pathMatch: 'full'}

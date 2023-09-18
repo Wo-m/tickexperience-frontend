@@ -22,7 +22,7 @@ export class VenueComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      this.venueId = params['venue_id'];
+      this.venueId = params['venueId'];
 
       this.venueService.getVenueDetails(this.venueId).subscribe(data => {
         this.venueDetails = data;

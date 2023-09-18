@@ -44,4 +44,8 @@ export class EventDetailsComponent implements OnInit {
     isAuthenticated() {
         return AuthUtils.isAuthenticated();
     }
+
+  closeDialog() {
+    this.dialogRef.close();
+  }
 }
