@@ -1,12 +1,20 @@
-<div *ngIf="tickets" class="container">
-  <mat-form-field>
-    <mat-label>Select a Ticket</mat-label>
-    <mat-select [(value)]="selectedTicketId">
-      <mat-option>None</mat-option>
-      <mat-option *ngFor="let ticket of tickets" value="{{ ticket.id }}">
-        {{ticket.seatNumber}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-<button (click)="buyTicket()" [disabled]="!selectedTicketId"> Buy Ticket</button>
+<div *ngIf="tickets" class="container" [ngClass]="{'container-phone': responsive.isPhone()}">
+  <div class="ticket-select">
+    <mat-form-field>
+      <mat-label>Select a Section</mat-label>
+      <mat-select [(ngModel)]="selectedTicket">
+        <mat-option>None</mat-option>
+        <mat-option *ngFor="let ticket of tickets" [value]="ticket">
+          {{ticket.section.location}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button (click)="buyTicket()" [disabled]="!selectedTicket"> Buy Ticket</button>
+  </div>
+  <div class="view-seat" *ngIf="selectedTicket">
+    <h1> View Your Experience</h1>
+    <div class="vr-image">
+      <app-vr-image [imageURL]="selectedTicket.section.imageURL"></app-vr-image>
+    </div>
+  </div>
 </div>

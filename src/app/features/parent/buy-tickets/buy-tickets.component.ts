@@ -3,6 +3,7 @@ import { EventService } from '../../../core/service/event.service';
 import { Ticket } from '../../../core/model/ticket.model';
 import { UserService } from '../../../core/service/user.service';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { ResponsiveService } from '../../../core/service/responsive.service';
 
 @Component({
   selector: 'app-buy-tickets',
@@ -15,13 +16,14 @@ export class BuyTicketsComponent implements OnInit {
 
   tickets: Ticket[];
 
-  selectedTicketId: number
+  selectedTicket: Ticket;
 
 
   constructor(private eventService: EventService,
               private userService: UserService,
               private router: Router,
-              private route: ActivatedRoute) { }
+              private route: ActivatedRoute,
+              public responsive: ResponsiveService) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params: ParamMap) => {
@@ -30,13 +32,14 @@ export class BuyTicketsComponent implements OnInit {
       // ew
       this.eventService.getTickets(this.eventId).subscribe(data => {
         this.tickets = data;
+        console.log(this.tickets)
       });
     });
 
   }
 
   buyTicket() {
-    this.userService.buyTicket(this.selectedTicketId).subscribe();
+    this.userService.buyTicket(this.selectedTicket.id).subscribe();
     this.router.navigate(['/my-tickets'])
   }
 }
