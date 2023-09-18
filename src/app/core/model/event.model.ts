@@ -3,6 +3,6 @@ export class Event {
   name: string;
   gender: string;
   startTime: Date;
-  venue: {name: string}
+  venue: {id: number, name: string}
   imageURL: string;
 }
