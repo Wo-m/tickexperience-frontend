@@ -12,7 +12,7 @@ import {VenueDetails} from "../../../core/model/venue-details.model";
 })
 export class VenueComponent implements OnInit {
 
-  place_holder_image: string = "assets/icons/swimming.png"
+  // place_holder_image: string = "assets/icons/swimming.png"
   venueId: number;
   venueDetails: VenueDetails;
 

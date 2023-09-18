@@ -19,7 +19,9 @@
 
 /* Style the venue image section in the center */
 .venue-image {
-  /* Add any specific styling for your VR image component here */
+  /* Limit the maximum width of the image and set a maximum height */
+  max-width: 100%; /* Adjust this value as needed */
+  max-height: 400px; /* Adjust this value as needed */
   margin-bottom: 20px;
 }
 
