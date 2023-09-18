@@ -39,7 +39,8 @@ export class BuyTicketsComponent implements OnInit {
   }
 
   buyTicket() {
-    this.userService.buyTicket(this.selectedTicket.id).subscribe();
-    this.router.navigate(['/my-tickets'])
+    this.userService.buyTicket(this.selectedTicket.id).subscribe( () => {
+      this.router.navigate(['/my-tickets'])
+    });
   }
 }
