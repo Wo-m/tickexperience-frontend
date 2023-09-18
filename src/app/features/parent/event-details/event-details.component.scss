@@ -7,10 +7,15 @@
 }
 
 .image-container {
-    overflow: hidden;
-    border-radius: 20px;
-    height: 80%;
-    img {
-        height: 100%
-    }
+  overflow: hidden;
+  border-radius: 20px;
+  height: 60%;
+  img {
+    height: -webkit-fill-available;
+    width: -webkit-fill-available;
+  }
+}
+
+.image-container_phone{
+  height: 60%;
 }
