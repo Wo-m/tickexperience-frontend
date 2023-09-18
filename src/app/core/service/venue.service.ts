@@ -7,18 +7,12 @@ import { environment } from "../../../environments/environment.development";
   providedIn: 'root'
 })
 export class VenueService {
-  private base_url: string = `${environment.backendBaseUrl}/authed`
-  private fakeVenue: VenueDetails = {
-    id: 0,
-    name: "Suncorp Stadium",
-    location: "Suncorp Stadium"
-  }
+  private base_url: string = `${environment.backendBaseUrl}`
 
   constructor(private http: HttpClient) {}
 
   getVenueDetails (venueId: number) {
-    // return this.http.get<VenueDetails>(this.base_url + `/venue-details/${venueId}`);
-    return this.fakeVenue;
+    return this.http.get<VenueDetails>(this.base_url + `/venue-details/${venueId}`);
   }
 
   getMapIframeLink(location: string) {

@@ -1,8 +1,9 @@
 <div class="venue-container">
   <div class="venue-info">
     <h2>Venue Information</h2>
-    <p>Suncorp Stadium</p>
-    <p>Mitlon, Brisbane</p>
+    <p>Name: {{ venueDetails.name }}</p> <!-- Replace 'Suncorp Stadium' with 'venueDetails.name' -->
+    <p>Capacity: {{ venueDetails.capacity}}</p> <!-- Replace 'Milton, Brisbane' with 'venueDetails.location' -->
+    <p>Location: {{ venueDetails.location }}</p> <!-- Replace 'Milton, Brisbane' with 'venueDetails.location' -->
     <div class="venue-directions">
       <button mat-raised-button (click)="openMapsPopup()">Get Directions</button>
     </div>
@@ -12,4 +13,3 @@
     <img [src]="place_holder_image" alt="Venue Image">
   </div>
 </div>
-
