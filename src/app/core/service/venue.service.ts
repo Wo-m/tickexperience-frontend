@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {VenueDetails} from "../model/venue-details.model";
+import { VenueDetails } from "../model/venue-details.model";
 import { environment } from "../../../environments/environment.development";
-import {VenueComponent} from "../../features/parent/venue/venue.component";
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +22,7 @@ export class VenueService {
   }
 
   getMapIframeLink(location: string) {
-    return `${environment.googleMapsBaseUrl}?q=${location}&key=${environment.googleMapsApiKey}`
+    const encodedLocation = encodeURIComponent(location);
+    return `${environment.googleMapsBaseUrl}?q=${encodedLocation}&key=${environment.googleMapsApiKey}`
   }
 }

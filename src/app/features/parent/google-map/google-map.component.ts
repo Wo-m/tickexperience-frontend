@@ -1,6 +1,7 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import {VenueService} from "../../../core/service/venue.service";
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-google-map',
@@ -8,16 +9,18 @@ import {VenueService} from "../../../core/service/venue.service";
   styleUrls: ['./google-map.component.scss']
 })
 export class GoogleMapComponent implements OnInit{
-  private iframeLink: string;
+  public iframeLink: SafeResourceUrl;
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,
     public dialogRef: MatDialogRef<GoogleMapComponent>,
     private venueService: VenueService,
+    private sanitizer: DomSanitizer
   ) {}
 
   ngOnInit(): void {
-    this.iframeLink = this.venueService.getMapIframeLink(this.data.location);
+    const rawIframeLink = this.venueService.getMapIframeLink(this.data.location);
+    this.iframeLink = this.sanitizer.bypassSecurityTrustResourceUrl(rawIframeLink);
     console.log(this.iframeLink);
   }
 

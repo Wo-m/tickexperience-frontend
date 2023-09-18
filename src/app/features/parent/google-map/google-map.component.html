@@ -1,4 +1,6 @@
 <div class="maps-container">
-  <div id="map" style="width: 100%; height: 400px;"></div>
+  <!-- Display the Google Map iframe using iframeLink -->
+  <iframe [src]="iframeLink" style="width: 100%; height: 600px;"></iframe>
   <button mat-button (click)="closePopup()">Close</button>
 </div>
+
