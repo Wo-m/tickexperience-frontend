@@ -1,4 +1,4 @@
-<div class="container" *ngIf="event && !buyingTickets">
+<div class="container" *ngIf="event">
     <div>
         {{event.name}}
     </div>
@@ -20,8 +20,5 @@
     <div class="image-container">
         <img src="{{event.imageURL}}">
     </div>
-</div>
-<div *ngIf="buyingTickets">
-  <app-buy-tickets [eventId]="event.id"></app-buy-tickets>
 </div>
 

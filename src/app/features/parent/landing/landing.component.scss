@@ -122,13 +122,14 @@
 .image-container {
   overflow: hidden;
   border-radius: 20px;
-  height: 80%;
+  height: 70%;
   img {
-    height: 100%
+    height: -webkit-fill-available;
+    width: -webkit-fill-available;
   }
 }
 
 .image-container_phone{
-  height: 70%;
+  height: 60%;
 }
 

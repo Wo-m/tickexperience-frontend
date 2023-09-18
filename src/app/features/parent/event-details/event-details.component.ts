@@ -4,6 +4,7 @@ import { LandingComponent } from '../landing/landing.component';
 import { EventService } from '../../../core/service/event.service';
 import { Event } from '../../../core/model/event.model';
 import { AuthUtils } from '../../../core/Utils/auth.utils';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-event-details',
@@ -16,11 +17,9 @@ export class EventDetailsComponent implements OnInit {
 
     event: Event
 
-
-  buyingTickets: boolean = false;
-
     constructor(public dialogRef: MatDialogRef<LandingComponent>,
-                private eventService: EventService) {
+                private eventService: EventService,
+                private router: Router) {
     }
 
     ngOnInit(): void {
@@ -30,7 +29,8 @@ export class EventDetailsComponent implements OnInit {
     }
 
     buyTicket() {
-        this.buyingTickets = true;
+      this.dialogRef.close()
+      this.router.navigate(['/buy-ticket', `${this.eventId}`]);
     }
 
     getStartDate(event: Event) {

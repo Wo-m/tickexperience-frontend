@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { EventService } from '../../../core/service/event.service';
 import { Ticket } from '../../../core/model/ticket.model';
 import { UserService } from '../../../core/service/user.service';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 
 @Component({
   selector: 'app-buy-tickets',
@@ -10,7 +11,6 @@ import { UserService } from '../../../core/service/user.service';
 })
 export class BuyTicketsComponent implements OnInit {
 
-  @Input()
   eventId: number;
 
   tickets: Ticket[];
@@ -19,15 +19,24 @@ export class BuyTicketsComponent implements OnInit {
 
 
   constructor(private eventService: EventService,
-              private userService: UserService) { }
+              private userService: UserService,
+              private router: Router,
+              private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.eventService.getTickets(this.eventId).subscribe(data => {
-      this.tickets = data;
+    this.route.paramMap.subscribe((params: ParamMap) => {
+      this.eventId = Number(params.get('eventId'));
+
+      // ew
+      this.eventService.getTickets(this.eventId).subscribe(data => {
+        this.tickets = data;
+      });
     });
+
   }
 
   buyTicket() {
     this.userService.buyTicket(this.selectedTicketId).subscribe();
+    this.router.navigate(['/my-tickets'])
   }
 }
