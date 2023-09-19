@@ -53,6 +53,11 @@
   aspect-ratio: 1;
   display: flex;
   padding-right: 5px;
+  img {
+    height: 75%;
+    width: 75%;
+    margin: auto;
+  }
 }
 
 .image_phone {
