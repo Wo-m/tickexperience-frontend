@@ -3,7 +3,7 @@ import {MatDialog} from "@angular/material/dialog";
 import {GoogleMapComponent} from "../google-map/google-map.component";
 import {ActivatedRoute} from "@angular/router";
 import {VenueService} from "../../../core/service/venue.service";
-import {VenueDetails} from "../../../core/model/venue-details.model";
+import {Venue} from "../../../core/model/venue-details.model";
 
 @Component({
   selector: 'app-venue',
@@ -14,7 +14,7 @@ export class VenueComponent implements OnInit {
 
   // place_holder_image: string = "assets/icons/swimming.png"
   venueId: number;
-  venueDetails: VenueDetails;
+  venueDetails: Venue;
 
   constructor(private venueService: VenueService,
               public dialog: MatDialog,
@@ -24,7 +24,7 @@ export class VenueComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.venueId = params['venueId'];
 
-      this.venueService.getVenueDetails(this.venueId).subscribe(data => {
+      this.venueService.getVenue(this.venueId).subscribe(data => {
         this.venueDetails = data;
       });
     })

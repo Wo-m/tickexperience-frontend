@@ -33,6 +33,65 @@
   padding: 1%;
 }
 
+
+
+.seat-select {
+  height: 30%;
+  width: 100%;
+}
+
+.section {
+  stroke: colours.$green;
+  stroke-linejoin: round;
+  stroke-width: 1;
+  fill: colours.$honeydew;
+  //fill-rule: nonzero;
+  //pointer-events: fill;
+}
+
+.path {
+  fill: transparent;
+  stroke: colours.$yellow;
+  stroke-width: 1;
+  stroke-dasharray: 250;
+  stroke-linejoin: round;
+  stroke-dashoffset: 250;
+
+  -webkit-transition: all 1.5s ease-out;
+  -moz-transition: all 1.5s ease-out;
+  -ms-transition: all 1.5s ease-out;
+  -o-transition: all 1.5s ease-out;
+  transition: all 1.5s ease-out;
+}
+
+.path:hover {
+  stroke-dasharray: 250;
+  stroke-dashoffset: 0;
+  fill: rgba(colours.$yellow, .4);
+  cursor: pointer;
+}
+
+.selected {
+  fill: rgba(colours.$yellow, .4);
+  stroke-dasharray: 250;
+  stroke-dashoffset: 0;
+}
+
+
+
+#topPoly:hover {
+  z-index: 1;
+}
+
+
+
+
+svg {
+  height: 100%;
+  width: 100%;
+  pointer-events: all;
+}
+
 button {
   margin-top: 30px;
   width: 100%;

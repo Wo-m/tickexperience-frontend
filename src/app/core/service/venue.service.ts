@@ -1,18 +1,23 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { VenueDetails } from "../model/venue-details.model";
+import { Venue } from "../model/venue-details.model";
 import { environment } from "../../../environments/environment.development";
+import { Section } from '../model/section.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class VenueService {
-  private base_url: string = `${environment.backendBaseUrl}`
+  private base_url: string = `${environment.backendBaseUrl}`+'/venue'
 
   constructor(private http: HttpClient) {}
 
-  getVenueDetails (venueId: number) {
-    return this.http.get<VenueDetails>(this.base_url + `/venue-details/${venueId}`);
+  getVenue (venueId: number) {
+    return this.http.get<Venue>(this.base_url + `/${venueId}`);
+  }
+
+  getSections(venueId: number) {
+    return this.http.get<Section[]>(this.base_url + `/${venueId}/sections`);
   }
 
   getMapIframeLink(location: string) {
