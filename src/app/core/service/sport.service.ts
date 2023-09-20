@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Sport } from '../model/sport.model';
+import { Event } from '../model/event.model';
 
 @Injectable({
   providedIn: 'root'
@@ -10,10 +12,10 @@ export class SportService {
   constructor(private http: HttpClient) { }
 
   getAllSports() {
-    return this.http.get(this.base_url + "/all")
+    return this.http.get<Sport[]>(this.base_url + "/all")
   }
 
   getEvents(sportId: number) {
-    return this.http.get(this.base_url + `/events/${sportId}`)
+    return this.http.get<Event[]>(this.base_url + `/events/${sportId}`)
   }
 }

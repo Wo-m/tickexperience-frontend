@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { ResponsiveService } from '../../../core/service/responsive.service';
+import { SportService } from '../../../core/service/sport.service';
+import { Sport } from '../../../core/model/sport.model';
+import { Event } from '../../../core/model/event.model';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { EventDetailsComponent } from '../event-details/event-details.component';
 
 @Component({
   selector: 'app-landing',
@@ -7,22 +13,55 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingComponent implements OnInit{
 
-  // sports: string[] = ['Running', 'Swimming', 'Rugby']
-  sports = [
-    {name: "Running", dates: [1, 2,3, 4, 5]},
-    {name: "Swimming", dates: [1, 2,3, 4, 5]},
-    {name: "Rugby", dates: [1, 2,3, 4, 5]}
-  ]
-  selectedSport: {name: string, dates: number[]} = this.sports[0]
+  sports: Sport[];
+  events: Event[];
 
-  constructor() {
+  constructor(public responsive: ResponsiveService,
+              private sportService: SportService,
+              private dialog: MatDialog) {
   }
 
   ngOnInit(): void {
+    this.sportService.getAllSports().subscribe((data: Sport[]) => {
+      this.sports = data;
+      this.selectSport(this.sports[0]);
+    })
   }
 
-  selectSport(sport: { name: string; dates: number[];}) {
-    this.selectedSport = sport;
+  selectSport(sport: any) {
+    this.sportService.getEvents(sport.id).subscribe((data: Event[]) => {
+      this.events = data;
+    });
+  }
+
+  openEventDetails(event: Event) {
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.autoFocus = true;
+    dialogConfig.height = "50%";
+    dialogConfig.width = "50%";
+    dialogConfig.viewContainerRef = undefined;
+
+    let dialogRef = this.dialog.open(EventDetailsComponent, dialogConfig);
+    dialogRef.componentInstance.eventId = event.id;
+  }
+
+  getStartDate(event: Event) {
+    return new Date(event.startTime).toLocaleDateString()
+  }
+
+  getStartTime(event: Event) {
+    return new Date(event.startTime).toLocaleTimeString();
+  }
+
+  getGender(event: Event) {
+    if (event.gender === "M") {
+      return "Male"
+    }
+    if (event.gender === "F") {
+      return "Female"
+    }
+    return "Mixed"
   }
 
   scrollLeft(id: string) {
@@ -39,5 +78,12 @@ export class LandingComponent implements OnInit{
       return;
     }
     nav.scrollBy({left: left, behavior: 'smooth'})
+  }
+
+  getCols() {
+    if (this.responsive.isPhone()){
+      return "1"
+    }
+    return "3"
   }
 }

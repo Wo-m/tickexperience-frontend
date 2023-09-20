@@ -1,0 +1,16 @@
+<div class="venue-container" *ngIf="venueDetails">
+  <div class="venue-info">
+    <h2>Venue Information</h2>
+    <p>Name: {{ venueDetails.name }}</p> <!-- Replace 'Suncorp Stadium' with 'venueDetails.name' -->
+    <p>Capacity: {{ venueDetails.capacity}}</p> <!-- Replace 'Milton, Brisbane' with 'venueDetails.location' -->
+    <p>Location: {{ venueDetails.location }}</p> <!-- Replace 'Milton, Brisbane' with 'venueDetails.location' -->
+    <div class="venue-directions">
+      <button mat-raised-button (click)="openMapsPopup()">Get Directions</button>
+    </div>
+  </div>
+
+  <div class="venue-image">
+    <img [src]="venueDetails.imageUrl" alt="Venue Image">
+<!--    <img src="https://www.austadiums.com/stadiums/photos/suncorp-stadium-2.jpg" alt="Venue Image">-->
+  </div>
+</div>

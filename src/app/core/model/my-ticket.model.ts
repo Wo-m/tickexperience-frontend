@@ -3,5 +3,5 @@ export class MyTicket {
   eventDateTime: Date;
   eventName: string;
   venueName: string;
-  imageUrl: string;
+  icon: string;
 }

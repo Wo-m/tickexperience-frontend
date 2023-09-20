@@ -4,13 +4,25 @@ import { LoginComponent } from './features/log-in/login.component';
 import { ParentComponent } from './features/parent/parent.component';
 import {TicketDetailsComponent} from "./features/parent/ticket-details/ticket-details.component";
 import { RegisterComponent } from './features/log-in/register/register.component';
+import { LandingComponent } from './features/parent/landing/landing.component';
+import { MyTicketsComponent } from './features/parent/my-tickets/my-tickets.component';
+import { MyAccountComponent } from './features/parent/my-account/my-account.component';
+import { VenueComponent } from "./features/parent/venue/venue.component";
+import { BuyTicketsComponent } from './features/parent/buy-tickets/buy-tickets.component';
 
 const routes: Routes = [
   { path: 'log-in/:loggedOut', component: LoginComponent },
   { path: 'ticket/:id', component: TicketDetailsComponent},
   { path: 'register', component: RegisterComponent },
-  { path: '', component: ParentComponent },
-  { path: '**', redirectTo: '/'}
+  { path: '', component: ParentComponent, children: [
+      { path: '', redirectTo: 'home', pathMatch: 'full'},
+      { path: 'home', component: LandingComponent },
+      { path: 'my-tickets', component: MyTicketsComponent },
+      { path: 'my-account', component: MyAccountComponent },
+      { path: 'venue/:venueId', component: VenueComponent},
+      { path: 'buy-ticket/:eventId', component: BuyTicketsComponent }
+    ]},
+  { path: '**', redirectTo: '/home', pathMatch: 'full'}
 ];
 
 @NgModule({
