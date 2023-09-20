@@ -12,9 +12,18 @@ body {
 .header {
   padding: 80px;
   text-align: center;
-  background: #0F2E1E;
-  color: white;
-}
+
+    background-color: red;
+    animation-name: example;
+    animation-duration: 10s;
+  }
+
+  @keyframes example {
+    0%   {background-color: red;}
+    25%  {background-color: yellow;}
+    50%  {background-color: blue;}
+    100% {background-color: green;}
+  }
 
 /* Increase the font size of the heading */
 .header h1 {
