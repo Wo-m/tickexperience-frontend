@@ -1,3 +1,5 @@
+@use "../../../../assets/styles/colours";
+
 .page-heading {
   display: flex;
   flex-direction: row;
@@ -11,7 +13,7 @@
 .nav-button {
   display: flex;
   flex-direction: row;
-  margin:5px;
+  margin: 5px;
   padding: 10px;
 }
 
@@ -22,10 +24,12 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin-left:10%;
-  margin-right: 10%;
+  //margin-left:7%;
+  //margin-right: 7%;
   padding: 10px;
-  font-size: 36px;
+  font-size: 30px;
+  color: colours.$green;
+  background-color: lightgrey;
 }
 
 .countdown-elements {
@@ -35,19 +39,30 @@
   justify-content: center;
   align-items: center;
   padding: 3px;
-  font-size: 32px;
 }
 
 .countdown-element {
   text-align: center;
-  font-size: 32px;
-  background: lightblue;
+  font-size: 30px;
+  color: colours.$green;
   align-items: center;
   margin: 1%;
-  padding: 10px;
+  padding:10px;
+  background:linear-gradient(135deg, colours.$honeydew 55%, colours.$yellow 70%);
 }
 
-.ticket-container {
+.ticket_container_phone {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding: 15px 10px;
+}
+
+.ticket_container_web {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -58,20 +73,35 @@
   padding: 30px 20px;
 }
 
-.ticket {
+.ticket_web {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
   height: 300px;
-  width: auto;
-  border-style: solid;
+  width: 800px;
+  box-shadow: 20px 20px 30px #d3d3d3;
   border-width: 2px;
-  box-shadow: 20px 20px 10px grey;
+  border-style: solid;
+  border-color: colours.$green;
 }
 
-.ticket-summary {
+.ticket_phone {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 550px;
+  width: 97%;
+  box-shadow: 10px 10px 20px grey;
+  border-width: 2px;
+  border-style: solid;
+  border-color: colours.$green;
+}
+
+.summary_web {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -82,32 +112,69 @@
   justify-content: center;
   align-items: center;
 }
-.icon-half{
+
+.summary_phone {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+  padding-bottom: 10px;
+  border-bottom-style: dashed;
+  justify-content: center;
+  align-items: center;
+}
+
+.year_half_web {
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+  justify-content: center;
+  align-items: center;
+}
+
+.year_half_phone {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon_half_web {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   height: 50%;
-
 }
 
-.icon {
+.icon_half_phone {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+.icon_web {
   height: 100px;
 }
 
-.year-half {
-  display: flex;
-  flex-direction: row;
-  height: 50%;
-  justify-content: center;
-  align-items: center;
+.icon_phone {
+  height: 50px;
 }
 
-.year-half-text {
+.year_half_text_web {
   position: relative;
   font-size: 24px;
   text-align: center;
   transform: rotate(90deg);
+}
+
+.year_half_text_phone {
+  position: relative;
+  font-size: 18px;
+  text-align: center;
 }
 
 .ticket-contents {
@@ -120,7 +187,7 @@
   font-size: 24px;
   padding-left: 10px;
   height: 300px;
-  width: 550px;
+  width: 100%;
   position: relative;
 }
 
@@ -154,6 +221,7 @@
   width: 50%;
   text-align: center;
   padding-bottom: 20px;
+  padding-top: 10px;
 }
 
 .seat {
@@ -188,17 +256,29 @@
   padding: 5px;
 }
 
-.qr-code {
+.qr_code_web {
+  display: flex;
+  flex-direction: column;
   height: 100%;
   border-left-style: dashed;
   justify-content: center;
+  align-items: center;
+}
+
+.qr_code_phone {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  border-top-style: dashed;
+  justify-content: center;
+  align-items: center;
 }
 
 .barcode_web {
-  width: 100px;
+  width: 175px;
 }
 
 .barcode_phone {
   height: auto;
-  width: 75px;
+  width: 150px;
 }
