@@ -8,7 +8,6 @@
 <header class = "page-heading">
   <button class="nav-button">
     <mat-icon>keyboard_arrow_left</mat-icon>
-    <h2>My Tickets</h2>
   </button>
 </header>
 
@@ -25,20 +24,50 @@
         {{ this.countdownTime.at(2) }} days
       </div>
     </div>
-    ...until your next event!
+    ...until your event!
   </div>
-  <div class = "ticket">
-    <div class = "ticket-barcode">
-      <img class="barcode" src="https://upload.wikimedia.org/wikipedia/commons/5/5d/UPC-A-036000291452.png" [ngClass]="{barcode_phone: responsive.isPhone(), barcode_web: !responsive.isPhone()}" alt="Ticket Barcode">
-    </div>
-    <div class = "ticket-contents">
-      <br> event: {{ this.ticket.event}}
-      <br> seatNumber: {{ this.ticket.seatNumber}}
-      <br> venue: {{ this.ticket.venue}}
-      <br> year: {{ this.ticket.date.getFullYear()}}
-      <br> month: {{ this.ticket.date.getMonth() + 1}}
-      <br> day: {{ this.ticket.date.getDate()}}
-      <br> time: {{ this.ticket.date.toLocaleTimeString()}}
+  <div class = "ticket-container">
+    <div class="ticket">
+
+      <div class = "ticket-summary">
+        <div class = "icon-half">
+          <img class = "icon" src="https://www.freeiconspng.com/thumbs/swimming-icon-png/sports-swimming-icon-png-1.png" alt = "swimming icon">
+        </div>
+        <div class = "year-half">
+          <div class = "year-half-text">
+            Brisbane
+            <br>2032
+          </div>
+        </div>
+      </div>
+
+      <div class = "ticket-contents">
+        <div class = "admission">
+          <div class = "admission-type">
+            GEN-AD
+          </div>
+          <div class = "seat">
+            Seat: {{ this.ticket.seatNumber}}
+          </div>
+        </div>
+        <div class = "event">
+          {{ this.ticket.event}}
+        </div>
+        <div class = "location">
+          {{ this.ticket.venue}}
+        </div>
+        <div class = "time">
+          {{ this.ticket.date.toLocaleTimeString()}}
+        </div>
+        <div class = "date">
+          {{ this.ticket.date.getDate()}}/{{ this.ticket.date.getMonth() + 1}}/{{ this.ticket.date.getFullYear()}}
+        </div>
+      </div>
+
+      <div class = "qr-code">
+        <img class="barcode" src="https://upload.wikimedia.org/wikipedia/commons/5/5d/UPC-A-036000291452.png" [ngClass]="{barcode_phone: responsive.isPhone(), barcode_web: !responsive.isPhone()}" alt="Ticket Barcode">
+      </div>
+
     </div>
   </div>
 </body>

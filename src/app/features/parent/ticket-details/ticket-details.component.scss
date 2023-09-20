@@ -3,8 +3,7 @@
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: left;
-  height: 70px;
-  background: yellow;
+  height: 50px;
   margin: 0 10%;
   align-content: space-between;
 }
@@ -14,7 +13,6 @@
   flex-direction: row;
   margin:5px;
   padding: 10px;
-  background: white;
 }
 
 .countdown-container {
@@ -27,8 +25,7 @@
   margin-left:10%;
   margin-right: 10%;
   padding: 10px;
-  background: pink;
-  font-size: 24px;
+  font-size: 36px;
 }
 
 .countdown-elements {
@@ -37,54 +34,171 @@
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  background: blueviolet;
   padding: 3px;
+  font-size: 32px;
 }
 
 .countdown-element {
   text-align: center;
-  font-size: 24px;
-  background: green;
+  font-size: 32px;
+  background: lightblue;
   align-items: center;
   margin: 1%;
   padding: 10px;
+}
+
+.ticket-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding: 30px 20px;
 }
 
 .ticket {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: left;
+  justify-content: center;
   align-items: center;
-  background: mediumpurple;
-  height: auto;
+  height: 300px;
   width: auto;
-  margin-left: 10%;
-  margin-right: 10%;
-  padding: 30px 20px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: 20px 20px 10px grey;
 }
 
-.ticket-barcode {
-  background: darkcyan;
-  height: auto;
+.ticket-summary {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  height: 100%;
   width: auto;
   padding: 10px;
-  transform: rotate(270deg);
+  border-right-style: dashed;
+  justify-content: center;
+  align-items: center;
+}
+.icon-half{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+
+}
+
+.icon {
+  height: 100px;
+}
+
+.year-half {
+  display: flex;
+  flex-direction: row;
+  height: 50%;
+  justify-content: center;
+  align-items: center;
+}
+
+.year-half-text {
+  position: relative;
+  font-size: 24px;
+  text-align: center;
+  transform: rotate(90deg);
+}
+
+.ticket-contents {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  content: "";
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  padding-left: 10px;
+  height: 300px;
+  width: 550px;
+  position: relative;
+}
+
+.ticket-contents::before {
+  content: "";
+  background-image: url("https://stillmed.olympics.com/media/Images/OlympicOrg/IOC/The_Organisation/The-Olympic-Rings/Olympic_rings_TM_c_IOC_All_rights_reserved_1.jpg");
+  background-repeat: no-repeat;
+  position: absolute;
+  background-position: center center;
+  background-size: cover;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 20%;
+}
+
+.admission{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.admission-type {
+  position: relative;
+  font-size: 24px;
+  width: 50%;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.seat {
+  position: relative;
+  font-size: 24px;
+  width: 50%;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.event {
+  text-transform: uppercase;
+  font-size: 48px;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+.location {
+  position: relative;
+  padding: 5px;
+}
+
+.date {
+  position: relative;
+  padding: 5px;
+}
+
+.time {
+  position: relative;
+  padding: 5px;
+}
+
+.qr-code {
+  height: 100%;
+  border-left-style: dashed;
+  justify-content: center;
 }
 
 .barcode_web {
-  height: auto;
-  width: 250px;
+  width: 100px;
 }
 
 .barcode_phone {
   height: auto;
-  width: 125px;
-}
-
-.ticket-contents {
-  background-color: lightpink;
-  font-size: 24px;
-  padding-left: 10px;
-
+  width: 75px;
 }
