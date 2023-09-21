@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { EventService } from '../../../core/service/event.service';
 import { Ticket } from '../../../core/model/ticket.model';
 import { UserService } from '../../../core/service/user.service';
@@ -47,7 +47,7 @@ export class BuyTicketsComponent implements OnInit {
                 this.tickets = data;
             });
 
-            this.venueService.getSections(this.eventId).subscribe(data => {
+            this.eventService.getSections(this.eventId).subscribe(data => {
                 // assuming this data is ordered with section locations ascending
                 this.imageURLs = data.map((section: Section) => section.imageURL);
                 this.selectSection('top');
