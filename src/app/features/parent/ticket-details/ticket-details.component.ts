@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { AuthService } from '../../../core/service/auth.service';
 import { ResponsiveService } from '../../../core/service/responsive.service';
 import { MyTicket } from '../../../core/model/my-ticket.model';
 import { TicketService } from '../../../core/service/ticket.service';
@@ -20,7 +19,8 @@ export class TicketDetailsComponent implements OnInit {
 
     constructor(private route: ActivatedRoute,
                 public responsive: ResponsiveService,
-                public ticketService: TicketService) {
+                private ticketService: TicketService,
+                private router: Router) {
     }
 
     ngOnInit(): void {
@@ -35,6 +35,10 @@ export class TicketDetailsComponent implements OnInit {
         });
 
 
+    }
+
+    back() {
+        this.router.navigate(['/my-tickets']);
     }
 
     setTimeToEvent(): void {
