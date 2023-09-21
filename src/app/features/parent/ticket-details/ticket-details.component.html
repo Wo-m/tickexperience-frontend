@@ -1,17 +1,9 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-  <link rel="stylesheet" href="ticket-details.component.scss">
-  <title>My Tickets</title>
-</head>
-
 <header class = "page-heading">
   <button class ="nav-button">
     <mat-icon>keyboard_arrow_left</mat-icon>
   </button>
 </header>
-
-<body>
+<div *ngIf="ticket">
   <div class = "countdown-container">
     <div class = "countdown-elements">
       <div class = "countdown-element">
@@ -31,7 +23,8 @@
 
       <div [ngClass]="{summary_phone: responsive.isPhone(), summary_web: !responsive.isPhone()}">
         <div [ngClass]="{icon_half_phone: responsive.isPhone(), icon_half_web: !responsive.isPhone()}">
-          <img [ngClass]="{icon_phone: responsive.isPhone(), icon_web: !responsive.isPhone()}" src="https://www.freeiconspng.com/thumbs/swimming-icon-png/sports-swimming-icon-png-1.png" alt = "swimming icon">
+          <img [ngClass]="{icon_phone: responsive.isPhone(), icon_web: !responsive.isPhone()}"
+               src="{{'assets/icons/' + ticket.icon +'.png'}}" alt = "swimming icon">
         </div>
         <div [ngClass]="{year_half_phone: responsive.isPhone(), year_half_web: !responsive.isPhone()}">
           <div [ngClass]="{year_half_text_phone: responsive.isPhone(), year_half_text_web: !responsive.isPhone()}">
@@ -51,24 +44,25 @@
           </div>
         </div>
         <div class = "event">
-          {{ this.ticket.event}}
+          {{ this.ticket.eventName}}
         </div>
         <div class = "location">
-          {{ this.ticket.venue}}
+          {{ this.ticket.venueName}}
         </div>
         <div class = "time">
-          {{ this.ticket.date.toLocaleTimeString()}}
+          {{ getTicketDayAndTime(this.ticket) }}
+<!--          {{ this.ticket.eventDateTime.toLocaleTimeString()}}-->
         </div>
         <div class = "date">
-          {{ this.ticket.date.getDate()}}/{{ this.ticket.date.getMonth() + 1}}/{{ this.ticket.date.getFullYear()}}
+          {{ getTicketDate(this.ticket) }}
+<!--          {{ this.ticket.eventDateTime.getDate()}}/{{ this.ticket.eventDateTime.getMonth() + 1}}/{{ this.ticket.eventDateTime.getFullYear()}}-->
         </div>
       </div>
 
       <div [ngClass]="{qr_code_phone: responsive.isPhone(), qr_code_web: !responsive.isPhone()}">
-        <img class="barcode" src="https://upload.wikimedia.org/wikipedia/commons/5/5d/UPC-A-036000291452.png" [ngClass]="{barcode_phone: responsive.isPhone(), barcode_web: !responsive.isPhone()}" alt="Ticket Barcode">
+        <img class="barcode" src="{{ticket.qrCode}}" [ngClass]="{barcode_phone: responsive.isPhone(), barcode_web: !responsive.isPhone()}" alt="Ticket Barcode">
       </div>
 
     </div>
   </div>
-</body>
-</html>
+</div>
