@@ -3,6 +3,10 @@ body, html {
   height: 100%;
   font-family: "Inconsolata", sans-serif;
 }
+html{
+  height: 3000px;
+  background: linear-gradient(141deg, white 0%, #F1E3A4 51%, beige 75%);
+}
 
 .bgimg {
   background-position: center;
@@ -23,4 +27,15 @@ body, html {
 }
 .mycustom_class.w3-animate-right {
   animation: 9s ease 0s normal none 1 running animateright;
+}
+.mycustom_class.w3-animate-top {
+  animation: 15s ease 0s normal none 1 running animatetop;
+}
+.mycustom_class.w3-animate-fading{
+  animation: 1 running animatefading;
+}
+
+.w3-container {
+  height: 3000px;
+  background: linear-gradient(141deg, white 0%, #F1E3A4 51%, beige 75%);
 }
