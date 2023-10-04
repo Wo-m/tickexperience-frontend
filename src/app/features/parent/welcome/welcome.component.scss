@@ -13,16 +13,18 @@ body {
   padding: 80px;
   text-align: center;
 
-    background-color: red;
-    animation-name: example;
-    animation-duration: 10s;
+    //background-color: red;
+    //animation-name: example;
+    //animation-duration: 10s;
+    animation: example 10s infinite;
   }
 
   @keyframes example {
     0%   {background-color: red;}
     25%  {background-color: yellow;}
     50%  {background-color: blue;}
-    100% {background-color: green;}
+    75% {background-color: green;}
+    100% {background-color: red;}
   }
 
 /* Increase the font size of the heading */
