@@ -1,4 +1,4 @@
-@use '../../../../assets/style/colours';
+@use '../../../../assets/styles/colours';
 
 .container {
   display: flex;
@@ -120,16 +120,16 @@
 }
 
 .image-container {
-  border: 5px solid red; // TODO remove this
   overflow: hidden;
   border-radius: 20px;
-  height: 80%;
+  height: 70%;
   img {
-    height: 500px;
+    height: -webkit-fill-available;
+    width: -webkit-fill-available;
   }
 }
 
 .image-container_phone{
-  height: 70%;
+  height: 60%;
 }
 

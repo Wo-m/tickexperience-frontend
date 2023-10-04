@@ -1,0 +1,284 @@
+@use "../../../../assets/styles/colours";
+
+.page-heading {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: left;
+  height: 50px;
+  margin: 0 10%;
+  align-content: space-between;
+}
+
+.nav-button {
+  display: flex;
+  flex-direction: row;
+  margin: 5px;
+  padding: 10px;
+}
+
+.countdown-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  //margin-left:7%;
+  //margin-right: 7%;
+  padding: 10px;
+  font-size: 30px;
+  color: colours.$green;
+  background-color: lightgrey;
+}
+
+.countdown-elements {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 3px;
+}
+
+.countdown-element {
+  text-align: center;
+  font-size: 30px;
+  color: colours.$green;
+  align-items: center;
+  margin: 1%;
+  padding:10px;
+  background:linear-gradient(135deg, colours.$honeydew 55%, colours.$yellow 70%);
+}
+
+.ticket_container_phone {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding: 15px 10px;
+}
+
+.ticket_container_web {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding: 30px 20px;
+}
+
+.ticket_web {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 800px;
+  box-shadow: 20px 20px 30px #d3d3d3;
+  border-width: 2px;
+  border-style: solid;
+  border-color: colours.$green;
+}
+
+.ticket_phone {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 550px;
+  width: 97%;
+  box-shadow: 10px 10px 20px grey;
+  border-width: 2px;
+  border-style: solid;
+  border-color: colours.$green;
+}
+
+.summary_web {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  height: 100%;
+  width: auto;
+  padding: 10px;
+  border-right-style: dashed;
+  justify-content: center;
+  align-items: center;
+}
+
+.summary_phone {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+  padding-bottom: 10px;
+  border-bottom-style: dashed;
+  justify-content: center;
+  align-items: center;
+}
+
+.year_half_web {
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+  justify-content: center;
+  align-items: center;
+}
+
+.year_half_phone {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon_half_web {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+}
+
+.icon_half_phone {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+.icon_web {
+  height: 100px;
+}
+
+.icon_phone {
+  height: 50px;
+}
+
+.year_half_text_web {
+  position: relative;
+  font-size: 24px;
+  text-align: center;
+  transform: rotate(90deg);
+}
+
+.year_half_text_phone {
+  position: relative;
+  font-size: 18px;
+  text-align: center;
+}
+
+.ticket-contents {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  content: "";
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  padding-left: 10px;
+  height: 300px;
+  width: 100%;
+  position: relative;
+}
+
+.ticket-contents::before {
+  content: "";
+  background-image: url("https://stillmed.olympics.com/media/Images/OlympicOrg/IOC/The_Organisation/The-Olympic-Rings/Olympic_rings_TM_c_IOC_All_rights_reserved_1.jpg");
+  background-repeat: no-repeat;
+  position: absolute;
+  background-position: center center;
+  background-size: cover;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 20%;
+}
+
+.admission{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.admission-type {
+  position: relative;
+  font-size: 24px;
+  width: 50%;
+  text-align: center;
+  padding-bottom: 20px;
+  padding-top: 10px;
+}
+
+.seat {
+  position: relative;
+  font-size: 24px;
+  width: 50%;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.event {
+  text-transform: uppercase;
+  font-size: 48px;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+.location {
+  position: relative;
+  padding: 5px;
+}
+
+.date {
+  position: relative;
+  padding: 5px;
+}
+
+.time {
+  position: relative;
+  padding: 5px;
+}
+
+.qr_code_web {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-left-style: dashed;
+  justify-content: center;
+  align-items: center;
+}
+
+.qr_code_phone {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  border-top-style: dashed;
+  justify-content: center;
+  align-items: center;
+}
+
+.barcode_web {
+  width: 175px;
+}
+
+.barcode_phone {
+  height: auto;
+  width: 150px;
+}

@@ -14,28 +14,28 @@
 </div>
 
 <mat-grid-list cols="{{ getCols() }}" rowHeight="1:1">
-  <mat-grid-tile *ngFor="let event of selectedSport.events">
-    <div class="card selectable">
+  <mat-grid-tile *ngFor="let event of events">
+    <div class="card selectable" (click)="openEventDetails(event)">
       <div class="horizontal-align">
         <div class="vertical-align title">
           <div class="left">
             {{ event.name }}
           </div>
           <div class="sub left">
-            {{ event.gender }}
+            {{ getGender(event) }}
           </div>
         </div>
         <div class="title right">
           <div class="right">
-            {{ event.date.toLocaleDateString() }}
+            {{ getStartDate(event) }}
           </div>
           <div class="sub right">
-            {{ event.time }} - {{ event.venue }}
+            {{ getStartTime(event) }} - {{ event.venue.name }}
           </div>
         </div>
       </div>
       <div class="image-container" [ngClass]="{'image-container_phone': responsive.isPhone()}">
-        <img src="{{event.image}}">
+        <img src="{{event.imageURL}}">
       </div>
     </div>
   </mat-grid-tile>

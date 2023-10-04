@@ -2,6 +2,7 @@
   <div class="card selectable" [ngClass]="{'selectable_phone card_phone': responsive.isPhone()}"
        *ngFor="let ticket of tickets" (click)="openTicketDetails(ticket.ticketId)">
     <div class="image" [ngClass]="{image_phone: responsive.isPhone()}">
+      <img src="{{ 'assets/icons/' + ticket.icon + '.png'}}" >
     </div>
     <div class="details" [ngClass]="{details_phone: responsive.isPhone()}">
       <div class="event" [ngClass]="{event_phone: responsive.isPhone()}">
