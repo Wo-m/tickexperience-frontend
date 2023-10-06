@@ -12,9 +12,11 @@ import {Venue} from "../../../core/model/venue-details.model";
 })
 export class VenueComponent implements OnInit {
 
-  // place_holder_image: string = "assets/icons/swimming.png"
   venueId: number;
   venueDetails: Venue;
+
+  imageUrls: string[];
+  currentImageIndex: number = 0;
 
   constructor(private venueService: VenueService,
               public dialog: MatDialog,
@@ -24,9 +26,15 @@ export class VenueComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.venueId = params['venueId'];
 
+      // get venue details
       this.venueService.getVenue(this.venueId).subscribe(data => {
         this.venueDetails = data;
       });
+
+      // get venue images
+      this.venueService.getVenueImages(this.venueId).subscribe(data => {
+        this.imageUrls = data;
+      })
     })
   }
 
@@ -39,4 +47,13 @@ export class VenueComponent implements OnInit {
       }
     });
   }
+
+  getCurrentImageURL(): string {
+    return this.imageUrls[this.currentImageIndex];
+  }
+
+  scroll(direction: number): void {
+    this.currentImageIndex = (this.currentImageIndex + direction) % this.imageUrls.length;
+  }
+
 }

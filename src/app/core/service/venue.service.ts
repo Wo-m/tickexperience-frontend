@@ -15,6 +15,10 @@ export class VenueService {
     return this.http.get<Venue>(this.base_url + `/${venueId}`);
   }
 
+  getVenueImages (venueId: number) {
+    return this.http.get<string[]>(this.base_url + `/images/${venueId}`)
+  }
+
   getMapIframeLink(location: string) {
     const encodedLocation = encodeURIComponent(location);
     return `${environment.googleMapsBaseUrl}?q=${encodedLocation}&key=${environment.googleMapsApiKey}`

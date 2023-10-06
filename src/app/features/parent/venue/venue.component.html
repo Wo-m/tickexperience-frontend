@@ -1,16 +1,21 @@
 <div class="venue-container" *ngIf="venueDetails">
   <div class="venue-info">
     <h2>Venue Information</h2>
-    <p>Name: {{ venueDetails.name }}</p> <!-- Replace 'Suncorp Stadium' with 'venueDetails.name' -->
-    <p>Capacity: {{ venueDetails.capacity}}</p> <!-- Replace 'Milton, Brisbane' with 'venueDetails.location' -->
-    <p>Location: {{ venueDetails.location }}</p> <!-- Replace 'Milton, Brisbane' with 'venueDetails.location' -->
+    <p>Name: {{ venueDetails.name }}</p>
+    <p>Capacity: {{ venueDetails.capacity}}</p>
+    <p>Location: {{ venueDetails.location }}</p>
     <div class="venue-directions">
       <button mat-raised-button (click)="openMapsPopup()">Get Directions</button>
     </div>
   </div>
 
-  <div class="venue-image">
-    <img [src]="venueDetails.imageUrl" alt="Venue Image">
-<!--    <img src="https://www.austadiums.com/stadiums/photos/suncorp-stadium-2.jpg" alt="Venue Image">-->
+  <div class="image-gallery">
+    <div class="gallery-container">
+      <div class="arrow left-arrow" (click)="scroll(-1)">&lt;</div>
+      <div class="image-frame">
+        <img [src]="getCurrentImageURL()" alt="Image" />
+      </div>
+      <div class="arrow right-arrow" (click)="scroll(1)">&gt;</div>
+    </div>
   </div>
 </div>
