@@ -12,13 +12,15 @@
     <mat-drawer #drawer mode="over" position="end">
       <!-- Side Menu Bar   -->
       <div class="menu">
-        <button *ngIf="!isAuthenticated()" [routerLink]="['/log-in', 'false']">Log In</button>
-        <button *ngIf="!isAuthenticated()" [routerLink]="'/register'"> Register </button>
-        <button *ngIf="isAuthenticated()" (click)="logout()">Log Out</button>
-        <div *ngIf="isAuthenticated()">
+        <div class="menu-sub" *ngIf="!isAuthenticated()">
+          <button [routerLink]="['/log-in', 'false']">Log In</button>
+          <button [routerLink]="'/register'"> Register </button>
+        </div>
+        <div class="menu-sub" *ngIf="isAuthenticated()">
           <button (click)="routeTo(PageEnum.LANDING)">Home</button>
           <button (click)="routeTo(PageEnum.MY_TICKETS)">My Tickets</button>
           <button (click)="routeTo(PageEnum.MY_ACCOUNT)">My Account</button>
+          <button (click)="logout()">Log Out</button>
         </div>
       </div>
     </mat-drawer>
