@@ -32,12 +32,11 @@ export class LandingComponent implements OnInit{
       allSport.icon = "all";
       this.sports.unshift(allSport)
       this.selectSport(this.sports[0]);
-
-      this.events = [];
     })
   }
 
   selectSport(selectedSport: any) {
+    this.events = [];
     if (selectedSport.id == 0) { // all sports
       for (const sport of this.sports) {
         if (sport.id == 0)
