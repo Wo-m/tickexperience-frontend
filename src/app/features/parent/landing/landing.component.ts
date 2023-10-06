@@ -25,13 +25,14 @@ export class LandingComponent implements OnInit{
     this.sportService.getAllSports().subscribe((data: Sport[]) => {
       this.sports = data;
 
+      // 'all sports' option
       const allSport = new Sport();
       allSport.id = 0;
       allSport.name = "all";
       allSport.icon = "all";
-
       this.sports.unshift(allSport)
       this.selectSport(this.sports[0]);
+
       this.events = [];
     })
   }
