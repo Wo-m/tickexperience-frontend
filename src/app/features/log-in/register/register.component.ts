@@ -25,6 +25,7 @@ export class RegisterComponent implements OnInit {
   registerForm = new FormGroup({
     username: new FormControl('', Validators.required),
     name: new FormControl('', Validators.required),
+    email: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required),
     confirmPassword: new FormControl('', [Validators.required, this.validatePasswordMatch]),
   })
@@ -38,7 +39,10 @@ export class RegisterComponent implements OnInit {
   }
 
   register() {
-    this.authService.register(this.registerForm.value.username!, this.registerForm.value.name!, this.registerForm.value.password!).subscribe({
+    this.authService.register(this.registerForm.value.username!,
+      this.registerForm.value.name!,
+      this.registerForm.value.email!,
+      this.registerForm.value.password!).subscribe({
       next: () => {
         this.router.navigate(['/log-in', 'false'])
       },
