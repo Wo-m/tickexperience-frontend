@@ -29,7 +29,7 @@
   padding: 10px;
   font-size: 30px;
   color: colours.$green;
-  background-color: lightgrey;
+  background-color: white;
 }
 
 .countdown-elements {
@@ -38,7 +38,8 @@
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  padding: 3px;
+  padding: 10px;
+  background:linear-gradient(135deg, colours.$honeydew 25%, colours.$yellow 70%);
 }
 
 .countdown-element {
@@ -48,7 +49,10 @@
   align-items: center;
   margin: 1%;
   padding:10px;
-  background:linear-gradient(135deg, colours.$honeydew 55%, colours.$yellow 70%);
+}
+
+.countdown-until {
+  padding-top: 15px;
 }
 
 .ticket_container_phone {
@@ -220,8 +224,8 @@
   font-size: 24px;
   width: 50%;
   text-align: center;
-  padding-bottom: 20px;
-  padding-top: 10px;
+  //padding-bottom: 20px;
+  padding-top: 20px;
 }
 
 .seat {
@@ -229,7 +233,8 @@
   font-size: 24px;
   width: 50%;
   text-align: center;
-  padding-bottom: 20px;
+  //padding-bottom: 20px;
+  padding-top: 20px;
 }
 
 .event {
@@ -248,7 +253,7 @@
 
 .date {
   position: relative;
-  padding: 5px;
+  padding-bottom: 20px;
 }
 
 .time {

@@ -13,7 +13,11 @@
         </div>
         <div class="formInput">
           <label>Password</label>
-          <input type="text" formControlName="password">
+          <input
+            type="password"
+            formControlName="password"
+            (input)="maskPassword($event)"
+          >
         </div>
         <button type="submit" [disabled]="!loginForm.valid">Login</button>
       </form>

@@ -17,11 +17,19 @@
       </div>
       <div class="formInput">
         <label>Password</label>
-        <input type="text" formControlName="password">
+        <input
+          type="password"
+          formControlName="password"
+          (input)="maskPassword($event)"
+        >
       </div>
       <div class="formInput">
         <label>Confirm Password</label>
-        <input type="text" formControlName="confirmPassword">
+        <input
+          type="password"
+          formControlName="confirmPassword"
+          (input)="maskPassword($event)"
+        >
       </div>
       <button type="submit" [disabled]="!registerForm.valid">Register</button>
     </form>

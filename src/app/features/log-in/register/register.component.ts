@@ -52,5 +52,12 @@ export class RegisterComponent implements OnInit {
     })
   }
 
+  maskPassword(event: Event) {
+    const passwordInput = event.target as HTMLInputElement;
+    const inputValue = passwordInput.value;
+    const asteriskValue = '*'.repeat(inputValue.length);
+    passwordInput.value = asteriskValue;
+  }
+
 
 }
