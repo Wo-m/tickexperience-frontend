@@ -24,7 +24,6 @@ export class ParentComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-
   }
 
   ngOnInit() {

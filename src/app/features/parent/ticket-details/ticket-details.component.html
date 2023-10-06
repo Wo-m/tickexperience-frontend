@@ -15,8 +15,19 @@
       <div class = "countdown-element">
         {{ this.countdownTime.at(2) }} days
       </div>
+      <div class = "countdown-element">
+        {{ this.countdownTime.at(3) }} hours
+      </div>
+      <div class = "countdown-element">
+        {{ this.countdownTime.at(4) }} minutes
+      </div>
+      <div class = "countdown-element">
+        {{ this.countdownTime.at(5) }} seconds
+      </div>
     </div>
-    ...until your event!
+    <div class = "countdown-until">
+      until your event!
+    </div>
   </div>
   <div [ngClass]="{ticket_container_phone: responsive.isPhone(), ticket_container_web: !responsive.isPhone()}">
     <div [ngClass]="{ticket_phone: responsive.isPhone(), ticket_web: !responsive.isPhone()}">
@@ -47,15 +58,13 @@
           {{ this.ticket.eventName}}
         </div>
         <div class = "location">
-          {{ this.ticket.venueName}}
+          <a [routerLink]="['/venue', this.ticket.venueId]">{{ this.ticket.venueName }}</a>
         </div>
         <div class = "time">
           {{ getTicketDayAndTime(this.ticket) }}
-<!--          {{ this.ticket.eventDateTime.toLocaleTimeString()}}-->
         </div>
         <div class = "date">
           {{ getTicketDate(this.ticket) }}
-<!--          {{ this.ticket.eventDateTime.getDate()}}/{{ this.ticket.eventDateTime.getMonth() + 1}}/{{ this.ticket.eventDateTime.getFullYear()}}-->
         </div>
       </div>
 
