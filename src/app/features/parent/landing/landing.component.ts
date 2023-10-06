@@ -24,14 +24,35 @@ export class LandingComponent implements OnInit{
   ngOnInit(): void {
     this.sportService.getAllSports().subscribe((data: Sport[]) => {
       this.sports = data;
+
+      const allSport = new Sport();
+      allSport.id = 0;
+      allSport.name = "all";
+      allSport.icon = "all";
+
+      this.sports.unshift(allSport)
       this.selectSport(this.sports[0]);
+      this.events = [];
     })
   }
 
-  selectSport(sport: any) {
-    this.sportService.getEvents(sport.id).subscribe((data: Event[]) => {
-      this.events = data;
-    });
+  selectSport(selectedSport: any) {
+    if (selectedSport.id == 0) { // all sports
+      for (const sport of this.sports) {
+        if (sport.id == 0)
+          continue
+
+        this.sportService.getEvents(sport.id).subscribe((data: Event[]) => {
+          data.forEach(event => {
+            this.events.push(event);
+          });
+        });
+      }
+    } else { // specific sport
+      this.sportService.getEvents(selectedSport.id).subscribe((data: Event[]) => {
+        this.events = data;
+      });
+    }
   }
 
   openEventDetails(event: Event) {
