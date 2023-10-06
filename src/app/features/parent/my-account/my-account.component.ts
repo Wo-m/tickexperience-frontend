@@ -9,21 +9,13 @@ import {MyAccountDetails} from "../../../core/model/my-account.model";
 })
 export class MyAccountComponent implements OnInit{
 
-  myAccountDetails: MyAccountDetails = {
-    name: 'John Doe',
-    username: 'johndoe123',
-    password: '********', // You can replace this with a real hashed password if needed
-    email: 'johndoe@example.com',
-    mobile: '+61462535294',
-  };
+  myAccountDetails: MyAccountDetails;
 
   constructor(private userService: UserService) {}
 
   ngOnInit() {
-    // TODO: backend setup
-    // Fetch user data when the component initializes
-    // this.userService.getMyAccountDetails().subscribe((userData) => {
-    //   this.myAccountDetails = userData;
-    // });
+    this.userService.getMyAccountDetails().subscribe((userData) => {
+      this.myAccountDetails = userData;
+    });
   }
 }
