@@ -25,7 +25,7 @@ export class BuyTicketsComponent implements OnInit {
 
     imageSelector: number;
 
-    pathIds: string[] = ['top', 'bottom', 'left', 'right'];
+    pathIds: string[] = ['top', 'right', 'bottom', 'left'];
 
     pathToLocation: Map<string, number> = new Map(
         [['top', 1], ['right', 2], ['bottom', 3], ['left', 4]]);
@@ -50,12 +50,17 @@ export class BuyTicketsComponent implements OnInit {
             this.eventService.getSections(this.eventId).subscribe(data => {
                 // assuming this data is ordered with section locations ascending
                 this.imageURLs = data.map((section: Section) => section.imageURL);
-                this.selectSection('top');
-
+                this.selectSection(this.pathToLocation.get("top")!);
             });
 
         });
 
+    }
+
+    updateVRImage(elementId: number) {
+      if (elementId != undefined) {
+        this.imageSelector = elementId;
+      }
     }
 
     buyTicket() {
@@ -64,7 +69,7 @@ export class BuyTicketsComponent implements OnInit {
         });
     }
 
-    selectSection(elementId: string) {
+    selectSection(elementId: number) {
         // Deselect other sections
         this.pathIds.forEach(id => {
             let element = document.getElementById(id);
@@ -73,16 +78,12 @@ export class BuyTicketsComponent implements OnInit {
             }
         })
         // Select this section
-        let element = document.getElementById(elementId);
+        let element = document.getElementById(this.pathIds[elementId - 1]);
         console.log(element)
         if (element) {
             element.classList.add('selected');
         }
 
-        // Update VR Image
-        const index = this.pathToLocation.get(elementId);
-        if (index != undefined) {
-            this.imageSelector = index;
-        }
+        this.updateVRImage(elementId);
     }
 }

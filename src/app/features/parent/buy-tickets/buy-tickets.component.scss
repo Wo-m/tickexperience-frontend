@@ -57,23 +57,23 @@
   stroke-linejoin: round;
   stroke-dashoffset: 250;
 
-  -webkit-transition: all 1.5s ease-out;
-  -moz-transition: all 1.5s ease-out;
-  -ms-transition: all 1.5s ease-out;
-  -o-transition: all 1.5s ease-out;
-  transition: all 1.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
 }
 
 .path:hover {
   stroke-dasharray: 250;
   stroke-dashoffset: 0;
-  fill: rgba(colours.$yellow, .4);
   cursor: pointer;
+  //fill: rgba(colours.$yellow, .4);
 }
 
 .selected {
   fill: rgba(colours.$yellow, .4);
-  stroke-dasharray: 250;
+  stroke-dasharray: 400;
   stroke-dashoffset: 0;
 }
 
