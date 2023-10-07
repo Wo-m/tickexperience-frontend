@@ -4,7 +4,7 @@
       <mat-label>Select a Section</mat-label>
       <mat-select [(ngModel)]="selectedTicket">
         <mat-option>None</mat-option>
-        <mat-option *ngFor="let ticket of tickets" [value]="ticket" (click)="selectSection(ticket.section.location)">
+        <mat-option *ngFor="let ticket of tickets" [value]="ticket" (click)="selectSection(pathIds[ticket.section.location - 1])">
           {{ticket.section.location}}
         </mat-option>
       </mat-select>
@@ -18,32 +18,18 @@
     </div>
     <h3> Select a Section</h3>
     <div class="seat-select">
-<!--      <svg viewBox="0 -5 100 80">-->
-<!--        <polygon  class="section" points="0,-1 100,-1 85,14  15,14"/>-->
-<!--        <path (click)="selectSection(pathToLocation.get('top')!)" id="top" class="path" d="M 0 -1 L 100 -1 L 85 14 L 15 14 L 0 -1 L 5 -1"/>-->
-
-<!--        <polygon class="section" points="0,67 15,52 85,52  100,67"/>-->
-<!--        <path (click)="selectSection(pathToLocation.get('bottom')!)" id="bottom" class="path" d="M 0 67 L 15 52 L 85 52 L 100 67 L 0 67 L 15 52" />-->
-
-<!--        <polygon class="section" points="-1,0 -1,66 14,51  14,15"/>-->
-<!--        <path (click)="selectSection(pathToLocation.get('left')!)" id="left" class="path" d="M -1 0 L -1 66 L 14 51 L 14 15 L -1 0 -1 5" />-->
-
-<!--        <polygon class="section" points="101,0 101,66 86,51  86,15"/>-->
-<!--        <path (click)="selectSection(pathToLocation.get('right')!)" id="right" class="path" d="M 101 0 L 101 66 L 86 51 L 86 15 L 101, 0 L 101 5" />-->
-
-<!--      </svg>-->
       <svg viewBox="0 -5 100 80">
         <polygon class="section" points="0,-1 100,-1 85,14  15,14"/>
-        <path (click)="selectSection(pathToLocation.get('top')!)" id="top" class="path" d="M 0 -1 L 100 -1 L 85 14 L 15 14 L 0 -1 L 5 -1"/>
+        <path (click)="selectSection('top')" id="top" class="path" d="M 0 -1 L 100 -1 L 85 14 L 15 14 L 0 -1 L 5 -1"/>
 
         <polygon class="section" points="0,67 15,52 85,52  100,67"/>
-        <path (click)="selectSection(pathToLocation.get('bottom')!)" id="bottom" class="path" d="M 0 67 L 15 52 L 85 52 L 100 67 L 0 67 L 15 52" />
+        <path (click)="selectSection('bottom')" id="bottom" class="path" d="M 0 67 L 15 52 L 85 52 L 100 67 L 0 67 L 15 52" />
 
         <polygon class="section" points="-1,0 -1,66 14,51  14,15"/>
-        <path (click)="selectSection(pathToLocation.get('left')!)" id="left" class="path" d="M -1 0 L -1 66 L 14 51 L 14 15 L -1 0 -1 5" />
+        <path (click)="selectSection('left')" id="left" class="path" d="M -1 0 L -1 66 L 14 51 L 14 15 L -1 0 -1 5" />
 
         <polygon class="section" points="101,0 101,66 86,51  86,15"/>
-        <path (click)="selectSection(pathToLocation.get('right')!)" id="right" class="path" d="M 101 0 L 101 66 L 86 51 L 86 15 L 101, 0 L 101 5" />
+        <path (click)="selectSection('right')" id="right" class="path" d="M 101 0 L 101 66 L 86 51 L 86 15 L 101, 0 L 101 5" />
       </svg>
     </div>
   </div>

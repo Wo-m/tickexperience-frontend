@@ -50,17 +50,9 @@ export class BuyTicketsComponent implements OnInit {
             this.eventService.getSections(this.eventId).subscribe(data => {
                 // assuming this data is ordered with section locations ascending
                 this.imageURLs = data.map((section: Section) => section.imageURL);
-                this.selectSection(this.pathToLocation.get("top")!);
+                this.selectSection("top");
             });
-
         });
-
-    }
-
-    updateVRImage(elementId: number) {
-      if (elementId != undefined) {
-        this.imageSelector = elementId;
-      }
     }
 
     buyTicket() {
@@ -69,21 +61,25 @@ export class BuyTicketsComponent implements OnInit {
         });
     }
 
-    selectSection(elementId: number) {
-        // Deselect other sections
-        this.pathIds.forEach(id => {
-            let element = document.getElementById(id);
-            if (element) {
-                element.classList.remove('selected');
-            }
-        })
-        // Select this section
-        let element = document.getElementById(this.pathIds[elementId - 1]);
-        console.log(element)
-        if (element) {
-            element.classList.add('selected');
-        }
-
-        this.updateVRImage(elementId);
+  selectSection(elementId: string) {
+    // Deselect other sections
+    this.pathIds.forEach(id => {
+      let element = document.getElementById(id);
+      if (element) {
+        element.classList.remove('selected');
+      }
+    })
+    // Select this section
+    let element = document.getElementById(elementId);
+    console.log(element)
+    if (element) {
+      element.classList.add('selected');
     }
+
+    // Update VR Image
+    const index = this.pathToLocation.get(elementId);
+    if (index != undefined) {
+      this.imageSelector = index;
+    }
+  }
 }
