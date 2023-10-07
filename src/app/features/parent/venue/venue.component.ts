@@ -48,9 +48,6 @@ export class VenueComponent implements OnInit {
     });
   }
 
-  // scroll(direction: number): void {
-  //   this.currentIndex = (this.currentIndex + direction) % this.imageUrls.length;
-  // }
   scroll(direction: number): void {
     this.currentIndex += direction;
 
