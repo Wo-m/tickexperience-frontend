@@ -17,14 +17,6 @@
   margin-bottom: 20px;
 }
 
-/* Style the venue image section in the center */
-.venue-image {
-  /* Limit the maximum width of the image and set a maximum height */
-  max-width: 100%; /* Adjust this value as needed */
-  max-height: 400px; /* Adjust this value as needed */
-  margin-bottom: 20px;
-}
-
 /* Style the directions link section on the top right */
 .venue-directions {
   align-self: flex-end;
@@ -45,13 +37,33 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 300px;
+  width: 700px;
+  height: 400px;
 }
 
 .gallery-container {
   position: relative;
+  width: 100%; /* Set the container width */
+  height: 100%; /* Set the container height */
+}
+
+.image-slide {
   display: flex;
-  align-items: center;
+  transition: transform 0.5s ease-in-out; /* Smooth transition effect */
+}
+
+.image-frame {
+  height: 100%; /* Set the frame height */
+  width: 100%; /* Set the frame width */
+  overflow: hidden;
+  position: relative;
+}
+
+img {
+  height: 100%; /* Set the image height to fill the frame */
+  width: 100%; /* Set the image width to fill the frame */
+  object-fit: cover; /* Maintain aspect ratio and cover the entire frame */
+  transition: transform 0.5s;
 }
 
 .arrow {
@@ -69,6 +81,7 @@
   align-items: center;
   border-radius: 50%;
   transition: background-color 0.3s;
+  z-index: 2;
 }
 
 .arrow:hover {
@@ -83,15 +96,4 @@
   right: 0;
 }
 
-.image-frame {
-  width: 100%;
-  max-width: 400px;
-  overflow: hidden;
-  position: relative;
-}
 
-img {
-  width: 100%;
-  height: auto;
-  transition: transform 0.3s;
-}

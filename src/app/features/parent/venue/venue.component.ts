@@ -16,7 +16,7 @@ export class VenueComponent implements OnInit {
   venueDetails: Venue;
 
   imageUrls: string[];
-  currentImageIndex: number = 0;
+  currentIndex: number = 0;
 
   constructor(private venueService: VenueService,
               public dialog: MatDialog,
@@ -48,12 +48,18 @@ export class VenueComponent implements OnInit {
     });
   }
 
-  getCurrentImageURL(): string {
-    return this.imageUrls[this.currentImageIndex];
-  }
-
+  // scroll(direction: number): void {
+  //   this.currentIndex = (this.currentIndex + direction) % this.imageUrls.length;
+  // }
   scroll(direction: number): void {
-    this.currentImageIndex = (this.currentImageIndex + direction) % this.imageUrls.length;
+    this.currentIndex += direction;
+
+    // Wrap around when reaching the end or beginning of the gallery
+    if (this.currentIndex >= this.imageUrls.length) {
+      this.currentIndex = 0;
+    } else if (this.currentIndex < 0) {
+      this.currentIndex = this.imageUrls.length - 1;
+    }
   }
 
 }
