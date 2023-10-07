@@ -5,6 +5,7 @@ import { Sport } from '../../../core/model/sport.model';
 import { Event } from '../../../core/model/event.model';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { EventDetailsComponent } from '../event-details/event-details.component';
+import {forkJoin} from "rxjs";
 
 @Component({
   selector: 'app-landing',
@@ -37,20 +38,35 @@ export class LandingComponent implements OnInit{
 
   selectSport(selectedSport: any) {
     this.events = [];
-    if (selectedSport.id == 0) { // all sports
-      for (const sport of this.sports) {
-        if (sport.id == 0)
-          continue
 
-        this.sportService.getEvents(sport.id).subscribe((data: Event[]) => {
-          data.forEach(event => {
-            this.events.push(event);
-          });
-        });
-      }
+    const fetchEventsAndSort = (data: Event[]) => {
+      this.events = data;
+
+      // Sort dates chronologically
+      this.events.sort((a, b) => {
+        if (a.startTime < b.startTime) {
+          return -1;
+        } else if (a.startTime > b.startTime) {
+          return 1;
+        } else {
+          return 0;
+        }
+      });
+    };
+
+    if (selectedSport.id == 0) { // all sports
+      const observables = this.sports
+        .filter(sport => sport.id !== 0)
+        .map(sport => this.sportService.getEvents(sport.id));
+
+      // wait for all to arrive before we process
+      forkJoin(observables).subscribe((results: Event[][]) => {
+        const allEvents = results.reduce((acc, curr) => acc.concat(curr), []);
+        fetchEventsAndSort(allEvents);
+      });
     } else { // specific sport
       this.sportService.getEvents(selectedSport.id).subscribe((data: Event[]) => {
-        this.events = data;
+        fetchEventsAndSort(data);
       });
     }
   }
