@@ -1,15 +1,22 @@
 <div class="venue-container" *ngIf="venueDetails">
   <div class="venue-info">
     <h2>Venue Information</h2>
-    <p>Name: {{ venueDetails.name }}</p> <!-- Replace 'Suncorp Stadium' with 'venueDetails.name' -->
-    <p>Capacity: {{ venueDetails.capacity}}</p> <!-- Replace 'Milton, Brisbane' with 'venueDetails.location' -->
-    <p>Location: {{ venueDetails.location }}</p> <!-- Replace 'Milton, Brisbane' with 'venueDetails.location' -->
+    <p>Name: {{ venueDetails.name }}</p>
+    <p>Capacity: {{ venueDetails.capacity}}</p>
+    <p>Location: {{ venueDetails.location }}</p>
     <div class="venue-directions">
       <button mat-raised-button (click)="openMapsPopup()">Get Directions</button>
     </div>
   </div>
-
-  <div class="venue-image">
-    <img [src]="venueDetails.imageUrl" alt="Venue Image">
+  <div class="image-gallery">
+    <div class="gallery-container">
+      <div class="arrow left-arrow" (click)="scroll(-1)">&lt;</div>
+      <div class="image-frame">
+        <div class="image-slide" [style.transform]="'translateX(-' + currentIndex * 100 + '%)'">
+          <img *ngFor="let imageURL of imageUrls; let i = index" [src]="imageURL" [style.left]="i * 100 + '%'" alt="Image" />
+        </div>
+      </div>
+      <div class="arrow right-arrow" (click)="scroll(1)">&gt;</div>
+    </div>
   </div>
 </div>

@@ -4,7 +4,7 @@
   </div>
   <div id="sport" class="scroll-menu">
       <div class="nav-item selectable" *ngFor="let sport of sports" (click)="selectSport(sport)">
-        <img class="icon" src="{{ 'assets/icons/' + sport.icon + '.png'}}">
+        <img class="icon" src="{{ 'assets/icons/' + sport.icon + '.png'}}" alt="">
         <span>{{ sport.name }}</span>
       </div>
   </div>
