@@ -5,4 +5,5 @@ export class Event {
   startTime: Date;
   venue: {id: number, name: string}
   imageURL: string;
+  sport : {name: string}
 }

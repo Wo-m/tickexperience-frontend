@@ -5,7 +5,7 @@
       <mat-select [(ngModel)]="selectedTicket">
         <mat-option>None</mat-option>
         <mat-option *ngFor="let ticket of tickets" [value]="ticket" (click)="selectSection(pathIds[ticket.section.location - 1])">
-          {{ticket.section.location}}
+          {{ locationToPath.get(ticket.section.location) }}
         </mat-option>
       </mat-select>
     </mat-form-field>
@@ -19,18 +19,36 @@
     <h3> Select a Section</h3>
     <div class="seat-select">
       <svg viewBox="0 -5 100 80">
-        <polygon class="section" points="0,-1 100,-1 85,14  15,14"/>
+
+        <defs>
+          <linearGradient id="aus" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:rgb(255,213,0);stop-opacity:1" />
+            <stop offset="100%" style="stop-color:rgb(28,87,57);stop-opacity:1" />
+          </linearGradient>
+
+          <linearGradient id="china" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+            <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+          </linearGradient>
+        </defs>
+
+        <polygon class="section" points="0,-1 100,-1 85,14  15,14" fill="url(#aus)" *ngIf="is_supporters_map"/>
+        <polygon class="section" points="0,-1 100,-1 85,14  15,14" fill="rgb(223, 237, 220)" *ngIf="!is_supporters_map"/>
         <path (click)="selectSection('top')" id="top" class="path" d="M 0 -1 L 100 -1 L 85 14 L 15 14 L 0 -1 L 5 -1"/>
+        <text x="50" y="10" text-anchor="middle" fill="white" font-size="10">Aus</text>
 
-        <polygon class="section" points="0,67 15,52 85,52  100,67"/>
+        <polygon class="section" points="0,67 15,52 85,52  100,67" fill="url(#china)" *ngIf="is_supporters_map"/>
+        <polygon class="section" points="0,67 15,52 85,52  100,67" fill="rgb(223, 237, 220)" *ngIf="!is_supporters_map"/>
         <path (click)="selectSection('bottom')" id="bottom" class="path" d="M 0 67 L 15 52 L 85 52 L 100 67 L 0 67 L 15 52" />
+        <text x="50" y="63" text-anchor="middle" fill="white" font-size="10">China</text>
 
-        <polygon class="section" points="-1,0 -1,66 14,51  14,15"/>
+        <polygon class="section" points="-1,0 -1,66 14,51  14,15" fill="rgb(223, 237, 220)"/>
         <path (click)="selectSection('left')" id="left" class="path" d="M -1 0 L -1 66 L 14 51 L 14 15 L -1 0 -1 5" />
 
-        <polygon class="section" points="101,0 101,66 86,51  86,15"/>
+        <polygon class="section" points="101,0 101,66 86,51  86,15" fill="rgb(223, 237, 220)"/>
         <path (click)="selectSection('right')" id="right" class="path" d="M 101 0 L 101 66 L 86 51 L 86 15 L 101, 0 L 101 5" />
       </svg>
     </div>
   </div>
+
 </div>
