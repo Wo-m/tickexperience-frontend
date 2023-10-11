@@ -1,0 +1,10 @@
+
+<a-scene embedded *ngIf="imageURLs">
+  <a-assets>
+    <img id="1" src="{{imageURLs[0]}}" crossorigin="anonymous">
+    <img id="2" src="{{imageURLs[1]}}" crossorigin="anonymous" *ngIf="imageURLs.length > 1">
+    <img id="3" src="{{imageURLs[2]}}" crossorigin="anonymous" *ngIf="imageURLs.length > 2">
+    <img id="4" src="{{imageURLs[3]}}" crossorigin="anonymous" *ngIf="imageURLs.length > 3">
+  </a-assets>
+  <a-sky id="image-360" radius="30" src="#1"></a-sky>
+</a-scene>

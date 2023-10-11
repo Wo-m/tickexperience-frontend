@@ -56,7 +56,13 @@
               "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
-              "namedChunks": true
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.development.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -95,7 +101,13 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              {
+                "input": "node_modules/aframe/dist/aframe-v1.4.0.min.js",
+                "inject": true,
+                "bundleName": "aframe.min"
+              }
+            ]
           }
         }
       }

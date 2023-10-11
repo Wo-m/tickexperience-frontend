@@ -1,3 +1,5 @@
+@use "../../../assets/styles/colours";
+
 .root-container {
   display: flex;
   flex-direction: column;
@@ -20,12 +22,40 @@ mat-drawer-container {
 }
 
 .menu {
-  background:#0F2E1E;
+  background: linear-gradient(135deg, colours.$yellow 30%, colours.$honeydew 70%);
   height: 100%;
-  width: 200px;
-  padding: 20%;
+  width: 300px;
+
+}
+
+.menu-sub {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  text-size-adjust: auto;
+  padding: 0;
+  margin: 0;
+}
+
+.menu button {
+  width: 100%; /* Make buttons span the entire width of the menu */
+  background-color: initial; /* Reset the background color */
+  border: none; /* Remove button borders if any */
+  padding: 10px; /* Add padding for better button appearance */
+  cursor: pointer;
+  transition: background-color 0.3s; /* Smooth transition for background-color */
+  border-radius: 0;
+  font-size: large;
+}
+
+.menu button:hover {
+  background-color: rgba(colours.$honeydew, 0.5);
+}
+
+.icon {
+  height: 35px;
+  padding: 10px 15px 10px 10px;
+  cursor: pointer;
 }
 
 footer {

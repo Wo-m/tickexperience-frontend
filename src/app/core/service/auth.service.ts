@@ -40,10 +40,11 @@ export class AuthService {
     this.http.post(this.base_url + `logout/${token}`, null ).subscribe();
   }
 
-  register(username: string, name: string, password: string) {
+  register(username: string, name: string, email: string, password: string) {
     let body : Register = {
       username: username,
       name: name,
+      email: email,
       password: password
     }
 

@@ -1,36 +1,41 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { AuthUtils } from '../../core/Utils/auth.utils';
 import { AuthService } from '../../core/service/auth.service';
 import { PageEnum } from '../../core/constant/page.enum';
+import { ActivatedRoute, Router } from '@angular/router';
+import { MatDrawer } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-parent',
   templateUrl: './parent.component.html',
   styleUrls: ['./parent.component.scss']
 })
-export class ParentComponent implements OnInit{
+export class ParentComponent implements OnInit, AfterViewInit {
 
   protected readonly PageEnum = PageEnum;
-  page: PageEnum;
 
-  constructor(private authService: AuthService) {
+  @ViewChild('drawer')
+  drawer: MatDrawer;
 
+  constructor(private authService: AuthService,
+              private router: Router,
+              private route: ActivatedRoute) {
+
+  }
+
+  ngAfterViewInit(): void {
   }
 
   ngOnInit() {
-    this.page = PageEnum.LANDING;
   }
 
-  checkPage(page: PageEnum) {
-    return page === this.page;
-  }
-
-  selectPage(page: PageEnum) {
-    this.page = page;
+  routeTo(page: PageEnum) {
+    this.drawer.close();
+    this.router.navigate([`${page}`], {relativeTo: this.route});
   }
 
   isAuthenticated() {
-    return AuthUtils.isAuthenticated()
+    return AuthUtils.isAuthenticated();
   }
 
   logout() {

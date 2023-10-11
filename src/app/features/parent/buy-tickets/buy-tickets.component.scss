@@ -1,0 +1,108 @@
+@use "../../../../assets/styles/colours";
+
+.container {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+}
+
+.container-phone {
+  flex-direction: column;
+}
+
+.vr-image {
+  height: 100%;
+  width: 100%;
+}
+
+.ticket-select {
+  display: flex;
+  flex-direction: column;
+  padding: 1%;
+}
+
+.view-seat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
+  flex-wrap: inherit;
+  padding: 1%;
+}
+
+
+
+.seat-select {
+  height: 30%;
+  width: 100%;
+}
+
+.section {
+  stroke: colours.$green;
+  stroke-linejoin: round;
+  stroke-width: 1;
+}
+
+.path {
+  fill: transparent;
+  stroke: colours.$yellow;
+  stroke-width: 1;
+  stroke-dasharray: 250;
+  stroke-linejoin: round;
+  stroke-dashoffset: 250;
+
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.path:hover {
+  stroke-dasharray: 250;
+  stroke-dashoffset: 0;
+  cursor: pointer;
+  //fill: rgba(colours.$yellow, .4);
+}
+
+.selected {
+  fill: rgba(colours.$yellow, .4);
+  stroke-dasharray: 400;
+  stroke-dashoffset: 0;
+}
+
+
+
+#topPoly:hover {
+  z-index: 1;
+}
+
+
+
+
+svg {
+  height: 100%;
+  width: 100%;
+  pointer-events: all;
+  text {
+    pointer-events: none;
+  }
+}
+
+button {
+  margin-top: 30px;
+  width: 100%;
+  padding: 15px 0;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: colours.$green;
+  color: #ffffff;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  color: #666666;
+}

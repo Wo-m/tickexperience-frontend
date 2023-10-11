@@ -36,6 +36,10 @@ export class AppInterceptor implements HttpInterceptor {
         AuthUtils.removeToken();
         this.router.navigate(['/log-in', 'true'])
       }
+      if (err.status === 404) {
+        AuthUtils.removeToken();
+        this.router.navigate(['/log-in', 'true'])
+      }
       return throwError(err);
     }));
   }

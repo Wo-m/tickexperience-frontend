@@ -1,34 +1,29 @@
 <div class="root-container">
 
   <div class="banner">
-    <div class="right-align">
-      <button mat-button (click)="drawer.toggle()">
-        Toggle sidenav
-      </button>
+    <div class="right-align" (click)="drawer.toggle()">
+      <img class="icon" src="{{'assets/icons/menu_side_bar.png'}}" alt="">
     </div>
   </div>
 
   <mat-drawer-container >
-
     <mat-drawer #drawer mode="over" position="end">
       <!-- Side Menu Bar   -->
       <div class="menu">
-        <button *ngIf="!isAuthenticated()" [routerLink]="['/log-in', 'false']">Log In</button>
-        <button *ngIf="!isAuthenticated()" [routerLink]="'/register'"> Register </button>
-        <button *ngIf="isAuthenticated()" (click)="logout()">Log Out</button>
-        <div *ngIf="isAuthenticated()">
-          <button (click)="selectPage(PageEnum.LANDING)">Home</button>
-          <button (click)="selectPage(PageEnum.MY_TICKETS)">My Tickets</button>
-          <button (click)="selectPage(PageEnum.MY_ACCOUNT)">My Account</button>
+        <div class="menu-sub" *ngIf="!isAuthenticated()">
+          <button [routerLink]="['/log-in', 'false']">Log In</button>
+          <button [routerLink]="'/register'"> Register </button>
+        </div>
+        <div class="menu-sub" *ngIf="isAuthenticated()">
+          <button (click)="routeTo(PageEnum.LANDING)">Home</button>
+          <button (click)="routeTo(PageEnum.MY_TICKETS)">My Tickets</button>
+          <button (click)="routeTo(PageEnum.MY_ACCOUNT)">My Account</button>
+          <button (click)="logout()">Log Out</button>
         </div>
       </div>
     </mat-drawer>
 
-    <!--Injected Components-->
-
-    <app-landing *ngIf="checkPage(PageEnum.LANDING)"></app-landing>
-    <app-my-tickets *ngIf="checkPage(PageEnum.MY_TICKETS)"></app-my-tickets>
-    <app-my-account *ngIf="checkPage(PageEnum.MY_ACCOUNT)"></app-my-account>
+    <router-outlet></router-outlet>
   </mat-drawer-container>
 
 </div>

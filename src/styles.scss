@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-@use "assets/style/colours";
+@use "assets/styles/colours";
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 body {
   margin: 0;
@@ -33,4 +34,8 @@ form *{
 .left-align {
   width: fit-content;
   margin-right: auto;
+}
+
+.selectable {
+  cursor: pointer;
 }

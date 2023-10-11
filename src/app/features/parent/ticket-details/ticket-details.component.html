@@ -1,0 +1,77 @@
+<header class = "page-heading">
+  <button class ="nav-button" (click)="back()">
+    <mat-icon>keyboard_arrow_left</mat-icon>
+  </button>
+</header>
+<div *ngIf="ticket">
+  <div class = "countdown-container">
+    <div class = "countdown-elements">
+      <div class = "countdown-element">
+        {{ this.countdownTime.at(0) }} years
+      </div>
+      <div class = "countdown-element">
+        {{ this.countdownTime.at(1) }} months
+      </div>
+      <div class = "countdown-element">
+        {{ this.countdownTime.at(2) }} days
+      </div>
+      <div class = "countdown-element">
+        {{ this.countdownTime.at(3) }} hours
+      </div>
+      <div class = "countdown-element">
+        {{ this.countdownTime.at(4) }} minutes
+      </div>
+      <div class = "countdown-element">
+        {{ this.countdownTime.at(5) }} seconds
+      </div>
+    </div>
+    <div class = "countdown-until">
+      until your event!
+    </div>
+  </div>
+  <div [ngClass]="{ticket_container_phone: responsive.isPhone(), ticket_container_web: !responsive.isPhone()}">
+    <div [ngClass]="{ticket_phone: responsive.isPhone(), ticket_web: !responsive.isPhone()}">
+
+      <div [ngClass]="{summary_phone: responsive.isPhone(), summary_web: !responsive.isPhone()}">
+        <div [ngClass]="{icon_half_phone: responsive.isPhone(), icon_half_web: !responsive.isPhone()}">
+          <img [ngClass]="{icon_phone: responsive.isPhone(), icon_web: !responsive.isPhone()}"
+               src="{{'assets/icons/' + ticket.icon +'.png'}}" alt = "swimming icon">
+        </div>
+        <div [ngClass]="{year_half_phone: responsive.isPhone(), year_half_web: !responsive.isPhone()}">
+          <div [ngClass]="{year_half_text_phone: responsive.isPhone(), year_half_text_web: !responsive.isPhone()}">
+            Brisbane
+            <br>2032
+          </div>
+        </div>
+      </div>
+
+      <div class = "ticket-contents">
+        <div class = "admission">
+          <div class = "admission-type">
+            GEN-AD
+          </div>
+          <div class = "seat">
+            Seat: {{ this.ticket.seatNumber}}
+          </div>
+        </div>
+        <div class = "event">
+          {{ this.ticket.eventName}}
+        </div>
+        <div class = "location">
+          <a [routerLink]="['/venue', this.ticket.venueId]">{{ this.ticket.venueName }}</a>
+        </div>
+        <div class = "time">
+          {{ getTicketDayAndTime(this.ticket) }}
+        </div>
+        <div class = "date">
+          {{ getTicketDate(this.ticket) }}
+        </div>
+      </div>
+
+      <div [ngClass]="{qr_code_phone: responsive.isPhone(), qr_code_web: !responsive.isPhone()}">
+        <img class="barcode" src="{{ticket.qrCode}}" [ngClass]="{barcode_phone: responsive.isPhone(), barcode_web: !responsive.isPhone()}" alt="Ticket Barcode">
+      </div>
+
+    </div>
+  </div>
+</div>
