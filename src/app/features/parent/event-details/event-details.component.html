@@ -14,7 +14,6 @@
     <div>
       <a [routerLink]="['/venue', event.venue.id]" (click)="closeDialog()">{{ event.venue.name }}</a>
     </div>
-
     <div class="selectable" matTooltip="Please login the purchase a ticket" [matTooltipDisabled]="isAuthenticated()">
         <button [disabled]="!isAuthenticated()" (click)="buyTicket()">Buy Ticket</button>
     </div>

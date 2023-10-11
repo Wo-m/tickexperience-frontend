@@ -6,6 +6,7 @@ import { Event } from '../../../core/model/event.model';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { EventDetailsComponent } from '../event-details/event-details.component';
 import {forkJoin} from "rxjs";
+import {CacheConstants} from "../../../core/constant/cache.constant";
 
 @Component({
   selector: 'app-landing',
@@ -34,6 +35,9 @@ export class LandingComponent implements OnInit{
       this.sports.unshift(allSport)
       this.selectSport(this.sports[0]);
     })
+    if (sessionStorage.getItem(CacheConstants.currentEventDialog)) {
+      this.openEventDetails(Number(sessionStorage.getItem(CacheConstants.currentEventDialog)));
+    }
   }
 
   selectSport(selectedSport: any) {
@@ -71,7 +75,7 @@ export class LandingComponent implements OnInit{
     }
   }
 
-  openEventDetails(event: Event) {
+  openEventDetails(eventId: number) {
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.autoFocus = true;
@@ -80,7 +84,7 @@ export class LandingComponent implements OnInit{
     dialogConfig.viewContainerRef = undefined;
 
     let dialogRef = this.dialog.open(EventDetailsComponent, dialogConfig);
-    dialogRef.componentInstance.eventId = event.id;
+    dialogRef.componentInstance.eventId = eventId;
   }
 
   getStartDate(event: Event) {
