@@ -29,6 +29,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { VenueComponent } from './features/parent/venue/venue.component';
 import { GoogleMapComponent } from './features/parent/google-map/google-map.component';
 import { TicketDetailsComponent } from './features/parent/ticket-details/ticket-details.component';
+import { WelcomeComponent } from './features/parent/welcome/welcome.component';
 
 @NgModule({
     declarations: [
@@ -44,7 +45,8 @@ import { TicketDetailsComponent } from './features/parent/ticket-details/ticket-
         BuyTicketsComponent,
         VenueComponent,
         GoogleMapComponent,
-        TicketDetailsComponent
+        TicketDetailsComponent,
+        WelcomeComponent
     ],
   imports: [
     BrowserModule,
