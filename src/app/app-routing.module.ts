@@ -24,7 +24,7 @@ const routes: Routes = [
             {path: 'venue/:venueId', component: VenueComponent},
             {path: 'buy-ticket/:eventId', component: BuyTicketsComponent}
         ]},
-    {path: '**', redirectTo: '/home', pathMatch: 'full'}
+    {path: '**', redirectTo: '/welcome', pathMatch: 'full'}
 ];
 
 @NgModule({

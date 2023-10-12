@@ -1,25 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>GoldPass</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
-</head>
-<body>
-
 <!-- Links (sit on top) -->
 <div class="w3-top">
   <div class="w3-row w3-padding w3-black">
     <div class="w3-col s3">
-      <a href="#" class="w3-button w3-block w3-black">HOME</a>
+      <a href="/home" class="w3-button w3-block w3-black">HOME</a>
     </div>
     <div class="w3-col s3">
-      <a href="#menu" class="w3-button w3-block w3-black">SIGN UP</a>
+      <a href="/register" class="w3-button w3-block w3-black">SIGN UP</a>
     </div>
     <div class="w3-col s3">
-      <a href="#where" class="w3-button w3-block w3-black">SIGN IN</a>
+      <a href="log-in/false" class="w3-button w3-block w3-black">SIGN IN</a>
     </div>
   </div>
 </div>
@@ -29,7 +18,7 @@
   <div class="w3-display-middle w3-top-center">
     <img class="w3-center mycustom_class animTest w3-animate-top" src="assets/icons/olympicringstrans.png" width="750" height="400">
   </div>
-  <video loop class="fakeimg" controls autoplay >
+  <video loop class="fakeimg" controls oncanplay="this.play()" onloadedmetadata="this.muted = true">
     <source src="assets/icons/brisbanevideo.mp4" type="video/mp4" >
   </video>
   <div class="w3-display-middle w3-center">
@@ -89,7 +78,3 @@
 <footer class="w3-center w3-light-grey w3-padding-48 w3-large">
   <p>Powered by GOLDPASS</p>
 </footer>
-</body>
-</html>
-<!-- I've removed the script -->
-<!-- link: https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_templates_cafe -->
