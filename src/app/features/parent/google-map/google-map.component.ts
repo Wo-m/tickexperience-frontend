@@ -2,6 +2,7 @@ import {Component, Inject, OnInit} from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import {VenueService} from "../../../core/service/venue.service";
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import {ResponsiveService} from "../../../core/service/responsive.service";
 
 @Component({
   selector: 'app-google-map',
@@ -15,7 +16,8 @@ export class GoogleMapComponent implements OnInit{
     @Inject(MAT_DIALOG_DATA) public data: any,
     public dialogRef: MatDialogRef<GoogleMapComponent>,
     private venueService: VenueService,
-    private sanitizer: DomSanitizer
+    private sanitizer: DomSanitizer,
+    public responsive: ResponsiveService
   ) {}
 
   ngOnInit(): void {

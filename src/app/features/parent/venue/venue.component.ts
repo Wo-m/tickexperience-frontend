@@ -41,9 +41,13 @@ export class VenueComponent implements OnInit {
   }
 
   openMapsPopup(): void {
+    const isPhone = this.responsive.isPhone();
+    const width = isPhone ? '100%' : '70%';
+    const height = isPhone ? '80%' : '85%';
+
     this.dialog.open(GoogleMapComponent, {
-      width: '70%',
-      height: '85%',
+      width: width,
+      height: height,
       data: {
         location: this.venueDetails.location
       }
