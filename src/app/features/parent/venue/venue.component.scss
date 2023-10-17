@@ -1,3 +1,5 @@
+@use "../../../../assets/styles/colours";
+
 /* Apply basic styling to the container */
 .venue-container {
   display: flex;
@@ -17,20 +19,36 @@
   margin-bottom: 20px;
 }
 
+.directions-button {
+  margin: 10px;
+  padding: 7px 12px 7px 12px;
+  background-color: colours.$green;
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 3px; /* Adding a small border radius for rounded corners */
+  text-align: center; /* Center the text horizontally */
+  transition: background-color 0.3s, transform 0.2s; /* Add transition effects for smooth hover */
+  cursor: pointer; /* Change the cursor on hover to indicate it's clickable */
+
+  /* Add a subtle box shadow for depth and hover effect */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+  /* Apply a gradient background on hover to make it pop */
+  &:hover {
+    //background: linear-gradient(to bottom, #2ecc71, #27ae60);
+    background-color: colours.$lighter-green;
+    transform: scale(1.05); /* Slightly scale up the button on hover */
+  }
+
+  /* Remove underlines from anchor tags if nested inside the button */
+  a {
+    text-decoration: none;
+  }
+}
+
 /* Style the directions link section on the top right */
 .venue-directions {
   align-self: flex-end;
-}
-
-/* Style the directions link */
-.venue-directions a {
-  text-decoration: none;
-  color: #007bff; /* Blue link color */
-}
-
-/* Style the directions link on hover */
-.venue-directions a:hover {
-  text-decoration: underline;
 }
 
 .image-gallery {
@@ -39,6 +57,11 @@
   align-items: center;
   width: 700px;
   height: 400px;
+}
+
+.image-gallery-phone {
+  width: 350px;
+  height: 600px;
 }
 
 .gallery-container {
@@ -67,21 +90,28 @@ img {
 }
 
 .arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
   font-size: 24px;
   cursor: pointer;
   width: 40px;
   height: 40px;
   background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border-radius: 50%;
   transition: background-color 0.3s;
   z-index: 2;
+  color: white;
+
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrow-phone {
+  top: 17%;
+  width: 35px;
+  height: 35px;
 }
 
 .arrow:hover {
@@ -95,5 +125,3 @@ img {
 .right-arrow {
   right: 0;
 }
-
-

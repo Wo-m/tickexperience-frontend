@@ -1,34 +1,35 @@
-<header class = "page-heading">
-  <button class ="nav-button" (click)="back()">
+<header class = "page-heading" [ngClass]="{'page-heading-phone': responsive.isPhone()}">
+  <button class ="nav-button" [ngClass]="{'nav-button-phone': responsive.isPhone()}"  (click)="back()">
     <mat-icon>keyboard_arrow_left</mat-icon>
   </button>
 </header>
 <div *ngIf="ticket">
-  <div class = "countdown-container">
-    <div class = "countdown-elements">
-      <div class = "countdown-element">
+  <div class="countdown-container" [ngClass]="{'countdown-container-phone': responsive.isPhone(), 'countdown-container-web': !responsive.isPhone()}">
+    <div class="countdown-elements" [ngClass]="{'countdown-elements-phone': responsive.isPhone(), 'countdown-elements-web': !responsive.isPhone()}">
+      <div class="countdown-element" [ngClass]="{'countdown-element-phone': responsive.isPhone(), 'countdown-element-web': !responsive.isPhone()}">
         {{ this.countdownTime.at(0) }} years
       </div>
-      <div class = "countdown-element">
+      <div class="countdown-element" [ngClass]="{'countdown-element-phone': responsive.isPhone(), 'countdown-element-web': !responsive.isPhone()}">
         {{ this.countdownTime.at(1) }} months
       </div>
-      <div class = "countdown-element">
+      <div class="countdown-element" [ngClass]="{'countdown-element-phone': responsive.isPhone(), 'countdown-element-web': !responsive.isPhone()}">
         {{ this.countdownTime.at(2) }} days
       </div>
-      <div class = "countdown-element">
+      <div class="countdown-element" [ngClass]="{'countdown-element-phone': responsive.isPhone(), 'countdown-element-web': !responsive.isPhone()}">
         {{ this.countdownTime.at(3) }} hours
       </div>
-      <div class = "countdown-element">
+      <div class="countdown-element" [ngClass]="{'countdown-element-phone': responsive.isPhone(), 'countdown-element-web': !responsive.isPhone()}">
         {{ this.countdownTime.at(4) }} minutes
       </div>
-      <div class = "countdown-element">
+      <div class="countdown-element" [ngClass]="{'countdown-element-phone': responsive.isPhone(), 'countdown-element-web': !responsive.isPhone()}">
         {{ this.countdownTime.at(5) }} seconds
       </div>
     </div>
-    <div class = "countdown-until">
+    <div class="countdown-until" [ngClass]="{'countdown-until-phone': responsive.isPhone(), 'countdown-until-web': !responsive.isPhone()}">
       until your event!
     </div>
   </div>
+
   <div [ngClass]="{ticket_container_phone: responsive.isPhone(), ticket_container_web: !responsive.isPhone()}">
     <div [ngClass]="{ticket_phone: responsive.isPhone(), ticket_web: !responsive.isPhone()}">
 

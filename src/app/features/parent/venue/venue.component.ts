@@ -4,6 +4,7 @@ import {GoogleMapComponent} from "../google-map/google-map.component";
 import {ActivatedRoute} from "@angular/router";
 import {VenueService} from "../../../core/service/venue.service";
 import {Venue} from "../../../core/model/venue-details.model";
+import {ResponsiveService} from "../../../core/service/responsive.service";
 
 @Component({
   selector: 'app-venue',
@@ -20,7 +21,8 @@ export class VenueComponent implements OnInit {
 
   constructor(private venueService: VenueService,
               public dialog: MatDialog,
-              private route: ActivatedRoute) { }
+              private route: ActivatedRoute,
+              public responsive: ResponsiveService) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
@@ -39,13 +41,18 @@ export class VenueComponent implements OnInit {
   }
 
   openMapsPopup(): void {
-    this.dialog.open(GoogleMapComponent, {
-      width: '70%',
-      height: '85%',
+    const isPhone = this.responsive.isPhone();
+    const width = isPhone ? '100%' : '70%';
+    const height = isPhone ? '80%' : '85%';
+
+    const dialogRef = this.dialog.open(GoogleMapComponent, {
+      width: width,
+      height: height,
       data: {
         location: this.venueDetails.location
       }
     });
+    dialogRef.updatePosition({ top: '72px' });
   }
 
   scroll(direction: number): void {

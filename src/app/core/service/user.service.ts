@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MyTicket } from '../model/my-ticket.model';
 import {MyAccountDetails} from "../model/my-account.model";
+import {environment} from "../../../environments/environment.development";
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  private base_url: string = "http://127.0.0.1:8080/api/authed/user";
+  private base_url: string = `${environment.backendBaseUrl}` + '/authed/user'
   constructor(private http: HttpClient) { }
 
   getMyTickets() {
