@@ -25,7 +25,6 @@ export class MyTicketsComponent implements OnInit {
     });
   }
 
-  //TODO: implement functionality
   openTicketDetails(id: number) {
     this.router.navigate(['/ticket', id]);
   }
