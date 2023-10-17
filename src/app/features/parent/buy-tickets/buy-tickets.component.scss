@@ -44,9 +44,6 @@
   stroke: colours.$green;
   stroke-linejoin: round;
   stroke-width: 1;
-  fill: colours.$honeydew;
-  //fill-rule: nonzero;
-  //pointer-events: fill;
 }
 
 .path {
@@ -90,6 +87,9 @@ svg {
   height: 100%;
   width: 100%;
   pointer-events: all;
+  text {
+    pointer-events: none;
+  }
 }
 
 button {

@@ -30,6 +30,14 @@ export class BuyTicketsComponent implements OnInit {
     pathToLocation: Map<string, number> = new Map(
         [['top', 1], ['right', 2], ['bottom', 3], ['left', 4]]);
 
+    locationToPath: Map<number, string> = new Map(
+        [[1, 'Top'], [2, 'Right'], [3, 'Bottom'], [4, 'Left']]);
+
+    is_supporters_map = false;
+
+    aus_colours = ['#fcba03', '#406b00'];
+    china = ['#ff0000', '#ff0000'];
+
     constructor(private eventService: EventService,
                 private userService: UserService,
                 private venueService: VenueService,
@@ -41,6 +49,11 @@ export class BuyTicketsComponent implements OnInit {
     ngOnInit(): void {
         this.route.paramMap.subscribe((params: ParamMap) => {
             this.eventId = Number(params.get('eventId'));
+            this.eventService.getEvent(this.eventId).subscribe(data => {
+                if (data.sport.name === "Football") {
+                  this.is_supporters_map = true;
+                }
+            });
 
             // ew
             this.eventService.getTickets(this.eventId).subscribe(data => {

@@ -11,12 +11,13 @@
 
 .banner {
   width: 100%;
-  background: rgba(0,0,0,0.78);
+  background: #0F2E1E;
   padding: 10px;
 }
 
 mat-drawer-container {
   height: 100%;
+  background: #FAF6DC;
 }
 
 .menu {
@@ -55,6 +56,3 @@ mat-drawer-container {
   padding: 10px 15px 10px 10px;
   cursor: pointer;
 }
-
-
-
