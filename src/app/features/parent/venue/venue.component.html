@@ -4,8 +4,8 @@
     <p>Name: {{ venueDetails.name }}</p>
     <p>Capacity: {{ venueDetails.capacity}}</p>
     <p>Location: {{ venueDetails.location }}</p>
-    <div class="venue-directions">
-      <button mat-raised-button (click)="openMapsPopup()">Get Directions</button>
+    <div>
+      <button class="directions-button" (click)="openMapsPopup()">Get Directions</button>
     </div>
   </div>
   <div class="image-gallery" [ngClass]="{'image-gallery-phone' : responsive.isPhone()}">

@@ -45,13 +45,14 @@ export class VenueComponent implements OnInit {
     const width = isPhone ? '100%' : '70%';
     const height = isPhone ? '80%' : '85%';
 
-    this.dialog.open(GoogleMapComponent, {
+    const dialogRef = this.dialog.open(GoogleMapComponent, {
       width: width,
       height: height,
       data: {
         location: this.venueDetails.location
       }
     });
+    dialogRef.updatePosition({ top: '72px' });
   }
 
   scroll(direction: number): void {

@@ -78,9 +78,13 @@ export class LandingComponent implements OnInit{
   openEventDetails(eventId: number) {
     const dialogConfig = new MatDialogConfig();
 
+    const isPhone = this.responsive.isPhone();
+    const width = isPhone ? '100%' : '60%';
+    const height = isPhone ? '80%' : '80%';
+
     dialogConfig.autoFocus = true;
-    dialogConfig.height = "50%";
-    dialogConfig.width = "50%";
+    dialogConfig.height = height;
+    dialogConfig.width = width;
     dialogConfig.viewContainerRef = undefined;
 
     let dialogRef = this.dialog.open(EventDetailsComponent, dialogConfig);
