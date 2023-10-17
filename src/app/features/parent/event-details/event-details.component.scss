@@ -47,9 +47,13 @@
     background-color: colours.$lighter-green;
     transform: scale(1.15); /* Slightly scale up the button on hover */
   }
-
-  /* Remove underlines from anchor tags if nested inside the button */
-  a {
-    text-decoration: none;
-  }
 }
+
+.link {
+    color: darkblue;
+    font-weight: bold;
+}
+
+.link:hover {
+    color: blue;
+  }
