@@ -4,6 +4,7 @@ import {GoogleMapComponent} from "../google-map/google-map.component";
 import {ActivatedRoute} from "@angular/router";
 import {VenueService} from "../../../core/service/venue.service";
 import {Venue} from "../../../core/model/venue-details.model";
+import {ResponsiveService} from "../../../core/service/responsive.service";
 
 @Component({
   selector: 'app-venue',
@@ -20,7 +21,8 @@ export class VenueComponent implements OnInit {
 
   constructor(private venueService: VenueService,
               public dialog: MatDialog,
-              private route: ActivatedRoute) { }
+              private route: ActivatedRoute,
+              public responsive: ResponsiveService) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {

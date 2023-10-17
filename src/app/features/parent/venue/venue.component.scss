@@ -41,6 +41,11 @@
   height: 400px;
 }
 
+.image-gallery-phone {
+  width: 350px;
+  height: 600px;
+}
+
 .gallery-container {
   position: relative;
   width: 100%; /* Set the container width */
@@ -67,21 +72,28 @@ img {
 }
 
 .arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
   font-size: 24px;
   cursor: pointer;
   width: 40px;
   height: 40px;
   background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border-radius: 50%;
   transition: background-color 0.3s;
   z-index: 2;
+  color: white;
+
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrow-phone {
+  top: 17%;
+  width: 35px;
+  height: 35px;
 }
 
 .arrow:hover {
