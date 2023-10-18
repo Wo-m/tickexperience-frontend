@@ -7,4 +7,5 @@ export class MyTicket {
     icon: string;
     seatNumber: number;
     qrCode: string;
+    videoUrls: string[];
 }

@@ -18,4 +18,8 @@ export class SportService {
   getEvents(sportId: number) {
     return this.http.get<Event[]>(this.base_url + `/events/${sportId}`)
   }
+
+  getVideoUrls(sportId: number) {
+    return this.http.get<string[]>(this.base_url + `/video/${sportId}`)
+  }
 }

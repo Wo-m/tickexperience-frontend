@@ -74,4 +74,10 @@
 
     </div>
   </div>
+  <div class="title">
+    Get excited for your event by watching some highlights!
+  </div>
+  <div *ngFor="let url of ticket.videoUrls" class="container">
+    <iframe class="responsive-iframe" [src]="url"></iframe>
+  </div>
 </div>
