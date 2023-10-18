@@ -1,5 +1,9 @@
 @use "../../../../assets/styles/colours";
 
+.container {
+  height: 100%
+}
+
 .page-heading {
   display: flex;
   flex-direction: row;
@@ -40,6 +44,7 @@
   font-size: 30px;
   color: colours.$green;
   background-color: colours.$yellow;
+  height: fit-content;
 }
 
 .countdown-elements {
@@ -104,6 +109,7 @@
   margin-left: 5%;
   margin-right: 5%;
   padding: 15px 10px;
+  height: 100%
 }
 
 .ticket_container_web {
@@ -117,6 +123,9 @@
   padding: 30px 20px;
 }
 
+.ticket_parent {
+  height: 100%;
+}
 .ticket_web {
   display: flex;
   flex-direction: row;
@@ -135,9 +144,9 @@
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  height: 550px;
+  height: 90%;
   width: 97%;
   box-shadow: 10px 10px 20px grey;
   border-width: 2px;
@@ -317,6 +326,9 @@
   border-top-style: dashed;
   justify-content: center;
   align-items: center;
+  img {
+    margin-top: 10px;
+  }
 }
 
 .barcode_web {
