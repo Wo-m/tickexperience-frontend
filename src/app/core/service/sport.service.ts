@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Sport } from '../model/sport.model';
 import { Event } from '../model/event.model';
+import {environment} from "../../../environments/environment.development";
 
 @Injectable({
   providedIn: 'root'
 })
 export class SportService {
 
-  private base_url: string = "http://127.0.0.1:8080/api/sport";
+  private base_url: string = `${environment.backendBaseUrl}` + '/sport';
   constructor(private http: HttpClient) { }
 
   getAllSports() {

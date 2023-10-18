@@ -8,7 +8,7 @@ import { MyTicket } from '../model/my-ticket.model';
 })
 export class TicketService {
 
-  private base_url: string = `${environment.backendBaseUrl}`+'/ticket'
+  private base_url: string = `${environment.backendBaseUrl}`+'/ticket';
 
   constructor(private http: HttpClient) { }
 

@@ -5,7 +5,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%; /* Adjust the height as needed */
+  width: 100%;
+  height: 100%;
+}
+
+.iframe-el {
+  width: 100%;
+  height: 100%;
 }
 
 #map {
@@ -14,7 +20,20 @@
   border: 1px solid #ccc; /* Add a border for clarity */
 }
 
-/* Style the close button */
 button {
-  margin-top: 10px; /* Adjust the spacing between the map and the button */
+  margin: 20px 0;
+  background-color: #ccc; /* Light gray background color */
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px; /* Add a small border radius for rounded corners */
+  transition: background-color 0.3s, transform 0.2s; /* Smooth color transition on hover */
+  cursor: pointer;
 }
+
+button:hover {
+  background-color: #aaa; /* Slightly darker light gray on hover */
+  transform: scale(1.05);
+}
+

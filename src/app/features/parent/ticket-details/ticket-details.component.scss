@@ -6,15 +6,26 @@
   flex-wrap: nowrap;
   justify-content: left;
   height: 50px;
-  margin: 0 10%;
+  padding-left: 50px;
+  padding-top: 15px;
+  //margin: 0 10%;
   align-content: space-between;
+  background-color: colours.$yellow;
+}
+
+.page-heading-phone {
+  padding-left: 0;
 }
 
 .nav-button {
   display: flex;
   flex-direction: row;
-  margin: 5px;
-  padding: 10px;
+  margin: 5px 5px 5px 5px; /* Adjust the margin for the left side */
+  padding: 10px 10px 30px;
+}
+
+.nav-button-phone {
+  padding: 2px 2px 2px;
 }
 
 .container {
@@ -51,12 +62,10 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  //margin-left:7%;
-  //margin-right: 7%;
-  padding: 10px;
+  padding: 1px;
   font-size: 30px;
   color: colours.$green;
-  background-color: white;
+  background-color: colours.$yellow;
 }
 
 .countdown-elements {
@@ -66,7 +75,7 @@
   justify-content: center;
   align-items: center;
   padding: 10px;
-  background:linear-gradient(135deg, colours.$honeydew 25%, colours.$yellow 70%);
+  background-color: initial;
 }
 
 .countdown-element {
@@ -79,7 +88,37 @@
 }
 
 .countdown-until {
-  padding-top: 15px;
+}
+
+// web specific countdown stuff
+.countdown-container-web {
+}
+
+.countdown-elements-web {
+}
+
+.countdown-element-web {
+}
+
+.countdown-until-web {
+}
+
+// phone specific countdown stuff
+.countdown-container-phone {
+  max-width: 500px;
+}
+
+.countdown-elements-phone{
+  max-width: 500px;
+}
+
+.countdown-element-phone{
+  font-size: 17px;
+  padding: 1px;
+}
+
+.countdown-until-phone {
+  font-size: 18px;
 }
 
 .ticket_container_phone {

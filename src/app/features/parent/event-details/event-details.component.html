@@ -1,22 +1,21 @@
 <div class="container" *ngIf="event">
-    <div>
+    <div class="info-el">
         {{event.name}}
     </div>
-    <div>
+    <div class="info-el">
         {{event.gender}}
     </div>
-    <div>
+    <div class="info-el">
         {{getStartDate(event)}}
     </div>
-    <div>
+    <div class="info-el">
         {{getStartTime(event)}}
     </div>
-    <div>
-      <a [routerLink]="['/venue', event.venue.id]" (click)="closeDialog()">{{ event.venue.name }}</a>
+    <div class="info-el">
+      <a class="link" [routerLink]="['/venue', event.venue.id]" (click)="closeDialog()">{{ event.venue.name }}</a>
     </div>
-
     <div class="selectable" matTooltip="Please login the purchase a ticket" [matTooltipDisabled]="isAuthenticated()">
-        <button [disabled]="!isAuthenticated()" (click)="buyTicket()">Buy Ticket</button>
+        <button class="buy-ticket-button" [disabled]="!isAuthenticated()" (click)="buyTicket()">Buy Ticket</button>
     </div>
     <div class="image-container">
         <img src="{{event.imageURL}}">

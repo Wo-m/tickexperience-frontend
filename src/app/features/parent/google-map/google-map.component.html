@@ -1,6 +1,5 @@
 <div class="maps-container">
-  <!-- Display the Google Map iframe using iframeLink -->
-  <iframe [src]="iframeLink" style="width: 100%; height: 600px;"></iframe>
+  <iframe [src]="iframeLink" class="iframe-el" [ngClass]="{'iframe-el-phone' : responsive.isPhone()}"></iframe>
   <button mat-button (click)="closePopup()">Close</button>
 </div>
 

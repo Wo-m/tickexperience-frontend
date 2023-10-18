@@ -3,13 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { Event } from '../model/event.model';
 import { Ticket } from '../model/ticket.model';
 import { Section } from '../model/section.model';
+import {environment} from "../../../environments/environment.development";
 
 @Injectable({
     providedIn: 'root'
 })
 export class EventService {
 
-    private base_url: string = 'http://127.0.0.1:8080/api/event';
+  private base_url: string = `${environment.backendBaseUrl}` + '/event';
 
     constructor(private http: HttpClient) {
     }

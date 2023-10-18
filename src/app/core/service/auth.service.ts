@@ -5,6 +5,7 @@ import { CacheConstants } from '../constant/cache.constant';
 import { AuthUtils } from '../Utils/auth.utils';
 import { Register } from '../model/register.model';
 import { Token } from '../model/token.model';
+import {environment} from "../../../environments/environment.development";
 
 /**
  * Singleton Service for handling authentication
@@ -14,7 +15,7 @@ import { Token } from '../model/token.model';
 })
 export class AuthService {
 
-  private base_url: string = "http://127.0.0.1:8080/api/auth/";
+  private base_url: string = `${environment.backendBaseUrl}` + '/auth/';
 
   constructor(private http: HttpClient) {
   }

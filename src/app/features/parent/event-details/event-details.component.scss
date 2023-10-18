@@ -1,21 +1,59 @@
+@use "../../../../assets/styles/colours";
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100%;
+    background: linear-gradient(135deg, colours.$yellow 20%, colours.$honeydew 60%, colours.$yellow 90%);
 }
 
 .image-container {
   overflow: hidden;
   border-radius: 20px;
-  height: 60%;
+  height: 50%;
   img {
     height: -webkit-fill-available;
     width: -webkit-fill-available;
   }
 }
 
+.info-el {
+  margin: 5px;
+  font-size: 20px;
+}
+
 .image-container_phone{
   height: 60%;
 }
+
+.buy-ticket-button {
+  padding: 10px;
+  margin: 10px;
+  background-color: colours.$green;
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 7px; /* Adding a small border radius for rounded corners */
+  text-align: center; /* Center the text horizontally */
+  transition: background-color 0.3s, transform 0.2s; /* Add transition effects for smooth hover */
+  cursor: pointer; /* Change the cursor on hover to indicate it's clickable */
+
+  /* Add a subtle box shadow for depth and hover effect */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+  /* Apply a gradient background on hover to make it pop */
+  &:hover {
+    //background: linear-gradient(to bottom, #2ecc71, #27ae60);
+    background-color: colours.$lighter-green;
+    transform: scale(1.15); /* Slightly scale up the button on hover */
+  }
+}
+
+.link {
+    color: darkblue;
+    font-weight: bold;
+}
+
+.link:hover {
+    color: blue;
+  }
