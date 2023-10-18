@@ -35,12 +35,12 @@
         <polygon class="section" points="0,-1 100,-1 85,14  15,14" fill="url(#aus)" *ngIf="is_supporters_map"/>
         <polygon class="section" points="0,-1 100,-1 85,14  15,14" fill="rgb(223, 237, 220)" *ngIf="!is_supporters_map"/>
         <path (click)="selectSection('top')" id="top" class="path" d="M 0 -1 L 100 -1 L 85 14 L 15 14 L 0 -1 L 5 -1"/>
-        <text x="50" y="10" text-anchor="middle" fill="white" font-size="10">Aus</text>
+        <text x="50" y="10" text-anchor="middle" fill="white" font-size="10" *ngIf="is_supporters_map">Aus</text>
 
         <polygon class="section" points="0,67 15,52 85,52  100,67" fill="url(#china)" *ngIf="is_supporters_map"/>
         <polygon class="section" points="0,67 15,52 85,52  100,67" fill="rgb(223, 237, 220)" *ngIf="!is_supporters_map"/>
         <path (click)="selectSection('bottom')" id="bottom" class="path" d="M 0 67 L 15 52 L 85 52 L 100 67 L 0 67 L 15 52" />
-        <text x="50" y="63" text-anchor="middle" fill="white" font-size="10">China</text>
+        <text x="50" y="63" text-anchor="middle" fill="white" font-size="10" *ngIf="is_supporters_map">China</text>
 
         <polygon class="section" points="-1,0 -1,66 14,51  14,15" fill="rgb(223, 237, 220)"/>
         <path (click)="selectSection('left')" id="left" class="path" d="M -1 0 L -1 66 L 14 51 L 14 15 L -1 0 -1 5" />

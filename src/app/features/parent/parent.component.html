@@ -1,8 +1,14 @@
 <div class="root-container">
 
   <div class="banner">
-    <div class="right-align" (click)="drawer.toggle()">
-      <img class="icon" src="{{'assets/icons/menu_side_bar.png'}}" alt="">
+    <div class="image" (click)="routeTo(PageEnum.LANDING)">
+      <img src="{{ 'assets/images/logo.png'}}" alt="">
+    </div>
+    <div class="title" (click)="routeTo(PageEnum.LANDING)">
+      GOLD PASS
+    </div>
+    <div class="menu-button">
+      <img class="icon" src="{{'assets/icons/menu_side_bar.png'}}" alt="" (click)="drawer.toggle()">
     </div>
   </div>
 

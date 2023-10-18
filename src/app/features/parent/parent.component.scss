@@ -9,10 +9,38 @@
   overflow: hidden !important;
 }
 
+.image {
+  height: 100%;
+  cursor: pointer;
+  img {
+    height: 50px;
+  }
+}
+
+.title {
+  color: colours.$yellow;
+  font-size: 2rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-weight: bold;
+  letter-spacing: 6px;
+}
+
+.menu-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
 .banner {
   width: 100%;
   background: #0F2E1E;
   padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 mat-drawer-container {

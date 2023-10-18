@@ -2,7 +2,7 @@
 <div class="root-container image" [ngClass]="{image_phone: responsive.isPhone(), image_web: !responsive.isPhone()}">
     <div class="card">
       <form [formGroup]="loginForm" (ngSubmit)="login()">
-        <h1>Welcome to Olympic Engaged Events</h1>
+        <h1>Welcome to Gold Pass</h1>
         <div class="warning">
           <p *ngIf="loggedOut">You have been logged out.</p>
           <p *ngIf="failed">Login failed. Please try again.</p>
