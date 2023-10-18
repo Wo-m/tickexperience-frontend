@@ -4,7 +4,6 @@ import { Ticket } from '../../../core/model/ticket.model';
 import { UserService } from '../../../core/service/user.service';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { ResponsiveService } from '../../../core/service/responsive.service';
-import { VenueService } from '../../../core/service/venue.service';
 
 import { Section } from '../../../core/model/section.model';
 
@@ -40,7 +39,6 @@ export class BuyTicketsComponent implements OnInit {
 
     constructor(private eventService: EventService,
                 private userService: UserService,
-                private venueService: VenueService,
                 private router: Router,
                 private route: ActivatedRoute,
                 public responsive: ResponsiveService) {

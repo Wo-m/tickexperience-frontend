@@ -4,6 +4,7 @@ import { AuthService } from '../../core/service/auth.service';
 import { PageEnum } from '../../core/constant/page.enum';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatDrawer } from '@angular/material/sidenav';
+import { CacheConstants } from 'src/app/core/constant/cache.constant';
 
 @Component({
   selector: 'app-parent',
@@ -40,5 +41,10 @@ export class ParentComponent implements OnInit, AfterViewInit {
 
   logout() {
     this.authService.logout();
+  }
+
+  navigateHome() {
+    sessionStorage.removeItem(CacheConstants.currentEventDialog)
+    this.routeTo(PageEnum.LANDING)
   }
 }
