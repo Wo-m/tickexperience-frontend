@@ -50,6 +50,5 @@ export class AuthService {
     }
 
     return this.http.post(this.base_url + "register", body);
-
   }
 }
