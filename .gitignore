@@ -38,6 +38,7 @@ testem.log
 /typings
 notes*
 todo*
+/.quicknote
 
 # System files
 .DS_Store
