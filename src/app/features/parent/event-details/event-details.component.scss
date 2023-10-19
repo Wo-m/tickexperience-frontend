@@ -47,6 +47,9 @@
     background-color: colours.$lighter-green;
     transform: scale(1.15); /* Slightly scale up the button on hover */
   }
+  &:disabled {
+    background-color: grey;
+  }
 }
 
 .link {
