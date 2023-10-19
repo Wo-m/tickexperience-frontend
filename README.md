@@ -20,7 +20,7 @@ And a 3D VR view of the stadium from your allocated seat, as well as a supporter
 The site currently includes an animated landing / welcome page, functional account login and management, an event page with listed olympic events that link to pages for ticket purchase and stadium seating viewing, and pages for each olympic venue with images of the venue and directions. 
 
 ## Live Implemention
-To access a live prototypeof the Gold Pass application please click [here](http://170.64.185.134:5000/welcome)
+To access a live prototype of the Gold Pass application please click [here](http://170.64.185.134:5000/welcome)
 
 ## Usage
 Please install [Node.js](https://nodejs.org/en/download) 20.0.0 or greater. Install the latest version of [Angular](https://angular.io/guide/setup-local).
