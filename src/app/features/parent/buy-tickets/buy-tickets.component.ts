@@ -87,6 +87,12 @@ export class BuyTicketsComponent implements OnInit {
       element.classList.add('selected');
     }
 
+    // Select Section in dropdown
+    const selectedTicket = this.tickets.find(ticket => ticket.section.location === this.pathToLocation.get(elementId));
+    if (selectedTicket) {
+      this.selectedTicket = selectedTicket;
+    }
+
     // Update VR Image
     const index = this.pathToLocation.get(elementId);
     if (index != undefined) {

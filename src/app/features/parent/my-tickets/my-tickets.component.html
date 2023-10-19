@@ -1,4 +1,9 @@
 <div class="container">
+  <div *ngIf="tickets.length === 0">
+    <h1>
+      No Tickets Purchased
+    </h1>
+  </div>
   <div class="card selectable" [ngClass]="{'selectable_phone card_phone': responsive.isPhone()}"
        *ngFor="let ticket of tickets" (click)="openTicketDetails(ticket.ticketId)">
     <div class="image" [ngClass]="{image_phone: responsive.isPhone()}">
