@@ -1,5 +1,3 @@
-
-
 # Brisbane 2032 Gold Pass
 <p align="center">
   <img src="https://github.com/Wo-m/tickexperience-frontend/blob/main/src/assets/images/logo.png?raw=true)" alt="logo" width="250"/>
