@@ -45,10 +45,10 @@ Services:
 
 ## Usage
 
-1. Install [Node.js](https://nodejs.org/en/download) 20.0.0 or greater.
-2. Install npm.
+1. Install [Node.js](https://nodejs.org/en/download) 20.0.0 or greater
+2. Install npm
 3. Navigate to the root folder and run `npm install` to install the project dependencies
-4. Run `ng serve` to start up the application.
+4. Run `ng serve` to start up the application
 5. Application will start on localhost:4200
 
 **NOTE:** Ensure that the [backend project](https://github.com/Wo-m/tickexperience-backend) is also running
