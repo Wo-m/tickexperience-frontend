@@ -28,9 +28,10 @@ The following is a brief overview of how to navigate this code-base/how it works
     - Services 
 
 Components:
-- Components are located in /src/app/features
-- A component represents all the code (TS, HTML, SCSS) related to a given page OR part of a page
-- Components are a convenient abstraction as they can be modularly injected into any page throughout the website, but can also function as their own pages entirely
+- [Angular Components](https://angular.io/guide/component-overview) are a convenient and modular building block for angular applications
+- As per Angular best practices components are located in /src/app/feature
+- each component contains the template (HTML, CSS) and functional code (TS) for its own purpose.
+- Components represent either whole pages, or smaller injectable components that exist inside other pages
 
 Models:
 - Models represent the various entities used in our web app and loosely map to tables in our backend DB
